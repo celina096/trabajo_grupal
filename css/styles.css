@@ -62,6 +62,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 div.header {
 	position: fixed;
 	width: 100%;
+	z-index: 1000000;
 }
 
 div.background1 {
@@ -130,6 +131,7 @@ section.section1 {
 }
 .formularioIndex {
 	text-align: center;
+	color: white;
 
 }
 
@@ -139,7 +141,7 @@ section.section1 {
 }
 
 .formularioIndex {
-	background-color: rgba(196, 221, 232, 0.4);
+	background-color: rgba(53, 74, 95, 0.58);
 	height: 300px;
 	width: 30%;
 	border-radius: 15px;
@@ -153,4 +155,27 @@ box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
 }
 .formularioIndex * {
 	margin-bottom: 5px;
+}
+
+.formularioIndex a{
+	text-decoration: none;
+	color: gainsboro;
+}
+
+section.indexParte2 {
+	height: 500px;
+	width: 100%;
+	font-size: 3em;
+	display: flex;
+	align-items: center;
+}
+
+.indexParte2 p {
+	font-size: 0.5em;
+}
+
+section.indexParte3 {
+	height: 800px;
+	background: url("../images/background_6.jpg") no-repeat center;
+	background-attachment: fixed;
 }
