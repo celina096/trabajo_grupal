@@ -57,6 +57,7 @@ div.background1 {
   background-size: cover;
   height: 100vh;
   background-attachment: fixed;
+	overflow: hidden;
 }
 
 header {
@@ -77,6 +78,7 @@ header h1, h2 {
 header li {
   float: right;
 	margin-right:40px;
+	padding: 30px;
 }
 
 nav a {
@@ -91,9 +93,12 @@ div.container {
 
 section.section1 {
 	position: absolute;
-	top: 40%;
+	top: 50%;
 	left: 0;
-	z-index: 10;
+	width: 100%;
+	z-index: 1000;
+	overflow: hidden;
+	float: none;
 }
 
 .section1 h2 {
