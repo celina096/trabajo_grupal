@@ -36,7 +36,7 @@ section{
   margin: 0 auto;
   display: block;
   text-align: center;
-  background-color: blue;
+
 }
 .generales-ingresos{
   float: left;
@@ -44,7 +44,7 @@ section{
   margin: 0 auto;
   display: block;
   text-align: left;
-    background-color: blue;
+
 }
 
 #grafico{
@@ -52,8 +52,7 @@ section{
   margin: 0 auto;
   display: block;
   text-align: center;
-  border: 1px solid black;
-  background-color: blue;
+  
 }
 
 form{
