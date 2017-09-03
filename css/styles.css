@@ -193,6 +193,7 @@ section.indexParte2 {
 	font-size: 3em;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .indexParte2 p {
@@ -200,7 +201,7 @@ section.indexParte2 {
 }
 
 section.indexParte3 {
-	height: 800px;
+	height: 80hv;
 	background: url("../images/background_6.jpg") no-repeat center;
 	background-attachment: fixed;
 	background-size: cover;
@@ -211,14 +212,23 @@ section.indexParte3 {
 }
 
 .indexParte3 h2 {
-	font-size: 4em;
+	font-size: em;
 	color: #010e1d;
-	width: 100%;
 	margin-bottom: 5%;
+	width: 95%;
+	margin-top: 5%;
+}
+
+.indexParte3 ul li:first-child {
+	width: 90%;
+}
+
+.indexParte3 img {
+	margin-right: 3%;
 }
 
 .indexParte3 div {
-	width: 100%;
+	width: 95%;
 	margin-left: 5%;
 }
 
@@ -227,13 +237,16 @@ section.indexParte3 {
 	color: #947857;
 	margin-bottom: 5%;
 	padding-left: 6%;
+	display: flex;
+	align-items: center;
 }
+
 
 .indexParte3 span {
 	font-weight: bold;
 	font-family: "Fjalla One";
 	color: #133153;
-	display: block;
+	margin-right: 3%;
 }
 
 footer {
@@ -248,8 +261,8 @@ footer div{
 	padding-bottom: 5%;
 }
 
-footer p {
-	margin-top: 5%;
+footer p.copyright {
+	padding: 10px;
 }
 /* ---------------------ANIMACIONES---------------*/
 
