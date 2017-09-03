@@ -159,6 +159,25 @@ box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
 	width: 190px;
 	border-radius: 10px;
 }
+
+.formularioIndex input, textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+.formularioIndex input:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
 .formularioIndex * {
 	margin-bottom: 5px;
 }
@@ -186,10 +205,52 @@ section.indexParte3 {
 	background-attachment: fixed;
 	background-size: cover;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
 }
 
+.indexParte3 h2 {
+	font-size: 4em;
+	color: #010e1d;
+	width: 100%;
+	margin-bottom: 5%;
+}
 
+.indexParte3 div {
+	width: 100%;
+	margin-left: 5%;
+}
+
+.indexParte3 li {
+	font-size: 1.5em;
+	color: #947857;
+	margin-bottom: 5%;
+	padding-left: 6%;
+}
+
+.indexParte3 span {
+	font-weight: bold;
+	font-family: "Fjalla One";
+	color: #133153;
+	display: block;
+}
+
+footer {
+	margin: 5% 0;
+}
+
+footer div{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  border-bottom: 0.1px solid gainsboro;
+	padding-bottom: 5%;
+}
+
+footer p {
+	margin-top: 5%;
+}
 /* ---------------------ANIMACIONES---------------*/
 
 .animation1 {
@@ -197,15 +258,15 @@ section.indexParte3 {
 }
 
 .animation2 {
-	-webkit-animation-delay: 1.15s;
+	-webkit-animation-delay: 1.2s;
 }
 
 .animation3 {
-	-webkit-animation-delay: 1.25s;
+	-webkit-animation-delay: 1.39s;
 }
 
 .fadeInDown {
-	-webkit-animation-delay: 1.25s;
+	-webkit-animation-delay: 1.39s;
 }
 
 
