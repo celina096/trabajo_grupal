@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="stylesheet" href="reset.css">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
+    <title> Mis Finanzas Argentina </title>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="header">
+        <header class="index">
+          <label class="burgerMenu" for="burger-menu">
+            <img class="burgerMenu" src="imagenes/menu.svg" alt="" width="40px">
+        </label>
+        <input id="burger-menu" type="checkbox" name="burgerMenu" value="">
+        <img class="logo" src="imagenes/logo200px.png" alt="" width="250px">
+        <nav>
+      <ul>
+        <li class="hvr-underline-from-center"><a href="#">Contacto</a></li>
+        <li class="hvr-underline-from-center"><a href="#">Registrate</a></li>
+        <li class="hvr-underline-from-center"><a href="#">Sobre Nosotros</a></li>
+        <li class="hvr-underline-from-center"><a href="#">FAQs</a></li>
+      </ul>
+    </nav>
+</header>
+</div>
+
+<div id="central">
+    <section class="banner">
+			<img src="imagenes/mujercompu.jpg" alt="banner">
+		</section>
+
+
+  <article class="forms">
+    <div class="signUp">
+        <h1> Sign Up </h1>
+        <br><br>
+
+     <form action="script.php" method="GET">
+     <label for="nombre">Nombre:</label>
+     <input id="nombre" type="text" name="nombre1" value="" required>
+     <br><br>
+     <label for="apellido">Apellido:</label>
+     <input id="apellido" type="text" name="apellido2" placeholder="" required>
+
+     <br><br>
+     <label for="password">Contraseña</label>
+     <input type="password" name="password" id="password" value="" required>
+
+     <br><br>
+
+     <label for="email">E-mail</label>
+     <input type="email" name="email" id="email" value="" required>
+     <br><br>
+     <label for="username">Username</label>
+     <input type="username" name="username" id="username" value="" required>
+
+     <br><br>
+
+     Sexo:
+     <input type="radio" name="sexo" value="M">M
+     <input type="radio" name="sexo" value="F">F
+
+     <br><br>
+
+      <input type="hidden" name="" value="">
+       <br><br>
+       <button type="submit">
+         <img src="https://www.datoweb.com/img/post/3_28_enviar-formulario-javascript.png" alt="" width="200px">
+       </button>
+       <button type="reset">
+         Reiniciar
+       </button>
+
+      </div>
+
+
+    <div class="logIn">
+
+      <h1> Log In </h1>
+      <br><br>
+
+      <label for="username">Username</label>
+      <input type="username" name="username" id="username" value="" required>
+
+
+      <br><br>
+      <label for="password">Contraseña</label>
+      <input type="password" name="password" id="password" value="" required>
+
+      <input type="hidden" name="" value="">
+
+      <br><br>
+      <button type="submit">
+        <img src="https://www.datoweb.com/img/post/3_28_enviar-formulario-javascript.png" alt="" width="200px">
+      </button>
+      <button type="reset">
+        Reiniciar
+      </button>
+
+    </div>
+</article>
+
+</div>
+  <br><br>
+
+       <footer class="footerIndex">
+
+         <img src="imagenes/logo200px.png" alt="" width="200px">
+              <p><a href="#">Terminos & Condiciones</a> <a href="#">Póliza de Privacidad</a><a href="#">Copyrights</a></p>
+              <div>
+                <ul>
+                  <h2>Servicios</h2>
+                  <li>Contador Online</li>
+                  <li>Mis Gastos</li>
+                  <li>Mis Ingresos</li>
+                </ul>
+                <ul>
+                  <h2>Información</h2>
+                  <li>Acerca de nosotros</li>
+                  <li>Documentación</li>
+                  <li>Soporte</li>
+                  <li>Contacto</li>
+                </ul>
+                <ul>
+                  <h2>0800-123-456</h2>
+                  <li>misfinanzas@atencion.com</li>
+                  <li></li>
+                  <li></li>
+                </ul>
+
+              </div>
+        <p class="copyright">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
+
+
+    </footer>
+   </div>
+  </body>
+</html>
