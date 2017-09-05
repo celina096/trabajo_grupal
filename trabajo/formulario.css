@@ -135,14 +135,7 @@ div.imagen-fondo {
     font-family: roboto;
     float: left;
     width: 45%;
-<<<<<<< HEAD
-    background-color: rgba(53, 74, 95, 0.58);
-
-=======
     color: white;
->>>>>>> 7602db8aeac1547ace94315deeab91bab45b279d
-
-
 }
 
   div.logIn{
@@ -150,11 +143,7 @@ div.imagen-fondo {
     float: left;
     padding-left: 10px;
     width: 45%;
-<<<<<<< HEAD
-    background-color: rgba(53, 74, 95, 0.58);
-=======
     color: white;
->>>>>>> 7602db8aeac1547ace94315deeab91bab45b279d
 }
 
 
