@@ -212,7 +212,7 @@ section.indexParte3 {
 }
 
 .indexParte3 h2 {
-	font-size: em;
+	font-size: 3.5em;
 	color: #010e1d;
 	margin-bottom: 5%;
 	width: 95%;
@@ -247,23 +247,32 @@ section.indexParte3 {
 	font-family: "Fjalla One";
 	color: #133153;
 	margin-right: 3%;
+	font-size: 1.2em;
 }
-
+/* FOOTER */
 footer {
 	margin: 5% 0;
+	text-align: center;
 }
 
-footer div{
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-  border-bottom: 0.1px solid gainsboro;
-	padding-bottom: 5%;
+footer a {
+	padding-right: 10px;
+
 }
+
+.margin-bottom {
+	margin-bottom: 2%;
+}
+
+footer a:last-child {
+	padding-right: 0;
+}
+
 
 footer p.copyright {
 	padding: 10px;
 }
+
 /* ---------------------ANIMACIONES---------------*/
 
 .animation1 {
