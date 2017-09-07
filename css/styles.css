@@ -60,18 +60,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	font-size: 2.5vh;
 }
 
-div.header {
-	position: fixed;
-	width: 100%;
-	z-index: 1000000;
-}
-
 div.background1 {
   background: url("../images/background--1.jpg") no-repeat center;
   background-size: cover;
   height: 100vh;
   background-attachment: fixed;
 }
+div.header {
+	position: fixed;
+	width: 100%;
+	z-index: 1000000;
+}
+
 
 header {
   overflow: hidden;
@@ -121,8 +121,6 @@ section.section1 {
 	align-items: center;
 	height: 90%;
 }
-.secttion1 div {
-}
 
 .section1 h2 {
 	font-size: 4.5em;
@@ -156,6 +154,7 @@ box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
 }
 .formularioIndex div input {
 	font-family: Oswald;
+	font-size: 1em;
 	width: 190px;
 	border-radius: 10px;
 }
@@ -251,8 +250,10 @@ section.indexParte3 {
 }
 /* FOOTER */
 footer {
-	margin: 5% 0;
+	background-color: #2d3845;
+	padding: 5% 0;
 	text-align: center;
+	border-top: 2.5px solid black;
 }
 
 footer a {
