@@ -58,12 +58,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   font-size: 2.5vh;
   box-sizing: border-box;
   margin: 0;
-  background-image: url("../images/background-tablas.jpg");
+  background-image: url("../images/background_1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
-.contenedor{
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 /* header*/
 div.header {
@@ -75,6 +75,9 @@ div.header {
 
 header {
   overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 80px;
   border-bottom: 0.1px solid gainsboro;
@@ -112,39 +115,61 @@ img.user {
 /*fin header*/
 
 .contenido {
-  width: 80%;
-  border: 1px solid black;
+  width: 100%;
   position: absolute;
   top: 100px;
-  margin-left: 10%;
-  background-color: rgba(53, 74, 95, 0.2);
+  overflow: hidden;
 }
 
+.contenido p {
+  float:left;
+}
 
 nav.menu {
   display: flex;
-  justify-content: center;
-
+  justify-content: flex-end;
+  font-size: 2em;
+  margin-right: 10%;
 }
 
 .menu ul{
-  overflow: hidden;
-  width: 100%;
+  width: 70%;
+  text-align: center;
+  flex-direction: column;
 }
 nav.menu ul li{
-  float: left;
-  width: 25%;
-  text-align: center;
+  float: right;
   padding: 3% 0;
-  background-color: rgba(20, 22, 67, 0.8);
-
-
+  display: flex;
+  align-items: center;
 }
+
+
+.Graphik-Medium-Reduced {
+	font-family: 'Graphik Web';
+	font-weight: 500;
+	font-style: normal;
+  font-size: 3em;
+  color: black;
+	}
+@font-face {
+	font-family: 'Graphik Web';
+	src: url('Graphik-Medium-Reduced.eot');
+	src: url('Graphik-Medium-Reduced.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Graphik-Medium-Reduced.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	}
 
 .menu a{
   text-decoration: none;
-  color:white;
+  color:#2d3845;
 }
+
+.menu img {
+  margin-right: 4%;
+}
+
 section{
   overflow: hidden;
   margin-top: 15%;
