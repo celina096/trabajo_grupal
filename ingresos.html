@@ -2,125 +2,156 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <link rel="stylesheet" href="css/style_contenido.css">
+    <link rel="stylesheet" href="css/style_contenido.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
     <title>INGRESOS</title>
   </head>
   <body>
     <div class="contenedor">
-      <nav>
-        <ul class=>
-          <li class=>
-            <a class="" href="tablero.html">TABLERO</a>
-          </li>
-          <li class=>
-            <a class="" href="#">INGRESOS</a>
-          </li>
-          <li class=>
-            <a class="" href="#">EGRESOS</a>
-          </li>
-          <li class="">
-            <a class="" href="#">BANCOS</a>
-          </li>
-          <li class="">
-            <a class="" href="#">CONTACTENOS</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="periodo">
-        <div class="ano">Año
-          <select class="" name="">
-            <option value="">2015</option>
-            <option value="">2016</option>
-            <option value="">2017</option>
-            <option value="">2018</option>
-            <option value="">2019</option>
-          </select>
-        </div>
-        <div class="mes">MES
-          <select class="" name="">
-            <option value="">ENERO</option>
-            <option value="">FEBRERO</option>
-            <option value="">MARZO</option>
-            <option value="">ABRIL</option>
-            <option value="">MAYO</option>
-            <option value="">JUNIO</option>
-            <option value="">JULIO</option>
-            <option value="">AGOSTO</option>
-            <option value="">SEPTIEMBRE</option>
-            <option value="">OCTUBRE</option>
-            <option value="">NOVIEMBRE</option>
-            <option value="">DICIEMBRE</option>
-          </select>
-        </div>
-      </div>
-      <section>
+      <div class="header">
+        <header class="index">
+          <label class="burgerMenu" for="burger-menu">
 
-        <div class="generales-ingresos">
-          <p class="encabezado">INGRESOS:</p>
-          <p class="importe">$1000</p>
-        </div>
-        <div class="generales-ingresos">
-          <form>
-            <label for="ingresos">Ingreso</label>
-            <select class="" id="ingresos">
-              <option>Sueldo Profesor</option>
-              <option>Clases Particulares</option>
-              <option>Horas de Programacion</option>
-              <option>Ventas On-Line</option>
-              <option>Cliente 1</option>
-              <option>Cliente 2</option>
-              <option>Cliente 3</option>
-              <option>Cliente 4</option>
-              <option>Cliente 5</option>
+            <img class="burgerMenu" src="images/menu.svg" alt="" width="40px">
+          </label>
+          <input id="burger-menu" type="checkbox" name="burgerMenu" value="">
+          <img class="logo" src="images/logo200px.png" alt="" width="250px">
+          <nav>
+            <ul>
+              <li><img src="" alt=""></li>
+              <img class="user" src="images/man.svg" alt="" width="5%">
+              <li class="hvr-underline-from-center"><a href="#">Contacto</a></li>
+              <li class="hvr-underline-from-center"><a href="#">Registrate</a></li>
+              <li class="hvr-underline-from-center"><a href="#">Sobre Nosotros</a></li>
+              <li class="hvr-underline-from-center"><a href="#">FAQs</a></li>
+            </ul>
+          </nav>
+        </header>
+      </div> <!-- .header -->
+      <div class="contenido">
+        <p class="Graphik-Medium-Reduced">Bienvenido</p>
+        <p class="Graphik-Medium-Reduced">Aqui se muestran tus ingresos</p>
+
+        <h1 class="Graphik-Medium-Reduced"></h1>
+          <nav class="menu">
+          <ul class=>
+            <li class=>
+              <img class="submenu" src="images/tablet.svg" alt="" width="40px">
+              <a class="" href="tablero.html">TABLERO</a>
+            </li>
+            <li class=>
+              <img class="submenu" src="images/profits.svg" alt="" width="40px">
+              <a class="" href="#">INGRESOS</a>
+            </li>
+            <li class=>
+              <img class="submenu" src="images/loss.svg" alt="" width="40px">
+              <a class="" href="#">EGRESOS</a>
+            </li>
+            <li class="">
+              <img class="submenu" src="images/bank.svg" alt="" width="40px">
+              <a class="" href="#">BANCOS</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="periodo">
+          <div class="ano">Año
+            <select class="" name="">
+              <option value="">2015</option>
+              <option value="">2016</option>
+              <option value="">2017</option>
+              <option value="">2018</option>
+              <option value="">2019</option>
             </select>
-              <label for="importe">Importe</label>
-              <input type="text" class="" id="importe" placeholder="$1000">
-
-              <label for="comentarios">COMENTARIOS</label>
-              <textarea class="" id="comentarios" rows="3"></textarea>
-
-            <div class="">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="efectivo" checked>EFECTIVO
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="banco">BANCO
-              </label>
-            </div>
-            <div class="">
-              <label>
-                <input type="checkbox">COBRADO?
-              </label>
-            </div>
-            <button type="submit" class="">GRABAR</button>
-          </form>
+          </div>
+          <div class="mes">MES
+            <select class="" name="">
+              <option value="">ENERO</option>
+              <option value="">FEBRERO</option>
+              <option value="">MARZO</option>
+              <option value="">ABRIL</option>
+              <option value="">MAYO</option>
+              <option value="">JUNIO</option>
+              <option value="">JULIO</option>
+              <option value="">AGOSTO</option>
+              <option value="">SEPTIEMBRE</option>
+              <option value="">OCTUBRE</option>
+              <option value="">NOVIEMBRE</option>
+              <option value="">DICIEMBRE</option>
+            </select>
+          </div>
         </div>
+        <section>
 
-        <div class="generales-ingresos">
-          <p class="encabezado">INGRESOS YA REGISTRADOS:</p>
-          <ol>
-            <li>Sueldo:$1000</li>
-            <li>Clases Particulares:$500</li>
-            <li>Horas de Programacion:$5000</li>
-            <li>Cliente 1: $1000</li>
-            <li>Cliente 2: $1500</li>
-            <li>Cliente 3: $900</li>
-            <li>Cliente 4: $1300</li>
-            <li>Cliente 5: $2000</li>
-          </ol>
+          <div class="generales-ingresos">
+            <p class="encabezado">INGRESOS:</p>
+            <p class="importe">$1000</p>
+          </div>
+          <div class="generales-ingresos">
+            <form>
+              <label for="ingresos">Ingreso</label>
+              <select class="" id="ingresos">
+                <option>Sueldo Profesor</option>
+                <option>Clases Particulares</option>
+                <option>Horas de Programacion</option>
+                <option>Ventas On-Line</option>
+                <option>Cliente 1</option>
+                <option>Cliente 2</option>
+                <option>Cliente 3</option>
+                <option>Cliente 4</option>
+                <option>Cliente 5</option>
+              </select>
+                <label for="importe">Importe</label>
+                <input type="text" class="" id="importe" placeholder="$1000">
+
+                <label for="comentarios">COMENTARIOS</label>
+                <textarea class="" id="comentarios" rows="3"></textarea>
+
+              <div class="">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="efectivo" checked>EFECTIVO
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="banco">BANCO
+                </label>
+              </div>
+              <div class="">
+                <label>
+                  <input type="checkbox">COBRADO?
+                </label>
+              </div>
+              <button type="submit" class="">GRABAR</button>
+            </form>
+          </div>
+
+          <div class="generales-ingresos">
+            <p class="encabezado">INGRESOS YA REGISTRADOS:</p>
+            <ol>
+              <li>Sueldo:$1000</li>
+              <li>Clases Particulares:$500</li>
+              <li>Horas de Programacion:$5000</li>
+              <li>Cliente 1: $1000</li>
+              <li>Cliente 2: $1500</li>
+              <li>Cliente 3: $900</li>
+              <li>Cliente 4: $1300</li>
+              <li>Cliente 5: $2000</li>
+            </ol>
+          </div>
+
+
+        </section>
+        <div class="grafico" id="grafico">
+          <p class="encabezado">GRAFICO</p>
+          <img src="images/ingresos.png" alt="">
         </div>
-
-
-      </section>
-      <div class="grafico" id="grafico">
-        <p class="encabezado">GRAFICO</p>
-        <img src="images/ingresos.png" alt="">
-      </div>
-      <footer>
-        DESARROLLADO POR ...
-      </footer>
+        <footer>
+          DESARROLLADO POR ...
+        </footer>
+      </div> <!-- .contenido -->
 </div>
   </body>
 </html>
