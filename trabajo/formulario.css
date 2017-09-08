@@ -33,17 +33,28 @@ footer, header, hgroup, menu, nav, section {
 /* mi css */
 
 
+a {
+   font-family: Oswald;
+   color: white;
+   text-decoration: none;
+
+
+}
+
+a:hover {
+  color: yellow;
+}
+
 body{
-<<<<<<< HEAD
+
   margin: 0 auto;
   background: url("../images/formulario.jpg") no-repeat center;
   width: 100%;
   height: 100vh;
   font-family: Oswald;
   font-size: 1.5em;
-=======
   margin: 0;
->>>>>>> 7602db8aeac1547ace94315deeab91bab45b279d
+
   }
 
 div.imagen-fondo {
