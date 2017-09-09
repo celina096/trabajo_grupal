@@ -47,20 +47,9 @@ table {
 
 body{
   font-family: Oswald;
-  background: rgba(255,255,255,1);
-background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
   font-size: 2.5vh;
   box-sizing: border-box;
   margin: 0;
-  background-image: url("../images/background_1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
   width: 100%;
   height: 100%;
@@ -117,12 +106,22 @@ img.user {
 .contenido {
   width: 100%;
   position: absolute;
-  top: 100px;
-  overflow: hidden;
+
 }
 
 .contenido p {
-  float:left;
+	font-size:
+}
+
+
+section-parte1 {
+	background-color: red;
+	display: block;
+	z-index: 9999999999;
+	height: 500px;
+	margin: 0;
+	width: 100%;
+
 }
 
 nav.menu {
