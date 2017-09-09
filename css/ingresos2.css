@@ -88,15 +88,14 @@ header.index li {
 body {
   font-family: Oswald;
   font-size: 2.5vh;
-  background: rgba(255,255,255,1);
-background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
-
+  background: rgba(4,27,84,1);
+background: -moz-linear-gradient(top, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%, rgba(69,80,126,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(4,27,84,1)), color-stop(47%, rgba(27,63,107,1)), color-stop(100%, rgba(69,80,126,1)));
+background: -webkit-linear-gradient(top, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%, rgba(69,80,126,1) 100%);
+background: -o-linear-gradient(top, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%, rgba(69,80,126,1) 100%);
+background: -ms-linear-gradient(top, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%, rgba(69,80,126,1) 100%);
+background: linear-gradient(to bottom, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%, rgba(69,80,126,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#041b54', endColorstr='#45507e', GradientType=0 );
 }
 
 .contenido {
@@ -110,7 +109,7 @@ section.parte1 {
   background-size: cover;
   height: 60vh;
   overflow: hidden;
-  border-bottom: 3px solid #a8996e;
+  border-bottom: 3px solid black;
 }
 
 .parte1 nav {
@@ -133,14 +132,36 @@ div.parte2 {
   border-right: 2px solid #a8996e;
   border-left: 2px solid #a8996e;
   padding-top: 3%;
-  background-color: rgba(168, 153, 110, 0.3);
+  background: rgba(255,255,255,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+
   font-size: 1.5em;
-  font-family: 'Fjalla One';
+  font-family: 'Roboto Condensed';
 }
 
 .parte2 input {
   font-family: Oswald;
 
+}
+
+.parte2 select {
+  text-align: center;
+}
+
+div.ano, div.mes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parte2 img {
+  border: 1px solid #a8996e;
 }
 
 input[type=text], textarea {
@@ -152,7 +173,7 @@ input[type=text], textarea {
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid #a8996e;
-  background-color: transparent;
+  background-color: white;
 }
 
 input[type=text]:focus, textarea:focus {

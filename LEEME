@@ -1,5 +1,0 @@
-Ya que puse animaciones en el proyecto tienen que linkear estas cosas en el <head> para que funcione
-
-    <link href="css/hover.css" rel="stylesheet" media="all">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
