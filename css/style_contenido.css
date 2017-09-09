@@ -110,6 +110,7 @@ img.user {
 }
 
 .contenido p {
+<<<<<<< HEAD
 	font-size:
 }
 
@@ -122,6 +123,10 @@ section-parte1 {
 	margin: 0;
 	width: 100%;
 
+=======
+	float: left;
+	width: 50%;
+>>>>>>> 3d1db69b24f46f9ea7223de0fc24b4451021d54f
 }
 
 nav.menu {
@@ -151,6 +156,7 @@ nav.menu ul li{
   font-size: 3em;
   color: black;
 	}
+
 @font-face {
 	font-family: 'Graphik Web';
 	src: url('Graphik-Medium-Reduced.eot');
@@ -170,24 +176,21 @@ nav.menu ul li{
 }
 
 section{
-  overflow: hidden;
   margin-top: 15%;
 }
 .noflotanmas{
-  overflow: hidden;
+
 }
 
 .generales{
-  float: left;
-  width: 25%;
+  width: 100%;
   margin: 0 auto;
   display: block;
   text-align: center;
 
 }
 .generales-ingresos{
-  float: left;
-  width: 33%;
+  width: 100%;
   margin: 0 auto;
   display: block;
   text-align: left;
@@ -207,6 +210,116 @@ form{
 }
 
 footer{
-  margin-top: 30%;
+  margin-top: 50%;
   text-align: center;
+}
+
+@media (min-width:641px) and (max-width:959px){
+
+}
+
+@media (min-width:960px){
+
+
+	.contenido {
+	  width: 100%;
+	  position: absolute;
+	  top: 100px;
+	  overflow: hidden;
+	}
+
+	.contenido p {
+	  float:left;
+	}
+
+	nav.menu {
+	  display: flex;
+	  justify-content: flex-end;
+	  font-size: 2em;
+	  margin-right: 10%;
+	}
+
+	.menu ul{
+	  width: 70%;
+	  text-align: center;
+	  flex-direction: column;
+	}
+	nav.menu ul li{
+	  float: right;
+	  padding: 3% 0;
+	  display: flex;
+	  align-items: center;
+	}
+
+
+	.Graphik-Medium-Reduced {
+		font-family: 'Graphik Web';
+		font-weight: 500;
+		font-style: normal;
+	  font-size: 3em;
+	  color: black;
+		}
+
+	@font-face {
+		font-family: 'Graphik Web';
+		src: url('Graphik-Medium-Reduced.eot');
+		src: url('Graphik-Medium-Reduced.eot?#iefix') format('embedded-opentype'),
+			url('fonts/Graphik-Medium-Reduced.woff') format('woff');
+		font-weight: 500;
+		font-style: normal;
+		}
+
+	.menu a{
+	  text-decoration: none;
+	  color:#2d3845;
+	}
+
+	.menu img {
+	  margin-right: 4%;
+	}
+
+	section{
+	  overflow: hidden;
+	  margin-top: 15%;
+	}
+	.noflotanmas{
+	  overflow: hidden;
+	}
+
+	.generales{
+	  float: left;
+	  width: 25%;
+	  margin: 0 auto;
+	  display: block;
+	  text-align: center;
+
+	}
+	.generales-ingresos{
+	  float: left;
+	  width: 33%;
+	  margin: 0 auto;
+	  display: block;
+	  text-align: left;
+
+	}
+
+	#grafico{
+	  width: 100%;
+	  margin: 0 auto;
+	  display: block;
+	  text-align: center;
+
+	}
+
+	form{
+
+	}
+
+	footer{
+	  margin-top: 30%;
+	  text-align: center;
+	}
+
+
+
 }
