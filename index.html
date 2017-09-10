@@ -14,13 +14,11 @@
       <div class="background1">
         <div class="header">
           <header class="index">
-            <label class="burgerMenu" for="burger-menu">
 
-              <img class="burgerMenu" src="images/menu.svg" alt="" width="40px">
-            </label>
-            <input id="burger-menu" type="checkbox" name="burgerMenu" value="">
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <img class="logo" src="images/logo200px.png" alt="" width="250px">
-            <nav>
+            <nav class="menu">
               <ul>
                 <li class="hvr-underline-from-center"><a href="#">Contacto</a></li>
                 <li class="hvr-underline-from-center"><a href="trabajo/formulario.html">Registrate</a></li>
@@ -28,6 +26,15 @@
                 <li class="hvr-underline-from-center"><a href="FAQS/faqs.html">FAQs</a></li>
               </ul>
             </nav>
+            <nav class="menu-movil">
+              <ul>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="trabajo/formulario.html">Registrate</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="FAQS/faqs.html">FAQs</a></li>
+              </ul>
+            </nav>
+
           </header>
         </div> <!-- .header -->
       </div>
@@ -35,10 +42,11 @@
         <div>
           <h2 class="bounceInLeft animated">Administra tus finanzas</h2>
           <h3><spam class="animation1 bounceInLeft animated">Fácil. </spam><spam class="bounceInLeft animated animation2">Rápido.</spam><spam class="bounceInLeft animated animation3"> Gratis.</spam></h3>
+          <a href="#queSomos" class="hvr-grow fadeInUp animated saberMas">Saber Más ↓</a>
         </div>
         <div class="formularioIndex fadeInDown animated">
           <p>Inicia Sesion</p>
-          <form class="logIn" action="index.html" method="post">
+          <form class="logIn" action="tablero.html" method="post">
             <div>
               <label for="nombreIndex">Nombre de Usuario</label>
               <br>
@@ -58,9 +66,10 @@
             <a href="#">¿No estás registrado? Crea tu cuenta.</a>
           </form>
         </div>
+
       </section>
     </div>
-    <section class="indexParte2">
+    <section id="queSomos" class="indexParte2">
       <div>
         <h2>¿Quiénes somos?</h2>
         <br>
