@@ -324,11 +324,11 @@ footer p.copyright {
 
 /* dimension tablet */
 @media (max-width: 850px) {
-	header nav {
-		display: none;
-	}
 
 	.section1 a.saberMas {
+		display: none;
+	}
+	header nav {
 		display: none;
 	}
 
