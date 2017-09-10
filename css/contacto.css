@@ -245,35 +245,26 @@ footer p.copyright {
     top: -5px;
   }
 
-  header {
-    background-color: transparent;
-    width: 100%;
-    height: 70vh;
-    border-bottom: none;
-  }
-  header img {
-    display: none;
-  }
+	header {
+		background-color: transparent;
+		width: 100%;
+		border-bottom: none;
+	}
+	header img {
+		display: none;
+	}
 
-  .menu-btn:checked ~ .menu-movil {
-    display: block;
-    float: right;
-    width: 40vh;
-    text-align: center;
-    height: 60vh;
-    background-color: rgba(38, 38, 38, 0.79);
-  }
-  .menu-btn:checked ~ ul {
-        height: 800px;
-  }
-
-  .menu-btn:checked ~ .menu-movil li{
-    display: block;
-    float: none;
-    margin: 0;
-    padding-top: 5%;
-    font-size: 1.5em;
-  }
+	.menu-btn:checked ~ .menu-movil {
+		display: block;
+		position: absolute;
+		top: 50px;
+		right: 0;
+		float: right;
+		width: 40vh;
+		text-align: center;
+		height: 60vh;
+		background-color: rgba(38, 38, 38, 0.79);
+	}
 
   .menu-movil ul:first-child {
     margin-top: 10%;

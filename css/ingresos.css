@@ -305,7 +305,6 @@ p.copyright {
 		header {
 			background-color: transparent;
 			width: 100%;
-			height: 70vh;
 			border-bottom: none;
 		}
 		header img {
@@ -314,6 +313,9 @@ p.copyright {
 
 		.menu-btn:checked ~ .menu-movil {
 			display: block;
+			position: absolute;
+			top: 50px;
+			right: 0;
 			float: right;
 			width: 40vh;
 			text-align: center;
