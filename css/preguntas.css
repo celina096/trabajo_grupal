@@ -29,18 +29,18 @@ footer, header, hgroup, menu, nav, section {
 /* mi css */
 
 body {
-  margin: 0 auto;
+  margin: 0;
   background-image: url("../images/jovenencomputadora.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+	font-size: 2.5vh;
 
 
 }
 
 .container{
     text-align: center;
-    margin: 0 2.5%;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -48,6 +48,15 @@ body {
 
 
 /*HEADER */
+
+/* BURGER MENU */
+
+
+.header .menu-btn {
+  display: none;
+}
+
+
 div.header {
 	position: fixed;
 	width: 100%;
@@ -76,8 +85,9 @@ nav.menu-movil {
 
 header.index li {
   float: right;
-	margin-right:20px;
-	padding: 25px;
+	margin-right:25px;
+	padding: 18px;
+	padding-top: 14px;
 	z-index: 100000;
 }
 
@@ -117,22 +127,41 @@ div.container {
      text-align: center;
    }
 
-  footer .footerIndex{
-      margin: 5% 0;
-      background-color: rgba(255, 255, 255, 0.5);
-}
+	 /* FOOTER */
+	 footer {
+	 	background-color: #637a97;
+	 	padding: 3% 0;
+	 	text-align: center;
+	 	border-top: 2.5px solid black;
+	 	width: 100%;
+	 }
 
-    footer div{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      border-bottom: 0.1px solid gainsboro;
-      padding-bottom: 5%;
-}
+	 footer img {
+	 	margin-bottom: 1.5%;
+	 }
 
-      footer p.copyright {
-      padding: 10px;
-}
+	 footer a {
+	 	padding-right: 10px;
+	 	text-decoration: none;
+	 	color: black;
+
+	 }
+	 footer a:last-child {
+	 	padding-right: 0;
+	 }
+
+	 footer a:hover {
+	 	color: white;
+	 }
+
+	 p.copyright {
+	 	padding: 15px 0;
+	 	width: 100%;
+	 	text-align: center;
+	 	background-color: #2d3845;
+	 	color: white;
+	 }
+	 /*FIN FOOTER*/
 
 
 
