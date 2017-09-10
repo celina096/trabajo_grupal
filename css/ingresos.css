@@ -116,10 +116,6 @@ background: linear-gradient(to bottom, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#041b54', endColorstr='#45507e', GradientType=0 );
 }
 
-.contenido {
-  width: 100%;
-}
-
 section.parte1 {
   width: 100%;
   background-image: url(../images/background_1.jpg);
@@ -156,6 +152,13 @@ section.parte1 {
 	background-color: rgba(255, 255, 255, 0.8);
 
 }
+/* SECTION*/
+
+.contenido {
+  width: 100%;
+}
+
+
 
 div.parte2 {
   width: 80%;
@@ -184,13 +187,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 
 .parte2 select {
-  text-align: center;
+  text-align: left;
+}
+div.periodo{
+	overflow: hidden;
 }
 
 div.ano, div.mes {
-  display: flex;
+	float: left;
+	display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:center;
+	padding-left: 3%;
+}
+div .generales-ingresos{
+	margin-top: 20px;
+	text-align: left;
+
+
+}
+.generales-ingresos article{
+	overflow:hidden;
+	text-align: center;
+	margin-bottom: 19px;
+}
+.generales-ingresos article p{
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+div .boton{
+	margin-top: 20px;
+	text-align: center;
+}
+.generales-ingresos ol li{
+	margin-bottom: 3px;
 }
 
 .parte2 img {
@@ -254,6 +286,22 @@ p.copyright {
 /*FIN FOOTER*/
 
 
+<<<<<<< HEAD
+@media (min-width:641px) and (max-width:959px){
+
+}
+
+/*PANTALLA COMPLETA */
+@media (min-width:960px){
+
+
+	.contenido {
+	  width: 100%;
+	  position: absolute;
+	  top: 100px;
+	  overflow: hidden;
+	}
+=======
 @media (max-width: 850px) {
 	@media (max-width: 850px) {
 		header nav {
@@ -364,3 +412,4 @@ p.copyright {
 
 		/* fin menu */
 }
+>>>>>>> master
