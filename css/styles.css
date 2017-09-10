@@ -84,10 +84,6 @@ header.index img.logo {
 	float: left;
 }
 
-header.index label.burgerMenu, #burger-menu {
-	display: none;
-}
-
 header.index h1, h2 {
   float: left;
 }
@@ -250,14 +246,17 @@ section.indexParte3 {
 }
 /* FOOTER */
 footer {
-	background-color: #2d3845;
-	padding: 5% 0;
+	background-color: #637a97;
+	padding: 3% 0;
+	padding-bottom: 0;
 	text-align: center;
 	border-top: 2.5px solid black;
 }
 
 footer a {
 	padding-right: 10px;
+	text-decoration: none;
+	color: black;
 
 }
 
@@ -272,7 +271,17 @@ footer a:last-child {
 
 footer p.copyright {
 	padding: 10px;
+	background-color: #2d3845;
+	color: white;
 }
+/* FIN FOOTER*/
+/* BURGER MENU */
+
+
+.header .menu-btn {
+  display: none;
+}
+
 
 /* ---------------------ANIMACIONES---------------*/
 
@@ -299,10 +308,71 @@ footer p.copyright {
 		display: none;
 	}
 
-	header.index label.burgerMenu {
-		display: block;
+
+.menu-btn {
+	  display: block;
 		float: right;
-		margin: 20px;
 	}
 
+.menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.menu-icon .navicon:before {
+  top: 5px;
+}
+
+.menu-icon .navicon:after {
+  top: -5px;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+	display: flex;
+	float: right;
+	flex-direction: row;
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
 }
