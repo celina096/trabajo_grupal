@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style_contenido.css">
+    <link rel="stylesheet" href="css/ingresos2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/hover.css" rel="stylesheet" media="all">
     <link href="css/animate.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
-
     <title>MIS FINANZAS</title>
   </head>
   <body>
@@ -19,10 +19,9 @@
             <img class="burgerMenu" src="images/menu.svg" alt="" width="40px">
           </label>
           <input id="burger-menu" type="checkbox" name="burgerMenu" value="">
-          <img class="logo" src="images/logo200px.png" alt="" width="250px">
+          <a href="index.html"><img class="logo" src="images/logo200px.png" alt="" width="250px"></a>
           <nav>
             <ul>
-              <li><img src="" alt=""></li>
               <img class="user" src="images/man.svg" alt="" width="5%">
               <li class="hvr-underline-from-center"><a href="#">Contacto</a></li>
               <li class="hvr-underline-from-center"><a href="#">Registrate</a></li>
@@ -32,58 +31,58 @@
           </nav>
         </header>
       </div> <!-- .header -->
-
-      <div class="contenido">
-        <p class="Graphik-Medium-Reduced">TOTALES</p>
-
-        <h1 class="Graphik-Medium-Reduced"></h1>
-          <nav class="menu">
-          <ul class=>
-            <li class=>
-              <img class="submenu" src="images/tablet.svg" alt="" width="40px">
-              <a class="" href="tablero.html">TABLERO</a>
-            </li>
-            <li class=>
-              <img class="submenu" src="images/profits.svg" alt="" width="40px">
-              <a class="" href="#">INGRESOS</a>
-            </li>
-            <li class=>
-              <img class="submenu" src="images/loss.svg" alt="" width="40px">
-              <a class="" href="#">EGRESOS</a>
-            </li>
-            <li class="">
-              <img class="submenu" src="images/bank.svg" alt="" width="40px">
-              <a class="" href="#">BANCOS</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="periodo">
-          <div class="ano">Año
-            <select class="" name="">
-              <option value="">2015</option>
-              <option value="">2016</option>
-              <option value="">2017</option>
-              <option value="">2018</option>
-              <option value="">2019</option>
-            </select>
-          </div>
-          <div class="mes">MES
-            <select class="" name="">
-              <option value="">ENERO</option>
-              <option value="">FEBRERO</option>
-              <option value="">MARZO</option>
-              <option value="">ABRIL</option>
-              <option value="">MAYO</option>
-              <option value="">JUNIO</option>
-              <option value="">JULIO</option>
-              <option value="">AGOSTO</option>
-              <option value="">SEPTIEMBRE</option>
-              <option value="">OCTUBRE</option>
-              <option value="">NOVIEMBRE</option>
-              <option value="">DICIEMBRE</option>
-            </select>
-          </div>
+      <section class="parte1">
+          <h2>Tu Tablero</h2>
+      <nav class="menu">
+        <ul class=>
+          <li class=>
+            <img class="submenu" src="images/tablet.svg" alt="" width="40px">
+            <a class="hvr-grow" href="tablero.html">TABLERO</a>
+          </li>
+          <li class=>
+            <img class="submenu" src="images/profits.svg" alt="" width="40px">
+            <a class="hvr-grow" href="#">INGRESOS</a>
+          </li>
+          <li class=>
+            <img class="submenu" src="images/loss.svg" alt="" width="40px">
+            <a class="hvr-grow" href="#">EGRESOS</a>
+          </li>
+          <li class="">
+            <img class="submenu" src="images/bank.svg" alt="" width="40px">
+            <a class="hvr-grow" href="#">BANCOS</a>
+          </li>
+        </ul>
+      </nav> <!-- .menu -->
+    </section> <!-- .parte1 -->
+    <div class="parte2">
+      <div class="periodo">
+        <div class="ano">Año
+          <select class="" name="">
+            <option value="">2015</option>
+            <option value="">2016</option>
+            <option value="">2017</option>
+            <option value="">2018</option>
+            <option value="">2019</option>
+          </select>
         </div>
+        <div class="mes">MES
+          <select class="" name="">
+            <option value="">ENERO</option>
+            <option value="">FEBRERO</option>
+            <option value="">MARZO</option>
+            <option value="">ABRIL</option>
+            <option value="">MAYO</option>
+            <option value="">JUNIO</option>
+            <option value="">JULIO</option>
+            <option value="">AGOSTO</option>
+            <option value="">SEPTIEMBRE</option>
+            <option value="">OCTUBRE</option>
+            <option value="">NOVIEMBRE</option>
+            <option value="">DICIEMBRE</option>
+          </select>
+        </div>
+      </div>
+
       <section>
         <div class="generales">
           <p class="encabezado">RESULTADO:</p>
@@ -103,7 +102,7 @@
           <p class="importe">$1000</p>
         </div>
       </section>
-
+    </div> <!-- .parte2 -->
       <footer class="footerIndex">
         <img class="margin-bottom" src="images/logo200px.png" alt="" width="200px">
         <p class="margin-bottom"><a href="#">Terminos & Condiciones</a> <a href="#">Póliza de Privacidad</a><a href="#">Copyrights</a></p>

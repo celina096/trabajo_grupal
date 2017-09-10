@@ -1,0 +1,228 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+/* mi css */
+
+body {
+  font-family: Oswald;
+  font-size: 2.5vh;
+  margin: 0;
+}
+
+div.container {
+	position: relative;
+  background-image: url(../images/formulario.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+/*HEADER */
+div.header {
+	position: fixed;
+	width: 100%;
+	z-index: 1000000;
+}
+
+
+header {
+  overflow: hidden;
+  width: 100%;
+  height: 80px;
+  border-bottom: 0.1px solid gainsboro;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+header.index img.logo {
+	float: left;
+}
+
+header.index h1, h2 {
+  float: left;
+}
+
+nav.menu-movil {
+	display: none;
+}
+
+header.index li {
+  float: right;
+	margin-right:20px;
+	padding: 25px;
+	z-index: 100000;
+}
+
+.index nav a {
+	text-decoration: none;
+	color: black;
+	font-family: Oswald;
+	font-size: 1.2em;
+}
+div.container {
+	position: relative;
+
+}
+
+/* FIN HEADER */
+/* FOOTER */
+footer {
+	background-color: #637a97;
+	padding: 3% 0;
+	padding-bottom: 0;
+	text-align: center;
+	border-top: 2.5px solid black;
+}
+
+footer a {
+	padding-right: 10px;
+	text-decoration: none;
+	color: black;
+
+}
+
+.margin-bottom {
+	margin-bottom: 2%;
+}
+
+footer a:last-child {
+	padding-right: 0;
+}
+
+
+footer p.copyright {
+	padding: 10px;
+	background-color: #2d3845;
+	color: white;
+}
+/* FIN FOOTER*/
+/* BURGER MENU */
+
+
+.header .menu-btn {
+  display: none;
+}
+
+/* fin BURGER MENU */
+
+/* FORMS */
+div.formularios {
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.formularios h1 {
+  font-size: 2.5em;
+  margin-top: -10%;
+}
+
+article.forms {
+  background-color:rgba(53, 74, 95, 0.58);
+  overflow: hidden;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4%;
+  border-radius: 25px;
+  color: white;
+  height: 78vh;
+}
+
+article a {
+  text-decoration: none;
+  color: white;
+}
+
+div.signUp {
+  float: left;
+  padding-right: 5%;
+}
+
+div.logIn {
+  float: left;
+}
+
+a.google {
+  background-color: #DC4E41;
+}
+
+a.facebook {
+  background-color: #3B5998;
+}
+
+a.twitter {
+  background-color: #55ACEE;
+}
+
+div.redes {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.redes a {
+  padding: 0 8px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* FORMS*/
+/* box focus */
+
+input {
+    border: 1px solid #4195fc; /* some kind of blue border */
+
+    /* other CSS styles */
+
+    /* round the corners */
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+
+
+    /* make it glow! */
+    -webkit-box-shadow: 0px 0px 4px #4195fc;
+       -moz-box-shadow: 0px 0px 4px #4195fc;
+            box-shadow: 0px 0px 4px #4195fc; /* some variation of blue for the shadow */
+
+}
+
+/*botones de enviar */
+
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
