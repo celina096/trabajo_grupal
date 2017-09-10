@@ -13,29 +13,35 @@
   <body>
 
     <div class="container">
+
       <div class="header">
-        <header class="index">
-          <label class="burgerMenu" for="burger-menu">
-            <img class="burgerMenu" src="imagenes/menu.svg" alt="" width="40px">
-          </label>
-          <input id="burger-menu" type="checkbox" name="burgerMenu" value="">
-          <img class="logo" src="imagenes/logo200px.png" alt="" width="250px">
-          <nav>
-            <ul>
-              <li class="hvr-underline-from-center"><a href="#">Contacto</a></li>
-              <li class="hvr-underline-from-center"><a href="#">Registrate</a></li>
-              <li class="hvr-underline-from-center"><a href="#">Sobre Nosotros</a></li>
-              <li class="hvr-underline-from-center"><a href="#">FAQs</a></li>
-            </ul>
-          </nav>
-        </header>
-      </div>
+         <header class="index">
+           <label class="burgerMenu" for="burger-menu">
+
+             <img class="burgerMenu" src="images/menu.svg" alt="" width="40px">
+           </label>
+           <input id="burger-menu" type="checkbox" name="burgerMenu" value="">
+           <a href="index.html"><img class="logo" src="images/logo200px.png" alt="" width="250px"></a>
+           <nav>
+             <ul>
+               <li><img src="" alt=""></li>
+               <img class="user" src="images/man.svg" alt="" width="5%">
+               <li class="hvr-underline-from-center"><a href="#">Contacto</a></li>
+               <li class="hvr-underline-from-center"><a href="#">Registrate</a></li>
+               <li class="hvr-underline-from-center"><a href="#">Sobre Nosotros</a></li>
+               <li class="hvr-underline-from-center"><a href="#">FAQs</a></li>
+             </ul>
+           </nav>
+         </header>
+       </div> <!-- .header -->
+
 <div class="imagen-fondo">
 
-<div id="central"
+<div id="central">
 
   <article class="forms">
     <div class="signUp">
+      <br><br>
       <h1> Sign Up </h1>
       <br><br>
 
@@ -81,18 +87,18 @@
      <br><br>
 
       <input type="hidden" name="" value="">
-       <br><br>
-       <button type="submit">
+      
+       <button class="button" type="submit">
         Enviar
        </button>
       </div>
 
 
     <div class="logIn">
-
+      <br><br>
       <h1> Log In </h1>
       <br><br>
-
+      <form action="" method="POST">
       <label for="username">Username</label>
       <input type="username" name="username" id="username" value="" required>
 
@@ -102,9 +108,8 @@
       <input type="password" name="password" id="password" value="" required>
 
       <input type="hidden" name="" value="">
-
       <br><br>
-      <button type="submit">
+      <button class="button" type="submit">
       Enviar
       </button>
     </div>
@@ -114,36 +119,9 @@
 </div>
   <br><br>
 
-       <footer class="footerIndex">
-
-         <img src="imagenes/logo200px.png" alt="" width="200px">
-              <p><a href="#">Terminos & Condiciones</a> <a href="#">Póliza de Privacidad</a><a href="#">Copyrights</a></p>
-              <div>
-                <ul>
-                  <h2>Servicios</h2>
-                  <li>Contador Online</li>
-                  <li>Mis Gastos</li>
-                  <li>Mis Ingresos</li>
-                </ul>
-                <ul>
-                  <h2>Información</h2>
-                  <li>Acerca de nosotros</li>
-                  <li>Documentación</li>
-                  <li>Soporte</li>
-                  <li>Contacto</li>
-                </ul>
-                <ul>
-                  <h2>0800-123-456</h2>
-                  <li>misfinanzas@atencion.com</li>
-                  <li></li>
-                  <li></li>
-                </ul>
-
-              </div>
-        <p class="copyright">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
-
-
-    </footer>
+  <footer>
+     DESARROLLADO POR ...
+   </footer>
    </div>
   </body>
 </html>
