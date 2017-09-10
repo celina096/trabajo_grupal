@@ -413,9 +413,39 @@ footer p.copyright {
 
 	/* fin menu */
 
+	img.logo {
+		display: block;
+		width: 40vh;
+	}
+
 	.section1 {
 		flex-direction: column;
+		text-align: center;
 	}
+
+	.section1 h2 {
+		font-size: 3em;
+	}
+
+div.formularioIndex {
+	width: 70%;
+
+}
+.section1 p {
+	font-size: 1.7em;
+}
+
+.section1 button {
+	font-family: Oswald;
+}
+
+.section1 a {
+	font-size: 1.2em;
+}
+
+.section1 label{
+	font-size: 1.3em;
+}
 
 	.section1 h2, h3 {
 		float: none;
@@ -423,5 +453,15 @@ footer p.copyright {
 
 	.section1 form {
 		float: none;
+	}
+}
+
+@media (max-width: 425px) {
+	.indexParte3 {
+		font-size: 0.9em;
+	}
+
+	.indexParte3 li img {
+		width: 10%;
 	}
 }
