@@ -248,6 +248,18 @@ section.indexParte3 {
 	margin-right: 3%;
 	font-size: 1.2em;
 }
+
+.section1 a.saberMas {
+	text-decoration: none;
+	float: none;
+	color: white;
+	font-size: 1.5em;
+	display: inline-block;
+	margin-top: 20%;
+	margin-left: 10%;
+
+}
+
 /* FOOTER */
 footer {
 	background-color: #637a97;
@@ -305,6 +317,10 @@ footer p.copyright {
 	-webkit-animation-delay: 1.39s;
 }
 
+.fadeInUp {
+	-webkit-animation-delay: 1.4s;
+}
+
 
 /* dimension tablet */
 @media (max-width: 850px) {
@@ -312,7 +328,9 @@ footer p.copyright {
 		display: none;
 	}
 
-
+	.section1 p{
+		display: none;
+	}
 
 
 	.menu-btn {
