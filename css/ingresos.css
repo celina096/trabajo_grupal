@@ -425,6 +425,7 @@ p.copyright {
 		section.parte1 h2 {
 			width: 100%;
 			margin-left: 0;
+			margin-bottom: 25px;
 		}
 
 		.parte1 nav {
@@ -440,4 +441,12 @@ p.copyright {
 			margin-left: 0;
 		}
 
+		nav.menu a {
+			background-color: rgba(53, 74, 95, 0.9);
+			width: 40vh;
+			padding: 20px;
+			border-radius: 25px;
+			color: white;
+			margin: 10px;
+		}
 }
