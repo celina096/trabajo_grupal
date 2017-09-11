@@ -425,7 +425,6 @@ p.copyright {
 		section.parte1 h2 {
 			width: 100%;
 			margin-left: 0;
-			margin-bottom: 30px;
 		}
 
 		.parte1 nav {
@@ -439,10 +438,6 @@ p.copyright {
 			width: 100%;
 			margin-right: 0;
 			margin-left: 0;
-		}
-
-		.menu-movil ul:first-child {
-			height: inherit;
 		}
 
 }
