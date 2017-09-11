@@ -203,6 +203,7 @@ div.ano, div.mes {
 div .generales-ingresos{
 	margin-top: 20px;
 	text-align: left;
+	margin-left: 50px;
 
 
 }
@@ -210,11 +211,16 @@ div .generales-ingresos{
 	overflow:hidden;
 	text-align: center;
 	margin-bottom: 19px;
+
+
 }
 .generales-ingresos article p{
 	width: 100%;
 	float: left;
 	text-align: center;
+	font-weight: bold;
+	text-decoration: underline;
+	font-size: 40px;
 }
 
 div .boton{
@@ -228,6 +234,8 @@ div .boton{
 .parte2 img {
   border: 1px solid #a8996e;
 }
+
+
 
 input[type=text], textarea {
   -webkit-transition: all 0.30s ease-in-out;
