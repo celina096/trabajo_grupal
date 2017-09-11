@@ -417,4 +417,27 @@ p.copyright {
 		}
 
 		/* fin menu */
+
+		section.parte1 {
+			height: 100vh;
+		}
+
+		section.parte1 h2 {
+			width: 100%;
+			margin-left: 0;
+		}
+
+		.parte1 nav {
+			margin: 0;
+			text-align: center;
+			float: none;
+			font-size: 2em;
+		}
+
+		div.parte2 {
+			width: 100%;
+			margin-right: 0;
+			margin-left: 0;
+		}
+
 }
