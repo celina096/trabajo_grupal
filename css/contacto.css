@@ -296,6 +296,10 @@ footer p.copyright {
 		display: none;
 	}
 
+	.menu-movil li{
+		padding: 20px;
+	}
+
 	.menu-btn:checked ~ .menu-movil {
 		display: block;
 		position: absolute;
@@ -304,8 +308,9 @@ footer p.copyright {
 		float: right;
 		width: 40vh;
 		text-align: center;
-		height: 60vh;
+		height: 50vh;
 		background-color: rgba(38, 38, 38, 0.79);
+		font-size: 1.3em;
 	}
 
   .menu-movil ul:first-child {
