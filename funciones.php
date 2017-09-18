@@ -29,17 +29,14 @@ function guardar($data){
   }
 }
 
-function leer(){
-$recurso = existe("bd.json");
-    while( $linea = fgets($recurso) ){
-      $usuario = json_decode($linea, true);
-    return $usuario;
-          }
-          return false;
-        }
-
-
-
+function leer($ano,$mes,$ingreso,$importe,$comentario,$cobranza){
+  $recurso = existe("bd.json");
+  while( $linea = fgets($recurso) ){
+    $usuario = json_decode($linea, true);
+    echo "Año: ".$usuario [$ano]." MES: ".$usuario [$mes]." ".$usuario [$ingreso].": $".$usuario[$importe]." COMENTARIO: ".$usuario [$comentario]." TIPO DE COBRANZA: ".$usuario[$cobranza]."<br>";
+  }
+  return false;
+}
 
 
 

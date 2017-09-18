@@ -21,8 +21,8 @@ $forma_cobro= array(
 
 $meses= array(
                   'enero'=>'ENERO',
-                  'banco'=>'FEBRERO',
-                  'cheque'=>'MARZO',
+                  'febrer'=>'FEBRERO',
+                  'marzo'=>'MARZO',
                   'abril' =>'ABRIL',
                   'mayo' =>'MAYO',
                   'junio' =>'JUNIO',
@@ -55,8 +55,13 @@ if ($_POST) {
 guardar($_POST);
 
 }
-$linea= leer;
-var_dump ($leer);
+
+
+
+// if ($_POST['submit']) {
+//   echo "entro!!";
+// }
+
 ?>
 
 
@@ -178,7 +183,10 @@ var_dump ($leer);
                    </label>
                  </div>
                  <div class="boton">
-                 <button type="submit" class="">GRABAR</button>
+                 <button type="submit" class="" name="submit">GRABAR</button>
+                 <?php if (isset($_POST['submit'])) { ?>
+                   <p>REGISTRO INGRESADO CON EXITO!!!</p>
+                 <?php } ?>
                  </div>
 
             </form>
@@ -190,14 +198,8 @@ var_dump ($leer);
                </article>
 
                <ol>
-                 <li>Sueldo:$10000</li>
-                 <li>Clases Particulares:$500</li>
-                 <li>Horas de Programacion:$5000</li>
-                 <li>Cliente 1: $1000</li>
-                 <li>Cliente 2: $1500</li>
-                 <li>Cliente 3: $900</li>
-                 <li>Cliente 4: $1300</li>
-                 <li>Cliente 5: $2000</li>
+
+                 <li><?php leer('ano','mes','ingreso','importe','comentario', 'cobranza') ?></li>
                </ol>
              </div>
 
