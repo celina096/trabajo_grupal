@@ -14,8 +14,6 @@ function guardar($data){
     //si post esta con datos:
     if ($data) {
 
-        // echo "Esto es el POST<br>";
-        //$data['clave'] = password_hash($data['clave'],PASSWORD_DEFAULT);
 
         $json=$data;
         $escribo=json_encode ($json);
@@ -29,17 +27,33 @@ function guardar($data){
   }
 }
 
-function leer($ano,$mes,$ingreso,$importe,$comentario,$cobranza){
+function leer(){
   $recurso = existe("bd.json");
   while( $linea = fgets($recurso) ){
     $usuario = json_decode($linea, true);
-    echo "Año: ".$usuario [$ano]." MES: ".$usuario [$mes]." ".$usuario [$ingreso].": $".$usuario[$importe]." COMENTARIO: ".$usuario [$comentario]." TIPO DE COBRANZA: ".$usuario[$cobranza]."<br>";
+    echo "Año: ".$usuario ['ano']." MES: ".$usuario ['mes']." ".$usuario ['ingreso'].": $".$usuario['importe']." COMENTARIO: ".$usuario ['comentario']." TIPO DE COBRANZA: ".$usuario['cobranza']."<br>";
   }
   return false;
 }
 
+function sumar(){
+  $recurso = existe("bd.json");
+  $suma =0;
+  while( $linea = fgets($recurso) ){
+    $usuario = json_decode($linea, true);
+    $suma=number_format($usuario ['importe'],2, ',', ' ');
+    $suma+=$suma;
+  }
+  return $suma;
+}
 
+function requerido($campo){
+    if (trim($campo) == '') {
+      return false;
+    }else {
+      return true;
+          }
 
-
+    }
 
 ?>

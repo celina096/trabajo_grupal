@@ -1,4 +1,6 @@
 <?php
+
+
 require_once 'funciones.php';
 
 $tipo_de_ingresos= array(
@@ -49,10 +51,17 @@ $ano = isset($_POST['ano']) ? $_POST['ano'] : null;
 $mes = isset($_POST['mes']) ? $_POST['mes'] : null;
 
 
+$errores= array();
+if ($_POST['enviar']) {
 
-if ($_POST) {
+  if (!requerido($importe)){
+    $errores['importe']="el campo importe es requerido";
+    }
 
-guardar($_POST);
+    if (count($errores)==0){
+      guardar($_POST);
+    }
+
 
 }
 
@@ -146,7 +155,7 @@ guardar($_POST);
                 </div>
                 <div class="generales-ingresos">
                   <article class="">
-                    <p class="encabezado">INGRESOS: $1000</p>
+                    <p class="encabezado">INGRESOS: <?php echo "$".sumar(); ?></p>
                   </article>
 
                 </div>
@@ -161,7 +170,8 @@ guardar($_POST);
 
                  </select>
                  <label for="importe">Importe</label>
-                 <input type="text" name="importe" class="" id="importe" placeholder="1000">
+                 <input type="text" name="importe" class="" id="importe" value='<?php echo $importe ?>' placeholder="1000">
+                 <?php if (isset($errores['importe'])){echo $errores['importe'];}else{ echo "";} ?><br/>
 
 
                    <label for="comentarios">COMENTARIOS</label>
@@ -183,25 +193,29 @@ guardar($_POST);
                    </label>
                  </div>
                  <div class="boton">
-                 <button type="submit" class="" name="submit">GRABAR</button>
-                 <?php if (isset($_POST['submit'])) { ?>
+                 <button type="submit" class="" name="enviar">GRABAR</button>
+                 <button type="submit" name="buscar">BUSCAR</button>
+                 <?php if (count($errores)==0) { ?>
                    <p>REGISTRO INGRESADO CON EXITO!!!</p>
                  <?php } ?>
                  </div>
-
+                 <?php var_dump($errores) ?>
+                 <?php var_dump($_POST['enviar']); ?>
             </form>
+
+                <div class="generales-ingresos">
+                  <?php if (isset($_POST['buscar'])) { ?>
+                    <article class="">
+                    <p class="encabezado">INGRESOS YA REGISTRADOS:</p>
+                    </article>
+                    <ol>
+                        <li><?php leer() ?></li>
+                  <?php } ?>
+                  </ol>
+                </div>
              </div>
 
-             <div class="generales-ingresos">
-               <article class="">
-               <p class="encabezado">INGRESOS YA REGISTRADOS:</p>
-               </article>
 
-               <ol>
-
-                 <li><?php leer('ano','mes','ingreso','importe','comentario', 'cobranza') ?></li>
-               </ol>
-             </div>
 
 
            </section>
