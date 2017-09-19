@@ -41,10 +41,13 @@ function sumar(){
   $suma =0;
   while( $linea = fgets($recurso) ){
     $usuario = json_decode($linea, true);
-    $suma=number_format($usuario ['importe'],2, ',', ' ');
+    $suma=number_format($usuario ['importe']);
+    var_dump($suma);
     $suma+=$suma;
-  }
+}
+
   return $suma;
+
 }
 
 function requerido($campo){

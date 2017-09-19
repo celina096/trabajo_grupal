@@ -7,3 +7,6 @@
 {"ano":"2017","mes":"enero","ingreso":"cliente1","importe":"7","comentario":"comentario 90","cobranza":"efectivo ","submit":""}
 {"ano":"2017","mes":"enero","ingreso":"cliente1","importe":"8","comentario":"comentario 90","cobranza":"efectivo ","submit":""}
 {"ano":"2017","mes":"enero","ingreso":"cliente1","importe":"9","comentario":"comentario 90","cobranza":"efectivo ","submit":""}
+{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"1","comentario":"","cobranza":"visa ","enviar":"true"}
+{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"10","comentario":"","cobranza":"visa ","enviar":"true"}
+{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"10","comentario":"","cobranza":"visa ","enviar":"true"}

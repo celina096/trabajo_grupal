@@ -191,16 +191,16 @@ if ($_POST['enviar']) {
                    <label>
                      <input type="checkbox">COBRADO?
                    </label>
+
                  </div>
                  <div class="boton">
-                 <button type="submit" class="" name="enviar">GRABAR</button>
+                 <button type="submit" class="" name="enviar" value="true">GRABAR</button>
                  <button type="submit" name="buscar">BUSCAR</button>
                  <?php if (count($errores)==0) { ?>
                    <p>REGISTRO INGRESADO CON EXITO!!!</p>
                  <?php } ?>
                  </div>
-                 <?php var_dump($errores) ?>
-                 <?php var_dump($_POST['enviar']); ?>
+
             </form>
 
                 <div class="generales-ingresos">
