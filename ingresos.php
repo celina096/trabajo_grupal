@@ -170,7 +170,7 @@ if ($_POST['enviar']) {
 
                  </select>
                  <label for="importe">Importe</label>
-                 <input type="text" name="importe" class="" id="importe" value='<?php echo $importe ?>' placeholder="1000">
+                 <input type="number" name="importe" class="" id="importe" value='<?php echo $importe ?>' placeholder="1000" step="any">
                  <?php if (isset($errores['importe'])){echo $errores['importe'];}else{ echo "";} ?><br/>
 
 
