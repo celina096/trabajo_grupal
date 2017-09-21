@@ -52,7 +52,7 @@ $mes = isset($_POST['mes']) ? $_POST['mes'] : null;
 
 if ($_POST) {
 
-guardar($_POST);
+guardar($_POST,"bd.json");
 
 }
 
@@ -118,6 +118,9 @@ guardar($_POST);
              </li>
              <li class="">
                <a class="hvr-grow" href="#"><img class="submenu" src="images/bank.svg" alt="" width="40px">BANCOS</a>
+             </li>
+             <li>
+               <a href="#">CERRAR SESION</a>
              </li>
            </ul>
          </nav> <!-- .menu -->

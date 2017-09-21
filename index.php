@@ -1,3 +1,44 @@
+<?php
+session_start();
+if (isset($_SESSION['login'])){
+  header('Location: ingresos.php');
+}
+
+require_once 'funciones.php';
+
+$usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
+$clave= isset ($_POST['clave'])? $_POST['clave'] : null;
+
+$errores= array();
+
+
+if (isset($_POST['enviar'])) {
+
+    if (!requerido($usuario)){
+      $errores['usuario']="el campo USUARIO es requerido";
+    }
+    if (!requerido($clave)){
+      $errores['clave']="el campo CLAVE es requerido";
+    }
+    if (!buscar_usu($usuario,$clave)){
+      $errores['usuario_error']="Usuario o clave incorrecto";
+    }
+    $linea = buscar_usuario($usuario,$clave);
+
+    if (count($errores)==0){
+      session_start();
+      $_SESSION['login']="ok";
+      $_SESSION['usuario']=$linea['usuario'];
+
+
+      header('Location: ingresos.php');
+    }
+
+}
+ ?>
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +57,7 @@
           <header class="index">
 
             <input class="menu-btn" type="checkbox" id="menu-btn" />
-  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <a href="index.html"><img class="logo" src="images/logo200px.png" alt="" width="250px"></a>
             <nav class="menu">
               <ul>
@@ -44,24 +85,29 @@
         </div>
         <div class="formularioIndex fadeInDown animated">
           <p>Inicia Sesion</p>
-          <form class="logIn" action="tablero.html" method="post">
+          <form class="logIn" action="index.php" method="post">
             <div>
-              <label for="nombreIndex">Nombre de Usuario</label>
+              <label for="usuario">Nombre de Usuario</label>
               <br>
-              <input id="nombreIndex" type="text" name="nombreIndex" value="" required>
+              <input id="usuario" type="text" name="usuario" value='<?php echo $usuario ?>'>
+              <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
+              <?php if (isset($errores['usuario_error'])){echo $errores['usuario_error'];}else{ echo "";} ?><br/>
               <br>
-              <label for="password">Contraseña</label>
+              <label for="clave">Contraseña</label>
               <br>
-              <input id="password" type="password" name="password" value="" required>
+              <input id="clave" type="password" name="clave" value="">
+              <?php if (isset($errores['clave'])){echo $errores['clave'];}else{ echo "";} ?><br/>
+              <?php if (isset($errores['clave_error'])){echo $errores['clave_error'];}else{ echo "";} ?><br/>
+
             </div>
             <input id="recordarme" type="checkbox" name="recordarme" value="yes">
             <label for="recordarme">Recordarme</label>
             <br>
-            <button type="submit" name="button">Iniciar</button>
+            <button type="submit" name="enviar" value="">Iniciar</button>
             <br>
             <a href="#">¿Has olvidado tu contraseña?</a>
             <br>
-            <a href="#">¿No estás registrado? Crea tu cuenta.</a>
+            <a href="registrate.php">¿No estás registrado? Crea tu cuenta.</a>
           </form>
         </div>
 
