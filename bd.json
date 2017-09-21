@@ -1,20 +1,5 @@
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":1,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":2,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":3,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":4,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":5,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":6,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":7,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":8,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"cliente1","importe":9,"comentario":"comentario 90","cobranza":"efectivo ","submit":""}
-{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":1,"comentario":"","cobranza":"visa ","enviar":"true"}
-{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":10,"comentario":"","cobranza":"visa ","enviar":"true"}
-{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":10,"comentario":"","cobranza":"visa ","enviar":"true"}
-{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"10000","comentario":"","cobranza":"visa ","enviar":"true"}
-{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"25","comentario":"","cobranza":"visa ","enviar":"true"}
-{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"100","comentario":"","cobranza":"visa ","enviar":"true"}
-{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"100","comentario":"","cobranza":"visa ","enviar":"true"}
-{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"3.4","comentario":"","cobranza":"visa ","enviar":"true"}
-{"ano":"2017","mes":"marzo","ingreso":"cliente1","importe":"15","comentario":"csd","cobranza":"efectivo ","enviar":"true","clave":"$2y$10$8jagVkxORcs7BoaDbFQjRO8i.fSgRStKmwtynuJUt3.Jb7EYT8pei"}
-{"ano":"2017","mes":"marzo","ingreso":"cliente1","importe":"15","comentario":"csd","cobranza":"efectivo ","enviar":"true","clave":"$2y$10$gJDjPAamfpVMzErnGBDuD.4tKIkTAzLMGcPO3tYarOI9TwRVTSnTq"}
-{"ano":"2017","mes":"enero","ingreso":"cliente2","importe":"5","comentario":"","cobranza":"visa ","enviar":"true"}
+{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"1000","comentario":"","cobranza":"visa ","enviar":"true","usuario":"vane"}
+{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"1","comentario":"","cobranza":"visa ","enviar":"true","usuario":"hernan"}
+{"ano":"2017","mes":"enero","ingreso":"clases","importe":"1500","comentario":"","cobranza":"visa ","enviar":"true","usuario":"hernan"}
+{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"1500","comentario":"","cobranza":"cheque ","enviar":"true","usuario":"vane"}
+{"ano":"2019","mes":"octubre","ingreso":"cliente5","importe":"1","comentario":"","cobranza":"efectivo ","enviar":"true","usuario":"admin"}

@@ -23,7 +23,7 @@ if (isset($_POST['enviar'])) {
     if (!buscar_usu($usuario,$clave)){
       $errores['usuario_error']="Usuario o clave incorrecto";
     }
-    $linea = buscar_usuario($usuario,$clave);
+    $linea=buscar_usu($usuario,$clave);
 
     if (count($errores)==0){
       session_start();

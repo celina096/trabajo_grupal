@@ -1,11 +1,13 @@
 <?php
+// NOTE: preguntas: como meto todo esto de php en una funcion?
+
 session_start();
 if (!isset($_SESSION['login'])){
   header('Location: index.php');
 }
 
 
-
+$usuario=$_SESSION['usuario'];
 require_once 'funciones.php';
 
 $tipo_de_ingresos= array(
@@ -64,17 +66,11 @@ if (isset($_POST['enviar'])) {
     }
 
     if (count($errores)==0){
-      guardar_ingreso($_POST,"bd.json");
+      guardar_ingreso($_POST,"bd.json",$usuario);
     }
 
 
 }
-
-
-
-// if ($_POST['submit']) {
-//   echo "entro!!";
-// }
 
 ?>
 
@@ -97,7 +93,7 @@ if (isset($_POST['enviar'])) {
          <header class="index">
 
            <input class="menu-btn" type="checkbox" id="menu-btn" />
- <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+           <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
            <a href="index.html"><img class="logo" src="images/logo200px.png" alt="" width="250px"></a>
            <nav class="menu">
              <ul>
@@ -145,6 +141,15 @@ if (isset($_POST['enviar'])) {
             <form action="ingresos.php" method="post">
               <div class="parte2">
                 <div class="periodo">
+                  <div class="generales-ingresos">
+                    <article class="">
+                      <p class="encabezado">USUARIO: <?php echo $usuario ?></p>
+                    </article>
+                    <article class="">
+                      <p class="encabezado">INGRESOS POR $: <?php echo sumar($usuario); ?></p>
+                    </article>
+
+                  </div>
                   <div class="ano">Año
                     <select class="" name="ano">
                       <?php foreach ($periodo as $key => $value) {?>
@@ -161,15 +166,7 @@ if (isset($_POST['enviar'])) {
                    </select>
                   </div>
                 </div>
-                <div class="generales-ingresos">
-                  <article class="">
-                    <p class="encabezado">INGRESOS: <?php echo "$".sumar(); ?></p>
-                  </article>
-
-                </div>
-
-
-                 <div>
+                <div>
                  <label for="ingreso">Ingreso</label>
                  <select class="" name="ingreso" id="ingresos">
                    <?php foreach ($tipo_de_ingresos as $key => $value) {?>
@@ -217,7 +214,7 @@ if (isset($_POST['enviar'])) {
                     <p class="encabezado">INGRESOS YA REGISTRADOS:</p>
                     </article>
                     <ol>
-                        <li><?php leer() ?></li>
+                        <li><?php leer($usuario) ?></li>
                   <?php } ?>
                   </ol>
                 </div>

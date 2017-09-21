@@ -12,10 +12,10 @@ if (file_exists($archivo)){
 
 // NOTE: funciones de ingresos.php
 // esta funcion de guardar, sirve tanto para guardar ingresos como los registros de usuarios
-function guardar_ingreso($data,$bd){
+function guardar_ingreso($data,$bd,$usuario){
 if ($data) {
-//$data es el post entero
-
+//$data es el post entero, $sesion es $_SESSION
+        array_push ($data['usuario']=$usuario);
         $json=$data;
         $escribo=json_encode ($json);
         $recurso= existe ($bd);
@@ -25,27 +25,30 @@ if ($data) {
   }
 }
 
-function leer(){
+function leer($usu){
   $recurso = existe("bd.json");
   while( $linea = fgets($recurso) ){
     $usuario = json_decode($linea, true);
+    if ($usuario['usuario']==$usu) {
     echo "Año: ".$usuario ['ano']." MES: ".$usuario ['mes']." ".$usuario ['ingreso'].": $".$usuario['importe']." COMENTARIO: ".$usuario ['comentario']." TIPO DE COBRANZA: ".$usuario['cobranza']."<br>";
+    }
   }
   return false;
 }
 
-function sumar(){
+function sumar($usu){
+
   $recurso = existe("bd.json");
   $suma =0;
   while( $linea = fgets($recurso) ){
     $usuario = json_decode($linea, true);
-    $suma+=$usuario["importe"];
-
+      if ($usuario['usuario']==$usu) {
+        $suma+=$usuario["importe"];
+      }
+    }
+    return $suma;
 }
 
-  return $suma;
-
-}
 
 // NOTE: funciones de register!!!
 function guardar($data,$bd){
