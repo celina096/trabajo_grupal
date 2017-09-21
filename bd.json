@@ -15,3 +15,6 @@
 {"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"100","comentario":"","cobranza":"visa ","enviar":"true"}
 {"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"100","comentario":"","cobranza":"visa ","enviar":"true"}
 {"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"3.4","comentario":"","cobranza":"visa ","enviar":"true"}
+{"ano":"2017","mes":"marzo","ingreso":"cliente1","importe":"15","comentario":"csd","cobranza":"efectivo ","enviar":"true","clave":"$2y$10$8jagVkxORcs7BoaDbFQjRO8i.fSgRStKmwtynuJUt3.Jb7EYT8pei"}
+{"ano":"2017","mes":"marzo","ingreso":"cliente1","importe":"15","comentario":"csd","cobranza":"efectivo ","enviar":"true","clave":"$2y$10$gJDjPAamfpVMzErnGBDuD.4tKIkTAzLMGcPO3tYarOI9TwRVTSnTq"}
+{"ano":"2017","mes":"enero","ingreso":"cliente2","importe":"5","comentario":"","cobranza":"visa ","enviar":"true"}

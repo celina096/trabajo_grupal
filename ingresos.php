@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])){
+  header('Location: index.php');
+}
+
 
 
 require_once 'funciones.php';
@@ -52,14 +57,14 @@ $mes = isset($_POST['mes']) ? $_POST['mes'] : null;
 
 
 $errores= array();
-if ($_POST['enviar']) {
+if (isset($_POST['enviar'])) {
 
   if (!requerido($importe)){
     $errores['importe']="el campo importe es requerido";
     }
 
     if (count($errores)==0){
-      guardar($_POST);
+      guardar_ingreso($_POST,"bd.json");
     }
 
 
@@ -127,6 +132,9 @@ if ($_POST['enviar']) {
              </li>
              <li class="">
                <a class="hvr-grow" href="#"><img class="submenu" src="images/bank.svg" alt="" width="40px">BANCOS</a>
+             </li>
+             <li>
+               <a href="cerrar_sesion.php">CERRAR SESION</a>
              </li>
            </ul>
          </nav> <!-- .menu -->
