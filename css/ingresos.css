@@ -44,64 +44,9 @@ table {
 }
 
 /* ------------mi css----------------------*/
-/* HEADER */
-div.header {
-	position: fixed;
-	width: 100%;
-	z-index: 1000000;
-}
-
-
-/* BURGER MENU */
-
-
-.header .menu-btn {
-  display: none;
-}
-
-header {
-  overflow: hidden;
-  width: 100%;
-  height: 80px;
-  border-bottom: 0.1px solid gainsboro;
-	background-color: rgba(255, 255, 255, 0.2);
-}
-header.index img.logo {
-	float: left;
-}
-
-header.index label.burgerMenu, #burger-menu {
-	display: none;
-}
-
-header nav ul img {
-	float:right;
-	margin-right: 3%;
-}
-header.index h1, h2 {
-  float: left;
-}
-
-header.index li {
-  float: right;
-	margin-right:40px;
-	padding: 30px;
-	z-index: 100000;
-}
-
-
-.index nav a {
-	text-decoration: none;
-	color: black;
+* {
 	font-family: Oswald;
-	font-size: 1.2em;
 }
-.menu-movil {
-	display: none;
-}
-
-/* FIN HEADER*/
-
 
 body {
   font-family: Oswald;
@@ -114,6 +59,14 @@ background: -o-linear-gradient(top, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%, r
 background: -ms-linear-gradient(top, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%, rgba(69,80,126,1) 100%);
 background: linear-gradient(to bottom, rgba(4,27,84,1) 0%, rgba(27,63,107,1) 47%, rgba(69,80,126,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#041b54', endColorstr='#45507e', GradientType=0 );
+}
+
+/* HEADER */
+div.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+
 }
 
 section.parte1 {
@@ -310,117 +263,10 @@ p.copyright {
 	}
 }
 	@media (max-width: 850px) {
-		header nav {
-			display: none;
-		}
-
-		.menu-btn {
-			  display: block;
-				float: right;
-			}
-
-		.menu-icon {
-		  cursor: pointer;
-		  display: inline-block;
-		  float: right;
-		  padding: 28px 20px;
-		  position: relative;
-		  user-select: none;
-		}
-
-		.menu-icon .navicon {
-		  background: #333;
-		  display: block;
-		  height: 4px;
-		  position: relative;
-		  transition: background .2s ease-out;
-		  width: 30px;
-		}
-
-		.menu-icon .navicon:before,
-		.menu-icon .navicon:after {
-		  background: #333;
-		  content: '';
-		  display: block;
-		  height: 100%;
-		  position: absolute;
-		  transition: all .2s ease-out;
-		  width: 100%;
-		}
-
-		.menu-icon .navicon:before {
-		  top: 5px;
-		}
-
-		.menu-icon .navicon:after {
-		  top: -5px;
-		}
-
-		header {
-			background-color: transparent;
-			width: 100%;
-			border-bottom: none;
-		}
-		header img {
-			display: none;
-		}
-
-		.menu-btn:checked ~ .menu-movil {
-			display: block;
-			position: absolute;
-			top: 50px;
-			right: 0;
-			float: right;
-			width: 40vh;
-			text-align: center;
-			height: 60vh;
-			background-color: rgba(38, 38, 38, 0.79);
-		}
-		.menu-btn:checked ~ ul {
-					height: 800px;
-		}
-
-		.menu-btn:checked ~ .menu-movil li{
-			display: block;
-			float: none;
-			margin: 0;
-			padding-top: 5%;
-			font-size: 1.5em;
-		}
-
-		.menu-movil ul:first-child {
-			margin-top: 10%;
-		}
-
-		nav.menu-movil a {
-			color: white;
-		}
-		.menu-btn:checked ~ .menu-icon .navicon {
-		  background: transparent;
-		}
-
-		.menu-btn:checked ~ .menu-icon .navicon:before {
-		  transform: rotate(-45deg);
-		}
-
-		.menu-btn:checked ~ .menu-icon .navicon:after {
-		  transform: rotate(45deg);
-		}
-
-		 .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-		 .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-		  top: 0;
-		}
-		img.logo {
-			display: block;
-			width: 40vh;
-		}
-
-		/* fin menu */
 
 		section.parte1 {
 			height: 100vh;
-			
+
 		}
 
 		section.parte1 h2 {
@@ -449,5 +295,6 @@ p.copyright {
 			border-radius: 25px;
 			color: white;
 			margin: 10px;
+			font-family: Oswald;
 		}
 }

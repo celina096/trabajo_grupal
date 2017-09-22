@@ -13,28 +13,7 @@
 
     <div class="container">
       <div class="header">
-        <header class="index">
-
-          <input class="menu-btn" type="checkbox" id="menu-btn" />
-          <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-          <a href="index.html"><img class="logo" src="images/logo200px.png" alt="" width="250px"></a>
-          <nav class="menu">
-            <ul>
-              <li class="hvr-underline-from-center"><a href="contacto.html">Contacto</a></li>
-              <li class="hvr-underline-from-center"><a href="formulario.html"> Sign Up / Log in </a></li>
-              <li class="hvr-underline-from-center"><a href="faqs.html">FAQs</a></li>
-            </ul>
-          </nav>
-          <nav class="menu-movil">
-            <ul>
-              <li><a href="contacto.html">Contacto</a></li>
-              <li><a href="formulario.html"> Sign Up / Log In </a></li>
-              <li><a href="faqs.html">FAQs</a></li>
-            </ul>
-          </nav>
-
-        </header>
-      </div> <!-- .header -->
+      <?php include('header/header.html') ?>
       <div class="formularios">
         <article class="forms">
           <div class="signUp">
