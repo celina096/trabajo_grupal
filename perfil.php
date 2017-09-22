@@ -6,33 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/hover.css" rel="stylesheet" media="all">
     <link href="css/animate.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald|Roboto+Slab" rel="stylesheet">
     <title>Mi Perfil</title>
   </head>
   <body>
     <div class="container">
-      <?php include('header/header.html') ?>
+      <?php include('header/header.php') ?>
       <div class="contenido">
-        <div class="leftMenu">
-          <h3>Ajustes de Usuario</h3>
-          <ul>
-            <li>Mi Cuenta</li>
-            <li>Seguridad</li>
-            <li>Perfil</li>
-            <li>Notificaciones</li>
-            <li>Log Out</li>
-          </ul>
-        </div> <!-- .leftMenu -->
-        <h1>Mi Perfil</h1>
+        <?php include('./profile_menu/profile_menu.php') ?>
+        <h1>MI PERFIL</h1>
         <div class="miPerfil">
-          <img src="images/man.svg" alt="" width="100px">
-          <span>
-            <h3>Nombre de Usuario</h3>
-            <p>'NOMBRE_USUARIO'</p>
-            <h3>E-mail</h3>
-            <p>'USER_EMAIL'</p>
-        </span>
-        </div>
+          <div class='perfil'>
+            <img src="images/man.svg" alt="" width="100px">
+            <div class="datosPerfil">
+              <h3>Nombre de Usuario</h3>
+              <p>'NOMBRE_USUARIO'</p>
+              <br>
+              <h3>E-mail</h3>
+              <p>'USER_EMAIL'</p>
+            </div> <!-- .datosPerfil -->
+            <form class="" action="preferencias.php" method="post">
+              <button class="hvr-pop" type="submit" name="button"> Editar</button>
+            </form>
+        </div> <!-- .perfil -->
+      </div> <!-- .miPerfil -->
       </div> <!-- .contenido -->
     </div> <!-- .container -->
   </body>

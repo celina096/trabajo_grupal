@@ -57,33 +57,70 @@ body {
 	padding-top: 50px;
 }
 .contenido h1 {
+	font-family: Whitney;
+	letter-spacing: 3px;
+	font-size: 3em;
+	margin-top: 2%;
+	color: #ebe8fc;
+	white-space: inherit;
 }
-
-div.leftMenu {
-	text-align: justify;
-	padding-top: 40px;
-	background-color: #343d46;
-	width: 25%;
-	height: 100vh;
-	float:left;
-}
-
-.leftMenu h3 {
-	font-size: 1em;
-	color: #a7adba;
-}
-
+/* SECCION PERFIL */
 div.miPerfil {
 	overflow: hidden;
-	padding-left: 10%;
-	background-color: #223242;
-	width: 50%;
+	width: 75%;
+	justify-content: center;
+	display: flex;
 }
 
 .miPerfil img {
 	float: left;
+	align-self: center;
+	display: flex;
+	margin: 2%;
 }
 
-.miPerfil span {
-	float: left;
+div.perfil {
+	width: 100%;
+	margin: 5% 0;
+	background-color: #223242;
+	border-radius: 20px ;
+	height: 30vh;
+	width: 50vw;
+	display: flex;
+	overflow: hidden;
 }
+
+div.datosPerfil {
+	margin-left: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.datosPerfil h3 {
+	font-size: 1.3em;
+	color: grey;
+}
+
+.datosPerfil p {
+	font-size: 1.6em;
+	color: white;
+}
+
+.perfil form {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 7%;
+}
+
+.perfil button {
+	border-radius: 10px;
+		padding: 1vh 3vh;
+		font-size: 1.3em;
+		text-align: center;
+		font-family: 'Roboto Slab';
+}
+
+ /* FIN SECCION PERFIL */
