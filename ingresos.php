@@ -1,6 +1,5 @@
 <?php
 // NOTE: preguntas: como meto todo esto de php en una funcion?
-
 session_start();
 if (!isset($_SESSION['login'])){
   header('Location: index.php');
@@ -219,6 +218,7 @@ if (isset($_POST['enviar'])) {
                   </ol>
                 </div>
              </div>
+$periodo= array(
 
 
 

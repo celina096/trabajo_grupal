@@ -1,4 +1,7 @@
 <?php
+
+
+
 function existe ($archivo){
 
 if (file_exists($archivo)){

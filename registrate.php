@@ -4,7 +4,7 @@ require_once 'funciones.php';
 
 if (isset($_SESSION['usuario'])){
   header('Location: ingresos.php');
-  echo "Aca estoy";
+
 }else {
 
     $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
