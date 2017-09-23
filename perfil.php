@@ -32,5 +32,6 @@
       </div> <!-- .miPerfil -->
       </div> <!-- .contenido -->
     </div> <!-- .container -->
+    <?php include('footer/footer.html') ?>
   </body>
 </html>

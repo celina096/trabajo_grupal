@@ -91,20 +91,43 @@ img.user-avatar {
 a.user-avatar:hover + div{
   display: block;
 }
+
+/* USER MENU */
 div.user-menu:hover {
   display: block;
 }
 
 div.user-menu {
+  text-align: center;
+  padding: 20px;
   display: none;
   position: absolute;
-  top: 50px;
+  top: 51px;
   right: 0;
-  width: 200px;
-  height: 400px;
-  background-color: red;
+  width: 195px;
+  height: 250px;
+  background-color: rgba(198, 215, 240, 0.9);
 }
 
+
+
+.user-menu h3 {
+  margin-bottom: 20px;
+  color: rgba(18, 38, 69, 0.73);
+}
+.user-menu a {
+  float: left;
+  padding: 7px;
+}
+
+.user-menu a:hover {
+  background-color: rgba(18, 38, 69, 0.73);
+  border-radius: 10px;
+  color: white;
+}
+
+
+/* FIN USER MENU */
 
 @media (max-width: 850px) {
 h1 {

@@ -1,0 +1,31 @@
+/* FOOTER */
+footer {
+	background-color: #637a97;
+	padding: 3% 0;
+	padding-bottom: 0;
+	text-align: center;
+	border-top: 2.5px solid black;
+}
+
+footer a {
+	padding-right: 10px;
+	text-decoration: none;
+	color: black;
+
+}
+
+.margin-bottom {
+	margin-bottom: 2%;
+}
+
+footer a:last-child {
+	padding-right: 0;
+}
+
+
+footer p.copyright {
+	padding: 10px;
+	background-color: #2d3845;
+	color: white;
+}
+/* FIN FOOTER*/
