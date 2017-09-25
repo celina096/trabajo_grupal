@@ -17,7 +17,8 @@
         <?php include('./profile_menu/profile_menu.php') ?>
         <!-- ACA VA EL CONTENIDO -->
         <h1>PRIVACY & SAFETY</h1>
-      </div>
+          
+      </div> <!-- .contenido -->
     </div> <!-- .container -->
   </body>
 </html>

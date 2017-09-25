@@ -8,6 +8,11 @@
     <div class="leftMenu">
       <div class="contenedor1">
         <ul>
+          <h3>MIS CONTENIDOS</h3>
+          <li><a href="tablero.php">Tablero</a></li>
+          <li><a href="ingresos.php">Ingresos</a></li>
+          <li><a href="egresos.php">Egresos</a></li>
+          <li><a href="#">Bancos</a></li>
           <h3>AJUSTES DE USUARIO</h3>
           <li><a href="perfil.php">Datos Personales</a></li>
           <li><a href="preferencias.php">Tus Preferencias</a></li>
