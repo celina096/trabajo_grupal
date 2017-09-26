@@ -39,6 +39,9 @@ if (isset($_SESSION['usuario'])){
 
     }
 }
+
+
+
  ?>
 
 
@@ -47,7 +50,9 @@ if (isset($_SESSION['usuario'])){
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="css/profile_menu.css">
+    <link rel="stylesheet" href="css/registrate.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/hover.css" rel="stylesheet" media="all">
     <link href="css/animate.css" rel="stylesheet">
@@ -57,25 +62,25 @@ if (isset($_SESSION['usuario'])){
   </head>
   <body>
     <div class="container ">
+     <div class="header">
+      <?php include('header/header.html') ?>
 
-
-      <section class="container">
-        <div class="container">
-          <h2 class="">Administra tus finanzas</h2>
+      <div class="registro">
+        <div class="form">
+        <div class= "backgroundColor">
+          <h2 class="backgroundColor">Administra tus finanzas</h2>
           <h3><spam class="animation1 bounceInLeft animated">Fácil. </spam><spam class="bounceInLeft animated animation2">Rápido.</spam><spam class="bounceInLeft animated animation3"> Gratis.</spam></h3>
           <a href="#queSomos" class="hvr-grow fadeInUp animated saberMas">Saber Más ↓</a>
-        </div>
-        <div class="">
+
           <p>REGISTRATE</p>
           <form class="container" action="registrate.php" method="post">
-            <div>
+
               <label for="usuario">Nombre de Usuario</label>
               <br>
               <input id="usuario" type="text" name="usuario" value='<?php echo $usuario ?>'>
               <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
               <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?><br/>
 
-              <br>
               <label for="clave">Contraseña</label>
               <br>
               <input id="clave" type="password" name="clave" value="">
@@ -84,28 +89,28 @@ if (isset($_SESSION['usuario'])){
               <br>
               <input id="clave2" type="password" name="clave2" value="">
               <?php if (isset($errores['claves_distintas'])){echo $errores['claves_distintas'];}else{ echo "";} ?><br/>
-            </div>
+
             <input id="recordarme" type="checkbox" name="recordarme" value="yes">
             <label for="recordarme">Recordarme</label>
             <br>
-            <button type="submit" name="enviar" value="">Iniciar</button>
+            <button  type="submit" name="enviar" value="">Iniciar</button>
             <br>
             <a href="#">¿Has olvidado tu contraseña?</a>
             <br>
             <a href="#">¿No estás registrado? Crea tu cuenta.</a>
           </form>
-        </div>
 
-      </section>
+        </div> <!-- .backgroundColor -->
+      </div>
     </div>
 
-
     <footer class="footerIndex">
-      <img class="margin-bottom" src="images/logo200px.png" alt="" width="200px">
-      <p class="margin-bottom"><a href="#">Terminos & Condiciones</a> <a href="#">Póliza de Privacidad</a><a href="#">Copyrights</a></p>
-      </div>
-      <p class="copyright">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
-    </footer>
+  <?php include('footer/footer.html') ?>
+    </footer> <!-- .footerIndex -->
+
+
+
+
 
   </body>
 </html>

@@ -1,0 +1,426 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* mi css */
+
+
+/* header */
+.header .menu-btn {
+  display: none;
+}
+
+h1 {
+	color: black;
+	font-size: 2em;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+a.nombrelogo{
+	text-decoration: none;
+	width: auto;
+	float: left;
+}
+
+div.header {
+	position: fixed;
+	width: 100%;
+	z-index: 1000000;
+	height: 50px;
+}
+
+nav.menu {
+	float: right;
+	width: auto;
+
+
+}
+
+.inicioSesion {
+  font-size: 0.7em;
+  letter-spacing: 2px;
+}
+
+.inicioSesion img {
+  margin-right: 4px;
+}
+
+
+header {
+  width: 100%;
+	height: 50px;
+  border-bottom: 0.1px solid gainsboro;
+	background-color: rgba(255, 255, 255, 0.9);
+}
+header.index img.logo {
+	z-index: 999999999999999;
+}
+
+nav.menu-movil {
+	display: none;
+}
+
+header.index li {
+	padding: 13px;
+	z-index: 100000;
+
+}
+
+.index nav a {
+	text-decoration: none;
+	color: black;
+	font-family: Oswald;
+	font-size: 1.2em;
+}
+li.user {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0;
+
+}
+
+li.user a {
+  color: Red;
+  font-family: 'Roboto Slab'
+}
+
+img.user-avatar {
+  float: right;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+a.user-avatar:hover + div{
+  display: block;
+}
+
+/* USER MENU */
+div.user-menu:hover {
+  display: block;
+}
+
+div.user-menu {
+  text-align: center;
+  padding: 20px;
+  display: none;
+  position: absolute;
+  top: 51px;
+  right: 0;
+  width: 195px;
+  height: 250px;
+  background-color: rgba(198, 215, 240, 0.9);
+}
+
+
+
+.user-menu h3 {
+  margin-bottom: 20px;
+  color: rgba(18, 38, 69, 0.73);
+}
+.user-menu a {
+  float: left;
+  padding: 7px;
+}
+
+.user-menu a:hover {
+  background-color: rgba(18, 38, 69, 0.73);
+  border-radius: 10px;
+  color: white;
+}
+
+
+/* FIN USER MENU */
+
+@media (max-width: 850px) {
+h1 {
+	margin-left: 15px;
+}
+
+  header nav {
+    display: none;
+  }
+
+  .menu-btn {
+      display: block;
+      float: right;
+			margin-top: 5px;
+    }
+
+  .menu-icon {
+		margin-top: 15px;
+		margin-right: 15px;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 0;
+    position: relative;
+    user-select: none;
+  }
+
+  .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 30px;
+  }
+
+  .menu-icon .navicon:before,
+  .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+
+  .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  header {
+    background-color: rgba(255, 255, 255, 0.9);
+		height: 6vh;
+    width: 100%;
+    border-bottom: none;
+  }
+  header img {
+    display: none;
+  }
+
+
+
+  .menu-btn:checked ~ .menu-movil {
+    display: block;
+    position: absolute;
+    top: 6vh;
+    float: right;
+    width: 40vh;
+    text-align: center;
+    height: 40vh;
+    background-color: rgba(38, 38, 38, 0.79);
+    right: 0;
+  }
+  .menu-btn:checked ~ ul {
+        height: 800px;
+  }
+
+  .menu-btn:checked ~ .menu-movil li{
+    display: block;
+    float: none;
+    margin: 0;
+    padding-top: 5%;
+    font-size: 1.5em;
+  }
+
+  .menu-movil ul:first-child {
+    margin-top: 10%;
+  }
+
+  nav.menu-movil a {
+    color: white;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+   .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+   .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  /* fin menu */
+
+  img.logo {
+    display: block;
+    width: 5vh;
+  }
+}
+
+
+
+/* fin de header */
+
+
+
+body {
+	font-family: Oswald;
+	background: rgba(255,255,255,1);
+background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+	font-size: 2.5vh;
+}
+
+div.container {
+	position: relative;
+  width: 100%;
+}
+
+div.registro {
+  height: 100vh;
+	width: 100vh;
+  background-color: gainsboro;
+
+}
+
+
+div .form{
+	text-align: center;
+	padding-top:10%;
+	margin-right: 10%;
+	margin-left: 10%;
+  width: 80%;
+	font-family: Oswald;
+}
+
+	.backgroundColor h2{
+	  font-size: 2em;
+	  margin-bottom: 50px;
+	}
+
+div	.backgroundColor {
+	  background-color: rgba(53, 74, 95, 0.58);
+
+	  padding: 5% 0;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  border-radius: 15px;
+		-webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
+	color: white;
+	}
+
+	button {
+	    background-color: #008CBA;
+	    border: none;
+	    color: white;
+			margin-top: 10px;
+	    padding: 10px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 1em;
+	    -webkit-border-radius: 4px;
+	       -moz-border-radius: 4px;
+	            border-radius: 4px;
+	}
+
+
+
+	 input:focus, textarea:focus {
+	  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+	  padding: 3px 0px 3px 3px;
+	  margin: 5px 1px 3px 0px;
+	  border: 1px solid rgba(81, 203, 238, 1);
+	}
+
+	.backgroundColor label {
+		font-size: 1.3em;
+	}
+
+	
+
+
+/* FOOTER */
+footer {
+	background-color: #637a97;
+	padding: 3% 0;
+	padding-bottom: 0;
+	text-align: center;
+	border-top: 2.5px solid black;
+}
+
+footer a {
+	padding-right: 10px;
+	text-decoration: none;
+	color: black;
+
+}
+
+.margin-bottom {
+	margin-bottom: 2%;
+}
+
+footer a:last-child {
+	padding-right: 0;
+}
+
+
+footer p.copyright {
+	padding: 10px;
+	background-color: #2d3845;
+	color: white;
+}
+/* FIN FOOTER*/
