@@ -57,30 +57,25 @@ if (isset($_SESSION['usuario'])){
     <link href="css/hover.css" rel="stylesheet" media="all">
     <link href="css/animate.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <title>REGISTRATE</title>
   </head>
   <body>
     <div class="container ">
-     <div class="header">
       <?php include('header/header.html') ?>
 
       <div class="registro">
         <div class="form">
         <div class= "backgroundColor">
-          <h2 class="backgroundColor">Administra tus finanzas</h2>
-          <h3><spam class="animation1 bounceInLeft animated">Fácil. </spam><spam class="bounceInLeft animated animation2">Rápido.</spam><spam class="bounceInLeft animated animation3"> Gratis.</spam></h3>
-          <a href="#queSomos" class="hvr-grow fadeInUp animated saberMas">Saber Más ↓</a>
 
-          <p>REGISTRATE</p>
+
+          <p class= 'registrate'>REGISTRATE</p>
           <form class="container" action="registrate.php" method="post">
 
               <label for="usuario">Nombre de Usuario</label>
               <br>
               <input id="usuario" type="text" name="usuario" value='<?php echo $usuario ?>'>
               <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
-              <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?><br/>
-
+              <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?>
               <label for="clave">Contraseña</label>
               <br>
               <input id="clave" type="password" name="clave" value="">
@@ -99,18 +94,8 @@ if (isset($_SESSION['usuario'])){
             <br>
             <a href="#">¿No estás registrado? Crea tu cuenta.</a>
           </form>
-
         </div> <!-- .backgroundColor -->
-      </div>
-    </div>
-
-    <footer class="footerIndex">
-  <?php include('footer/footer.html') ?>
-    </footer> <!-- .footerIndex -->
-
-
-
-
-
+    </div> <!-- .container -->
+    <?php include('footer/footer.html') ?>
   </body>
 </html>
