@@ -110,7 +110,7 @@ section.section1 {
 
 .formularioIndex {
 	background-color: rgba(53, 74, 95, 0.58);
-	height: 300px;
+	padding: 20px 0;
 	width: 30%;
 	border-radius: 15px;
 	-webkit-box-shadow: 0px 0px 35px 3px rgba(0,0,0,0.75);
@@ -225,37 +225,11 @@ section.indexParte3 {
 
 }
 
-/* FOOTER */
-footer {
-	background-color: #637a97;
-	padding: 3% 0;
-	padding-bottom: 0;
-	text-align: center;
-	border-top: 2.5px solid black;
+p.error {
+	color: #960005;
+	font-size: 1em;
 }
 
-footer a {
-	padding-right: 10px;
-	text-decoration: none;
-	color: black;
-
-}
-
-.margin-bottom {
-	margin-bottom: 2%;
-}
-
-footer a:last-child {
-	padding-right: 0;
-}
-
-
-footer p.copyright {
-	padding: 10px;
-	background-color: #2d3845;
-	color: white;
-}
-/* FIN FOOTER*/
 /* ---------------------ANIMACIONES---------------*/
 
 .animation1 {
