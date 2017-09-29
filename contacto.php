@@ -80,8 +80,6 @@ if (empty($errores)) {
 
         </div> <!-- .form -->
     </div> <!-- .container -->
-    <div class="footer">
       <?php include('footer/footer.html') ?>
-    </div>
   </body>
 </html>

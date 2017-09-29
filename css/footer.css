@@ -25,6 +25,7 @@ footer a:last-child {
 
 footer p.copyright {
 	padding: 10px;
+	text-align: center;
 	background-color: #2d3845;
 	color: white;
 }

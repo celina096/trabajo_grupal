@@ -51,12 +51,6 @@
 
  </article>
 </div>
-<footer class="footerIndex">
-  <img class="margin-bottom" src="images/logo200px.png" alt="" width="200px">
-  <p class="margin-bottom"><a href="#">Terminos & Condiciones</a> <a href="#">Póliza de Privacidad</a><a href="#">Copyrights</a></p>
-  </div>
-  <p class="copyright">Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
-</footer>
-
+    <?php include_once('footer/footer.html') ?>
   </body>
 </html>

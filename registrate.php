@@ -104,7 +104,7 @@ if (isset($_SESSION['usuario'])){
             <label for="recordarme"> Recordarme </label>
             <br>
             <button  type="submit" name="enviar" value="">Iniciar</button>
-    
+
           </form>
         </div> <!-- .backgroundColor -->
     </div> <!-- .container -->
