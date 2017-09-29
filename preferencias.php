@@ -1,5 +1,13 @@
 <?php
 require_once('./funciones.php');
+
+$usuario = $_SESSION['usuario'];
+
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $newUsername = $_POST['username'];
+  reemplazar($_SESSION['usuario'], $_POST['username']);
+  header("Location: preferencias.php");
+}
  ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +32,7 @@ require_once('./funciones.php');
           <h2>Cambiar datos personales</h2>
           <label for="username">Nombre de Usuario</label>
           <br>
-          <input id="username" type="text" name="username" value="'USER_NAME'">
+          <input id="username" type="text" name="username" value="<?php echo $usuario ?>">
           <br>
           <label for="nombre">Nombre</label>
           <br>
@@ -34,17 +42,17 @@ require_once('./funciones.php');
           <br>
           <input id="apellido" type="text" name="lastName" value="">
           <br>
+          <label for="email">E-mail</label>
+          <br>
+          <input type="email" name="email" value="">
+          <br>
           <label for="oldpassword">Contraseña Actual</label>
           <br>
-          <input id="oldpassword" type="password" name="oldpassword" value="">
+          <input id="oldpassword" type="password" name="oldpassword" value="" >
           <br>
           <label for="password">Nueva Contraseña</label>
           <br>
           <input id="password" type="password" name="password" value="">
-          <br>
-          <label for="confirmpassword">Confirmar Contraseña</label>
-          <br>
-          <input id="confirmpassword" type="password" name="" value="">
           <br>
           <button form="form1" class="boton" type="submit" name="form">Registrar cambios</button>
         </form>

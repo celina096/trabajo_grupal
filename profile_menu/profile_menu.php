@@ -18,7 +18,7 @@
           <li><a href="preferencias.php">Tus Preferencias</a></li>
           <li><a href="safety.php">Privacidad y Seguridad</a></li>
           <li><a href="#">Notificaciones</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><a href="cerrar_sesion.php">Log Out</a></li>
           </ul>
       </div><!-- .leftMenu -->
     </div> <!-- .contenedor1 -->

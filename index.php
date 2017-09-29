@@ -1,10 +1,10 @@
 <?php
-session_start();
+require_once 'funciones.php';
+
 if (isset($_SESSION['login'])){
-  header('Location: ingresos.php');
+  header('Location: perfil.php');
 }
 
-require_once 'funciones.php';
 
 $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
 $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
