@@ -10,3 +10,4 @@
 {"ano":"2017","mes":"enero","ingreso":"horas","importe":"10000000","comentario":"","cobranza":"efectivo ","enviar":"true","usuario":"celina"}
 {"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"0","comentario":"","cobranza":"visa ","enviar":"true","usuario":"celina"}
 {"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"1","comentario":"","cobranza":"visa ","enviar":"true","usuario":"celina"}
+{"ano":"2017","mes":"enero","ingreso":"sueldo","importe":"2000","comentario":"hola","cobranza":"efectivo ","enviar":"true","usuario":"celina"}
