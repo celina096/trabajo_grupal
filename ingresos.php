@@ -1,6 +1,7 @@
 <?php
+require_once('./funciones.php');
 // NOTE: preguntas: como meto todo esto de php en una funcion?
-session_start();
+
 if (!isset($_SESSION['login'])){
   header('Location: index.php');
 }
@@ -88,7 +89,7 @@ if (isset($_POST['enviar'])) {
    </head>
    <body>
      <div class="contenedor">
-        <?php include('header/header.html') ?>
+        <?php include('header/header.php') ?>
        <div class="contenido">
          <section class="parte1">
              <h2>Tus Ingresos</h2>

@@ -54,7 +54,7 @@ body {
 .contenido {
 	width: 100%;
 	overflow: hidden;
-	padding-top: 50px;
+	padding-top: 8vh;
 }
 .contenido h1 {
 	font-family: Whitney;
@@ -63,64 +63,28 @@ body {
 	margin-top: 2%;
 	color: #ebe8fc;
 	white-space: inherit;
+
 }
-/* SECCION PERFIL */
-div.miPerfil {
+
+div.seguridad {
 	overflow: hidden;
 	width: 75%;
 	justify-content: center;
 	display: flex;
 }
 
-.miPerfil img {
-	float: left;
-	align-self: center;
-	display: flex;
-	margin: 2%;
+.seguridad li:first-child {
+	margin-top: 8vh;
+	margin-bottom: 8vh;
 }
+.seguridad li {
 
-div.perfil {
-	width: 100%;
-	margin: 5% 0;
-	background-color: #223242;
-	border-radius: 20px ;
-	height: 30vh;
-	width: 50vw;
-	display: flex;
-	overflow: hidden;
 }
-
-div.datosPerfil {
-	margin-left: 5%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.datosPerfil h3 {
-	font-size: 1.2em;
-	color: grey;
-}
-
-.datosPerfil p {
-	font-size: 1.6em;
+.seguridad a {
+	text-decoration: none;
+	background-color: rgba(255, 0, 0, 0.5);
+	width: 60vw;
+	height: 20vh;
 	color: white;
-}
 
-.perfil form {
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	margin-right: 7%;
 }
-
-.perfil button {
-	border-radius: 10px;
-		padding: 1vh 3vh;
-		font-size: 1.3em;
-		text-align: center;
-		font-family: 'Roboto Slab';
-}
-
- /* FIN SECCION PERFIL */

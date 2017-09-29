@@ -64,63 +64,58 @@ body {
 	color: #ebe8fc;
 	white-space: inherit;
 }
-/* SECCION PERFIL */
-div.miPerfil {
-	overflow: hidden;
-	width: 75%;
-	justify-content: center;
-	display: flex;
+
+/* FORM PREFERENCIAS */
+div.wrap {
+  overflow: hidden;
+}
+form.preferencias {
+  margin-top: 5%;
+  float: left;
+	padding-left: 10vw;
+  margin-right: 10vw;
 }
 
-.miPerfil img {
+.avatar-wrap {
 	float: left;
-	align-self: center;
-	display: flex;
-	margin: 2%;
+	margin-top: 5%;
 }
 
-div.perfil {
-	width: 100%;
-	margin: 5% 0;
-	background-color: #223242;
-	border-radius: 20px ;
-	height: 30vh;
-	width: 50vw;
-	display: flex;
-	overflow: hidden;
+.avatar {
+  border: 5px dashed black;
+  border-radius: 25px;
+	text-align: center;
+}
+.avatar img {
+  padding: 20px;
 }
 
-div.datosPerfil {
-	margin-left: 5%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.preferencias input {
+	background-color: inherit;
+	border: none;
+	margin-top: 5px;
+	border-bottom: 3px dashed white;
+	margin-bottom: 15px;
+	font-size: 1em;
 }
 
-.datosPerfil h3 {
-	font-size: 1.2em;
-	color: grey;
-}
-
-.datosPerfil p {
-	font-size: 1.6em;
+.preferencias input:focus {
+	border-left: 2px solid black;
+	border-bottom: 3px dashed black;
 	color: white;
+	background-color: rgba(191, 219, 253, 0.42);
 }
 
-.perfil form {
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	margin-right: 7%;
+ .boton {
+	padding: 5px;
+	font-family: Oswald;
+	font-size: 1em;
 }
 
-.perfil button {
-	border-radius: 10px;
-		padding: 1vh 3vh;
-		font-size: 1.3em;
-		text-align: center;
-		font-family: 'Roboto Slab';
-}
 
- /* FIN SECCION PERFIL */
+h2 {
+	font-size: 1.5em;
+	letter-spacing: 3px;
+	color: white;
+	margin-bottom: 20px;
+}

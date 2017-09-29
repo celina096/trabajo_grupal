@@ -1,3 +1,6 @@
+<?php
+require_once('./funciones.php') ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,29 +15,7 @@
   </head>
   <body>
     <div class="contenedor">
-      <div class="header">
-        <header class="index">
-
-          <input class="menu-btn" type="checkbox" id="menu-btn" />
-<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-          <a href="index.html"><img class="logo" src="images/logo200px.png" alt="" width="250px"></a>
-          <nav class="menu">
-            <ul>
-              <li class="hvr-underline-from-center"><a href="contacto.html">Contacto</a></li>
-              <li class="hvr-underline-from-center"><a href="formulario.html"> Log in / Sign up </a></li>
-              <li class="hvr-underline-from-center"><a href="faqs.html">FAQs</a></li>
-            </ul>
-          </nav>
-          <nav class="menu-movil">
-            <ul>
-              <li><a href="contacto.html">Contacto</a></li>
-              <li><a href="formulario.html"> Log in / Sign up </a></li>
-              <li><a href="faqs.html">FAQs</a></li>
-            </ul>
-          </nav>
-
-        </header>
-      </div> <!-- .header -->
+    <?php include_once('header/header.php') ?>
       <section class="parte1">
           <h2>Tu Tablero</h2>
       <nav class="menu">

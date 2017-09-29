@@ -1,3 +1,10 @@
+<?php
+require_once('./funciones.php');
+
+$usuario = $_SESSION['usuario'];
+
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,12 +27,12 @@
             <img src="images/man.svg" alt="" width="100px">
             <div class="datosPerfil">
               <h3>Nombre de Usuario</h3>
-              <p>'NOMBRE_USUARIO'</p>
+              <p><?php echo $usuario ?></p>
               <br>
               <h3>E-mail</h3>
               <p>'USER_EMAIL'</p>
             </div> <!-- .datosPerfil -->
-            <form class="" action="preferencias.php" method="post">
+            <form class="" action="preferencias.php" method="get">
               <button class="hvr-pop" type="submit" name="button"> Editar</button>
             </form>
         </div> <!-- .perfil -->

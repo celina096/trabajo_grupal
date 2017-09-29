@@ -1,10 +1,10 @@
 <?php
-session_start();
+require_once 'funciones.php';
+
 if (isset($_SESSION['login'])){
-  header('Location: ingresos.php');
+  header('Location: perfil.php');
 }
 
-require_once 'funciones.php';
 
 $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
 $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
@@ -57,7 +57,6 @@ if (isset($_POST['enviar'])) {
         <div>
           <h2 class="bounceInLeft animated">Administra tus finanzas</h2>
           <h3><spam class="animation1 bounceInLeft animated">Fácil. </spam><spam class="bounceInLeft animated animation2">Rápido.</spam><spam class="bounceInLeft animated animation3"> Gratis.</spam></h3>
-          <a href="#queSomos" class="hvr-grow fadeInUp animated saberMas">Saber Más ↓</a>
         </div>
         <div class="formularioIndex fadeInDown animated">
           <p>Inicia Sesion</p>
@@ -66,15 +65,14 @@ if (isset($_POST['enviar'])) {
               <label for="usuario">Nombre de Usuario</label>
               <br>
               <input id="usuario" type="text" name="usuario" value='<?php echo $usuario ?>'>
-              <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
-              <?php if (isset($errores['usuario_error'])){echo $errores['usuario_error'];}else{ echo "";} ?><br/>
               <br>
+              <?php if (isset($errores['usuario'])){echo '<p class="error">'.$errores['usuario']."</p>";}elseif(isset($errores['usuario_error'])){echo '<p class="error">'.$errores['usuario_error']."</p>";}else{ echo "";}  ?>
+              <br/>
               <label for="clave">Contraseña</label>
               <br>
               <input id="clave" type="password" name="clave" value="">
-              <?php if (isset($errores['clave'])){echo $errores['clave'];}else{ echo "";} ?><br/>
-              <?php if (isset($errores['clave_error'])){echo $errores['clave_error'];}else{ echo "";} ?><br/>
-
+              <br/>
+              <?php if (isset($errores['clave'])){echo '<p class="error">'.$errores['clave'].'</p>';}else{ echo "";} ?>
             </div>
             <input id="recordarme" type="checkbox" name="recordarme" value="yes">
             <label for="recordarme">Recordarme</label>
