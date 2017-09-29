@@ -68,31 +68,44 @@ if (isset($_SESSION['usuario'])){
         <div class= "backgroundColor">
 
 
-          <p class= 'registrate'>REGISTRATE</p>
+            <p class= 'registrate'>REGISTRATE</p>
+
           <form class="container" action="registrate.php" method="post">
 
               <label for="usuario">Nombre de Usuario</label>
               <br>
-              <input id="usuario" type="text" name="usuario" value='<?php echo $usuario ?>'>
+              <input id="usuario"  placeholder="Escriba su usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
               <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
               <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?>
-              <label for="clave">Contraseña</label>
+              <label class="control-label" for="email"> E-mail </label><br/>
+              <input type="email" class="form-control" id="email" name="email" placeholder=" Ingrese su Email" value="<?php echo (isset($_POST['email'])) ? $_POST['email']: '' ?>">
+              <p class="text-danger">
+                <?php if(isset($errores['email'])){
+                    foreach($errores['email'] as $lista){
+                      echo $lista.'<br>';
+                    } } ?>
+              </p>
+
+
+
+
+              <label for="clave" >Contraseña</label>
               <br>
-              <input id="clave" type="password" name="clave" value="">
+              <input id="clave" type="password" name="clave" value="" required>
               <br>
               <label for="clave2">Repetir Contraseña</label>
               <br>
               <input id="clave2" type="password" name="clave2" value="">
               <?php if (isset($errores['claves_distintas'])){echo $errores['claves_distintas'];}else{ echo "";} ?><br/>
+              <?php echo (isset($errores['email'])) ? ' has-error': '' ?>
+
+
 
             <input id="recordarme" type="checkbox" name="recordarme" value="yes">
-            <label for="recordarme">Recordarme</label>
+            <label for="recordarme"> Recordarme </label>
             <br>
             <button  type="submit" name="enviar" value="">Iniciar</button>
-            <br>
-            <a href="#">¿Has olvidado tu contraseña?</a>
-            <br>
-            <a href="#">¿No estás registrado? Crea tu cuenta.</a>
+    
           </form>
         </div> <!-- .backgroundColor -->
     </div> <!-- .container -->

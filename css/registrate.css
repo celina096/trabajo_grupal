@@ -86,10 +86,13 @@ form.container input {
 }
 
 p.registrate {
-	margin-bottom: 2%;
+	margin-bottom: 4%;
 	font-size: 2em;
 	letter-spacing: 4px;
+
 }
+
+
 
 div .form{
 	text-align: center;
