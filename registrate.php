@@ -29,6 +29,9 @@ if (isset($_SESSION['usuario'])){
         if (buscar_usuario($usuario,"usuarios.json")) {
           $errores['usuario_existe']="El usuario ya existe en la Base de datos!!";
         }
+        if (empty($_FILES['avatar']['name'])) {
+          $respuesta['avatar'] = "Debe subir una imagen";
+        }
 
         if (count($errores)==0){
           guardar($_POST,"usuarios.json");
@@ -74,8 +77,8 @@ if (isset($_SESSION['usuario'])){
               <label for="usuario">Nombre de Usuario</label>
               <br>
               <input id="usuario"  placeholder="Escriba su usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
-              <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
-              <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?>
+              <?php //if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
+              <?php //if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?>
               <label class="control-label" for="email"> E-mail </label><br/>
               <input type="email" class="form-control" id="email" name="email" placeholder=" Ingrese su Email" value="<?php echo (isset($_POST['email'])) ? $_POST['email']: '' ?>">
               <p class="text-danger">
@@ -84,10 +87,6 @@ if (isset($_SESSION['usuario'])){
                       echo $lista.'<br>';
                     } } ?>
               </p>
-
-
-
-
               <label for="clave" >Contraseña</label>
               <br>
               <input id="clave" type="password" name="clave" value="" required>
@@ -100,25 +99,13 @@ if (isset($_SESSION['usuario'])){
 
               <div class="avatar" <?php echo (isset($errores['avatar'])) ? ' has-error': '' ?>>
               <label class="control-label"  for="avatar">Avatar : </label>
-              <input type="file" id="avatar" name="avatar">
+              <input type="file" id="avatar" name="avatar"  accept="image/*">
               <p class="text-danger">
-                <?php if(isset($errores['avatar'])){
-                    foreach($errores['avatar'] as $lista){
-                      echo $lista.'<br>';
-                    } }
-                    if (isset ($_FILES['avatar']['tmp_name'])){
-                      $file_ext= end (explode('.', $_FILES ['avatar']['name']));
-
-                      if (in_array)(strtolower ($file_ext) , array ('jpg','jpeg', 'png', 'gif') === false ){
-                        $errors[] = 'Tu avatar debe ser una imagen.';
-                      }
-                    }
+              </div> <!-- .avatar -->
 
 
-
-                     ?>
-              </div>
               <br>
+
             <input id="recordarme" type="checkbox" name="recordarme" value="yes">
             <label for="recordarme"> Recordarme </label>
             <br>

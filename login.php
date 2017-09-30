@@ -54,11 +54,10 @@ if (isset($_POST['enviar'])) {
       <?php include('header/header.html') ?>
 
       <div class="registro">
-        <div class="form">
         <div class= "backgroundColor">
 
 
-            <p class= 'registrate'> INICIA SESIÓN </p>
+            <p class='registrate'> INICIA SESIÓN </p>
 
           <form class="container" action="registrate.php" method="post">
 

@@ -44,7 +44,7 @@
     <nav class="menu-movil">
       <ul>
         <li><a href="contacto.php">Contacto</a></li>
-        <li><a href="formulario.php"> Log in / Sign up </a></li>
+        <li><a href="registrate.php"> Registrate </a></li>
         <li><a href="faqs.php">FAQs</a></li>
       </ul>
     </nav>
