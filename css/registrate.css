@@ -110,6 +110,17 @@ div.backgroundColor {
 	  flex-direction: column;
 	}
 
+	div.avatar {
+   padding: 15px;
+	 background: #35424a;
+	 color: #ffffff;
+	 margin-top: 10px;
+	 margin-bottom: 10px;
+	 border: none;
+  border-radius: 40px 10px;
+
+	}
+
 	button {
 	    background-color: #008CBA;
 	    border: none;

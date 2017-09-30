@@ -69,7 +69,7 @@ if (isset($_SESSION['usuario'])){
 
             <p class= 'registrate'>REGISTRATE</p>
 
-          <form class="container" action="registrate.php" method="post">
+          <form class="container" action="registrate.php" method="post" enctype="multipart/form-data" >
 
               <label for="usuario">Nombre de Usuario</label>
               <br>
@@ -98,12 +98,32 @@ if (isset($_SESSION['usuario'])){
               <?php if (isset($errores['claves_distintas'])){echo $errores['claves_distintas'];}else{ echo "";} ?><br/>
               <?php echo (isset($errores['email'])) ? ' has-error': '' ?>
 
+              <div class="avatar" <?php echo (isset($errores['avatar'])) ? ' has-error': '' ?>>
+              <label class="control-label"  for="avatar">Avatar : </label>
+              <input type="file" id="avatar" name="avatar">
+              <p class="text-danger">
+                <?php if(isset($errores['avatar'])){
+                    foreach($errores['avatar'] as $lista){
+                      echo $lista.'<br>';
+                    } }
+                    if (isset ($_FILES['avatar']['tmp_name'])){
+                      $file_ext= end (explode('.', $_FILES ['avatar']['name']));
+
+                      if (in_array)(strtolower ($file_ext) , array ('jpg','jpeg', 'png', 'gif') === false ){
+                        $errors[] = 'Tu avatar debe ser una imagen.';
+                      }
+                    }
 
 
+
+                     ?>
+              </div>
+              <br>
             <input id="recordarme" type="checkbox" name="recordarme" value="yes">
             <label for="recordarme"> Recordarme </label>
             <br>
             <button  type="submit" name="enviar" value="">Iniciar</button>
+
 
           </form>
         </div> <!-- .backgroundColor -->
