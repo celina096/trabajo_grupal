@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION['login'])){
+  header('Location: index.php');
+}
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,7 +18,7 @@
   </head>
   <body>
     <div class="container">
-      <?php include('header/header.html') ?>
+      <?php include('header/header.php') ?>
       <div class="contenido privacy">
         <?php include('./profile_menu/profile_menu.php') ?>
         <!-- ACA VA EL CONTENIDO -->

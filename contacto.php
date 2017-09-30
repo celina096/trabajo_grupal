@@ -1,4 +1,5 @@
 <?php
+require_once('./funciones.php');
 $enviar_a = "misfinanzasDH@gmail.com";
 $asunto = "Consulta - Mis Finanzas";
 $errores=[];
@@ -48,7 +49,11 @@ if (empty($errores)) {
   </head>
   <body>
     <div class="container">
-        <?php include('header/header.html') ?>
+      <?php if (!isset($_SESSION['login'])){
+        include('./header/header.html');
+      } else {
+        include('header/header.php');
+      }?>
       <div class="contacto">
         <div class="form">
           <div class="backgroundColor">
