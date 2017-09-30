@@ -1,3 +1,6 @@
+<?php
+require_once('./funciones.php');
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,7 +18,11 @@
 
 
 <div class="container">
-  <?php include('header/header.html') ?>
+  <?php if (!isset($_SESSION['login'])){
+    include('./header/header.html');
+  } else {
+    include('header/header.php');
+  }?>
 </div>
 
  <article class="text">

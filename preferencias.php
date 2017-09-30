@@ -13,6 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/gif">
     <link rel="stylesheet" href="css/preferencias.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/hover.css" rel="stylesheet" media="all">
