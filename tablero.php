@@ -4,6 +4,7 @@ require_once('./funciones.php') ?>
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="icon" href="images/favicon.ico" type="image/gif">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/ingresos.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">

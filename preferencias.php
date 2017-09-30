@@ -34,14 +34,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <br>
           <input id="username" type="text" name="username" value="<?php echo $usuario ?>">
           <br>
-          <label for="nombre">Nombre</label>
-          <br>
-          <input id="nombre" type="text" name="name" value="">
-          <br>
-          <label for="apellido">Apellido</label>
-          <br>
-          <input id="apellido" type="text" name="lastName" value="">
-          <br>
           <label for="email">E-mail</label>
           <br>
           <input type="email" name="email" value="">

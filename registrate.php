@@ -52,7 +52,7 @@ if (isset($_SESSION['usuario'])){
 <html>
   <head>
     <meta charset="utf-8">
-
+    <link rel="icon" href="images/favicon.ico" type="image/gif">
     <link rel="stylesheet" href="css/profile_menu.css">
     <link rel="stylesheet" href="css/registrate.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">

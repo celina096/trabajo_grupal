@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/gif">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/preguntas.css">
     <link rel="stylesheet" href="reset.css">
