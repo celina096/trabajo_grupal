@@ -16,7 +16,9 @@
         <li class="hvr-underline-from-center"><a href="faqs.php">FAQs</a></li>
         <li class="hvr-underline-from-center"><a href="perfil.php">Perfil</a></li>
         <a class="user-avatar" href="perfil.php">
-          <img class="user-avatar" src="images/man.svg" alt="ACA VA EL AVATAR DE USUARIO" width="50px">
+          <img class="user-avatar" src="<?php
+          $nombreimagen = buscarAvatar($_SESSION['usuario']);
+           echo 'avatar/'.$nombreimagen; ?>" alt="avatar del usuario" width="50px">
         </a>
         <div class="user-menu ">
           <h3>mimail@gmail.com</h3>

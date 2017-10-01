@@ -161,4 +161,15 @@ function guardarImagen($ruta, $input, $nombreDeseado) {
 }
 
 
+function buscarAvatar($nombre_usuario) {
+  $recurso = existe("usuarios.json");
+      while( $linea = fgets($recurso) ){
+        $usuario = json_decode($linea, true);
+          if ($usuario["usuario"]==$nombre_usuario) {
+            return $usuario['avatar'];
+            }
+          }
+        return false;
+}
+
 ?>

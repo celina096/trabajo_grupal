@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <br>
           <label for="email">E-mail</label>
           <br>
-          <input type="email" name="email" value="">
+          <input type="email" name="email" value="<?php ?>">
           <br>
           <label for="oldpassword">Contraseña Actual</label>
           <br>
@@ -51,7 +51,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
         <div class="avatar-wrap">
           <div class="avatar">
-            <img src="images/man.svg" alt="" width="150px">
+            <img src="<?php
+            $nombreimagen = buscarAvatar($_SESSION['usuario']);
+             echo 'avatar/'.$nombreimagen; ?>" alt="" width="150px">
           </div> <!-- .avatar -->
           <form class="cambiar-avatar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
             <br>

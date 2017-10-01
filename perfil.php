@@ -28,7 +28,9 @@ $usuario = $_SESSION['usuario'];
         <h1>MI PERFIL</h1>
         <div class="miPerfil">
           <div class='perfil'>
-            <img src="images/man.svg" alt="" width="100px">
+            <img src="<?php
+            $nombreimagen = buscarAvatar($_SESSION['usuario']);
+             echo 'avatar/'.$nombreimagen; ?>" alt="" width="100px">
             <div class="datosPerfil">
               <h3>Nombre de Usuario</h3>
               <p><?php echo $usuario ?></p>
