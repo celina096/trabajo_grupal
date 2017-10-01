@@ -86,7 +86,7 @@ if (isset($_SESSION['usuario'])){
 
             <p class= 'registrate'>REGISTRATE</p>
 
-          <form class="container" action="registrate.php" method="post" enctype="multipart/form-data" >
+          <form class="container" action="perfil.php" method="post" enctype="multipart/form-data" >
 
               <label for="usuario">Nombre de Usuario</label>
               <br>
