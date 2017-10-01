@@ -96,6 +96,17 @@ $recurso = existe($bd);
       return false;
 }
 
+function buscar_email($email_buscado,$bd){
+$recurso = existe($bd);
+    while( $linea = fgets($recurso) ){
+      $usuario = json_decode($linea, true);
+        if ($usuario["email"]==$email_buscado) {
+
+          return $usuario;
+          }
+        }
+      return false;
+}
 
 
 
@@ -106,6 +117,22 @@ $recurso = existe("usuarios.json");
       $usuario = json_decode($linea, true);
         if ($usuario["usuario"]==$buscar_usuario && password_verify($clave , $usuario["clave"])) {
           return $usuario;
+          }
+        }
+      return false;
+}
+
+// MENSAJE DE RECUPERACION
+$asunto_recupera = "Recupera tu contraseña";
+$mensaje_recupera = "Su contraseña de recuperación es: ";
+
+
+function buscar_clave($buscar_mail){
+$recurso = existe("usuarios.json");
+    while( $linea = fgets($recurso) ){
+      $usuario = json_decode($linea, true);
+        if ($usuario["email"]==$buscar_mail) {
+          return $usuario['clave2'];
           }
         }
       return false;
