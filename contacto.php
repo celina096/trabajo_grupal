@@ -1,5 +1,9 @@
 <?php
 require_once('./funciones.php');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
+
 $enviar_a = "misfinanzasDH@gmail.com";
 $asunto = "Consulta - Mis Finanzas";
 $errores=[];
@@ -20,16 +24,41 @@ if($_POST) {
   }
   $name = $_POST['name'];
   $from = $_POST['email'];
+  if (empty($errores)) {
+    $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+    try {
+      //Server settings
+      $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+      $mail->isSMTP();                                      // Set mailer to use SMTP
+      $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                               // Enable SMTP authentication
+      $mail->Username = "misfinanzasDH@gmail.com";                 // SMTP username
+      $mail->Password = 'tiburones2017';                           // SMTP password
+      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 587;                                    // TCP port to connect to
+
+      //Recipients
+      $mail->setFrom($_POST['email'], $_POST['email']);
+      $mail->addAddress("misfinanzasDH@gmail.com", 'Mis Finanzas');     // Add a recipient             // Name is optional
+      $mail->addReplyTo($_POST['email'], 'Information');
+
+
+      //Content
+      $mail->isHTML(true);                                  // Set email format to HTML
+      $mail->Subject = $asunto;
+      $mail->Body    = $mensaje;
+      $mail->AltBody = $mensaje;
+
+      $mail->send();
+      echo 'Message has been sent';
+    } catch (Exception $e) {
+      echo 'Message could not be sent.';
+      echo 'Mailer Error: ' . $mail->ErrorInfo;
+    }
+  }
 }
 
-if (empty($errores)) {
 
-  $mensaje_enviar = "De $name \n";
-  $mensaje_enviar = "Correo: $from \n";
-  $mensaje_enviar = 'Mensaje: '.$mensaje;
-
-  mail($enviar_a, $asunto, $mensaje_enviar);
-}
 
 
 
@@ -83,7 +112,6 @@ if (empty($errores)) {
             }
            ?>
           </div> <!-- .backgroundColor -->
-
         </div> <!-- .form -->
     </div> <!-- .container -->
       <?php include('footer/footer.html') ?>
