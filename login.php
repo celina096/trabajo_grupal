@@ -59,7 +59,7 @@ if (isset($_POST['enviar'])) {
 
             <p class='registrate'> INICIA SESIÓN </p>
 
-          <form class="container" action="perfil.php" method="post">
+          <form class="container" action="index.php" method="post">
 
               <label for="usuario">Nombre de Usuario</label>
               <br>
