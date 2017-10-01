@@ -188,7 +188,21 @@ div .boton{
   border: 1px solid #a8996e;
 }
 
+.grafico img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
 
+.parrafo {
+	text-align: center;
+	color: #ffffff;
+	letter-spacing: 4px;
+}
+
+div .parrafo_grafico {
+	background-color: #637a97;
+}
 
 input[type=text], textarea {
   -webkit-transition: all 0.30s ease-in-out;

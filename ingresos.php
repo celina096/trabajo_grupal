@@ -198,15 +198,14 @@ if (isset($_POST['enviar'])) {
                   </ol>
                 </div>
              </div>
-$periodo= array(
-
-
-
-
            </section>
-           <div class="grafico" id="grafico">
-             <p class="encabezado">GRAFICO</p>
-             <img src="images/ingresos.png" alt="grafico" width="60%">
+
+           <div class="grafico" >
+             <div class="parrafo_grafico">
+            <p  class="parrafo" class="encabezado">GRAFICO</p>
+             </div>
+             
+             <img  class= "imagen" src="images/ingresos.png" alt="grafico" width="60%" text-align= "center">
            </div>
 
          </div> <!-- .parte2 -->
