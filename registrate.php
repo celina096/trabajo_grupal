@@ -34,7 +34,6 @@ if (isset($_SESSION['usuario'])){
         }
 
         if (count($errores)==0){
-          guardar($_POST,"usuarios.json");
           if(!empty($_FILES['avatar']['name'])){
               print_r($_FILES);
               $ruta=__DIR__.'/avatar/';
@@ -46,12 +45,11 @@ if (isset($_SESSION['usuario'])){
               }
               $_POST['avatar'] = (isset($archivo['ruta']) ? $archivo['ruta'] : null);
             }
-            if (count($errores)==0){
-              session_start();
-              $_SESSION['login']="ok";
-              $_SESSION['usuario']=$linea['usuario'];
-              header('Location: ingresos.php');
-            }
+            guardar($_POST,"usuarios.json");
+            session_start();
+            $_SESSION['login']="ok";
+            $_SESSION['usuario']=$_POST['usuario'];
+            header('Location: perfil.php');
         }
     }
 }
