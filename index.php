@@ -80,7 +80,7 @@ if (isset($_POST['enviar'])) {
             <br>
             <button type="submit" name="enviar" value="">Iniciar</button>
             <br>
-            <a href="#">¿Has olvidado tu contraseña?</a>
+            <a href="recupera.php">¿Has olvidado tu contraseña?</a>
             <br>
             <a href="registrate.php">¿No estás registrado? Crea tu cuenta.</a>
           </form>

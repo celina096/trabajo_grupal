@@ -138,4 +138,27 @@ $recurso = existe("usuarios.json");
       return false;
 }
 
+function crearDirectorio($ruta){
+    if(!file_exists($ruta)){
+      mkdir($ruta, 0777);
+    }
+}
+
+function guardarImagen($ruta, $input, $nombreDeseado) {
+  if ($_FILES[$input]["error"] == UPLOAD_ERR_OK)
+	{
+		$nombre=$_FILES[$input]["name"];
+		$archivo=$_FILES[$input]["tmp_name"];
+
+		$ext = pathinfo($nombre, PATHINFO_EXTENSION);
+		$miArchivo = $ruta;
+		$miArchivo = $miArchivo . $nombreDeseado . '.' . $ext;
+		move_uploaded_file($archivo, $miArchivo);
+    return ['ruta' => $nombreDeseado . '.' . $ext ];
+	}else{
+    return ['error' => $_FILES[$input]['error']];
+  }
+}
+
+
 ?>

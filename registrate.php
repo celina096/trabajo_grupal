@@ -35,23 +35,24 @@ if (isset($_SESSION['usuario'])){
 
         if (count($errores)==0){
           guardar($_POST,"usuarios.json");
-
-          header('Location: index.php');
+          if(!empty($_FILES['avatar']['name'])){
+              print_r($_FILES);
+              $ruta=__DIR__.'/avatar/';
+              crearDirectorio($ruta);
+              $archivo = guardarImagen($ruta, 'avatar', md5($_FILES['avatar']['name'].time()) );
+              //print_r($archivo);
+              if(isset($archivo['error'])){
+                $respuesta['avatar'] = $archivo['error'];
+              }
+              $_POST['avatar'] = (isset($archivo['ruta']) ? $archivo['ruta'] : null);
+            }
+            if (count($errores)==0){
+              session_start();
+              $_SESSION['login']="ok";
+              $_SESSION['usuario']=$linea['usuario'];
+              header('Location: ingresos.php');
+            }
         }
-
-
-        if(!empty($_FILES['avatar']['name'])){
-        print_r($_FILES);
-       $ruta=__DIR__.'/avatar/';
-       crearDirectorio($ruta);
-       $archivo = guardarImagen($ruta, 'avatar', md5($_FILES['avatar']['name'].time()) );
-
-       if(isset($archivo['error'])){
-      $respuesta['avatar'] = $archivo['error'];
-      }
-      $_POST['avatar'] = (isset($archivo['ruta']) ? $archivo['ruta'] : null);
-
-         }
     }
 }
 

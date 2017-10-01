@@ -32,8 +32,8 @@ if(isset($exito)) {
     $mail->Port = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom("misfinanzasDH@gmail.com", $_POST['email']);
-    $mail->addAddress($_POST['email'], 'Mis Finanzas');     // Add a recipient             // Name is optional
+    $mail->setFrom("misfinanzasDH@gmail.com", 'Mis Finanzas');
+    $mail->addAddress($_POST['email'], $_POST['email']);     // Add a recipient             // Name is optional
     $mail->addReplyTo("misfinanzasDH@gmail.com", 'Information');
 
 
