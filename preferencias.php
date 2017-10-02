@@ -2,10 +2,13 @@
 require_once('./funciones.php');
 
 $usuario = $_SESSION['usuario'];
+$datos = buscar_usuario($_SESSION['usuario'], 'usuarios.json');
+
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
   $newUsername = $_POST['username'];
-  reemplazar($_SESSION['usuario'], $_POST['username']);
+  reemplazar($usuario, $newUsername);
+  $_SESSION['usuario'] = $newUsername;
   header("Location: preferencias.php");
 }
  ?>
@@ -37,7 +40,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <br>
           <label for="email">E-mail</label>
           <br>
-          <input type="email" name="email" value="<?php ?>">
+          <input type="email" name="email" value="<?php echo $datos['email'] ?>">
           <br>
           <label for="oldpassword">Contraseña Actual</label>
           <br>

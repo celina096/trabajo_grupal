@@ -83,10 +83,10 @@ if (isset($_POST['enviar'])) {
 
             <br>
             <br>
-            <a  href="#">¿Has olvidado tu contraseña?</a>
+            <a  href="recupera.php">¿Has olvidado tu contraseña?</a>
             <br>
             <br>
-            <a  href="#">¿No estás registrado? Crea tu cuenta.</a>
+            <a  href="registrate.php">¿No estás registrado? Crea tu cuenta.</a>
 
           </form>
         </div> <!-- .backgroundColor -->

@@ -44,7 +44,6 @@ function reemplazar($oldData, $newData) {
   $handler = file_get_contents('usuarios.json');
   $handler = str_replace("$oldData", "$newData", $handler);
   file_put_contents('usuarios.json', $handler);
-  $_SESSION['usuario'] = $newData;
 }
 
 function sumar($usu){

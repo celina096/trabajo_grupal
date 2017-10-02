@@ -1,12 +1,2 @@
-{"usuario":"admin","clave":"$2y$10$VAX8BnRMkwdfNbdx01BYx.qlE27cNSzEsz3SKxZVTcpomLoa.nrra","clave2":"1","enviar":""}
-{"usuario":"admin1","clave":"$2y$10$iCXGpAdKHNe25heNVqe.k.EN.OKzrfa0c0nEUeN.YcKnc7cwv9koG","clave2":"1","enviar":""}
-{"usuario":"admin2","clave":"$2y$10$xM76XVbHhLIsBQq6J1YIr.PsoBG5rco4yjkO2tuGSMX5T1svRAOve","clave2":"2","enviar":""}
-{"usuario":"admin4","clave":"$2y$10$Bxf8y4wHtTJ6eimtqMD3s.PsL9PD.to8ziAUtzQ1dbyS7uT36swY2","clave2":"4","enviar":""}
-{"usuario":"hernan","clave":"$2y$10$ie9\/y65NTmNure0P.L9nLegGZXdI2o8VuqdTaP14SiNoMwMokAMim","clave2":"123","enviar":""}
-{"usuario":"vane","clave":"$2y$10$bfZYyee3xN3SB.psFiVtWuS\/cPv.HgOHU4zmXX1IphtmkKCQg.1z6","clave2":"1","enviar":""}
-{"usuario":"celina","clave":"$2y$10$xzlWcP4YRdH\/fZSXc6n4JODwvvQJgYMeAnb5AwnqKbiwdwAH\/vz7q","clave2":"1","enviar":""}
-{"usuario":"mariana","email":"maru@gmail.com","clave":"$2y$10$HCJcQG1Wb5OMY0E6WS.aleWzej1ZPZ3\/8sNQ9PrEDCUEImf0G83OC","clave2":"lala","enviar":""}
-
-{"usuario":"ariana","email":"ariana@gmail.com","clave":"$2y$10$iJniCVXEKciOjCUgTajIuOLVCa6xRr5HQIlmhYjd44mzWTcRIykVu","clave2":"123","recordarme":"yes","enviar":""}
-{"usuario":"felipe","email":"misfinanzasDH@gmail.com","clave":"$2y$10$9BdjfBC2bYROE\/A.0at6eOXZLX5v\/505ROqff22jBYpQv.dFVVadm","clave2":"123","recordarme":"yes","enviar":""}
-{"usuario":"homero1","email":"celina_tarn@hotmail.com","clave":"$2y$10$frFwfbPYB4LNWGj1ebsxwOAaAYCEhMjQxOQ2YmB6OgNNvdsph8Z\/a","clave2":"123","recordarme":"yes","enviar":""}
+{"usuario":"ompa loompa","email":"ompa loompa@gmail.com","clave":"$2y$10$FBJprMfk6WElUfQGOd4mB.jx5992BQizah0tXOHOLg943Tf3O0Z92","clave2":"123","recordarme":"yes","enviar":"","avatar":"58cb7ac74cf82ac779737f4f11e5bc44.png"}
+{"usuario":"celina","email":"asdas@gmail.com","clave":"$2y$10$EUd20Ba9OyX358SaJdSWA.kXqLmdSd.T6OXouaFqplfSgoOcDINx2","clave2":"123","enviar":"","avatar":"4f6d1fd8451d6c62b34e170416720262.png"}

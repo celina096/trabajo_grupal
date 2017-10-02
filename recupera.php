@@ -3,6 +3,9 @@ require_once('./funciones.php');
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
+if (isset($_SESSION['login'])){
+  header('Location: perfil.php');
+}
 $errores = [];
 $exito ='';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

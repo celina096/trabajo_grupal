@@ -9,7 +9,7 @@
 
     <input class="menu-btn" type="checkbox" id="menu-btn" />
 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <a class="nombrelogo" href="perfil.php"><h1><img class="logo" src="images/logonuevo.png" alt="" width="50px">Mis Finanzas</h1></a>
+    <a class="nombrelogo" href="perfil.php"><h1><img class="logo" src="images/logonuevo.png" alt="" width="50vh">Mis Finanzas</h1></a>
     <nav class="menu">
       <ul>
         <li class="hvr-underline-from-center"><a href="contacto.php">Contacto</a></li>

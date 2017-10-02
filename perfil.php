@@ -5,7 +5,7 @@ if (!isset($_SESSION['login'])){
 }
 
 $usuario = $_SESSION['usuario'];
-
+$datos = buscar_usuario($usuario, 'usuarios.json');
  ?>
 
 <!DOCTYPE html>
@@ -36,10 +36,10 @@ $usuario = $_SESSION['usuario'];
               <p><?php echo $usuario ?></p>
               <br>
               <h3>E-mail</h3>
-              <p>'USER_EMAIL'</p>
+              <p><?php echo $datos['email']?></p>
             </div> <!-- .datosPerfil -->
-            <form class="" action="preferencias.php" method="get">
-              <button class="hvr-pop" type="submit" name="button"> Editar</button>
+            <form class="" action="preferencias.php" >
+              <button class="hvr-pop" type="submit"> Editar</button>
             </form>
         </div> <!-- .perfil -->
       </div> <!-- .miPerfil -->
