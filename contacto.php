@@ -89,19 +89,13 @@ if($_POST) {
             <h2>Envianos tus inquietudes</h2>
             <form class="contacto" action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
               <label for="name">Tu Nombre</label>
-              <input id="name" type="text" name="name" value="<?php if (empty($errores['name'])) {
-                echo $name;
-              } ?>">
+              <input id="name" type="text" name="name" value="">
               <br>
               <label for="email">Tu E-mail</label>
-              <input id="email" type="text" name="email" value="<?php if (empty($errores['email'])) {
-                echo $from;
-              } ?>">
+              <input id="email" type="text" name="email" value="">
               <br>
             <label class="comment" for="comment">Comentario</label>
-            <textarea name="comment" rows="8" cols="80"><?php if (empty($errores['comment'])) {
-              echo $mensaje;
-            } ?></textarea>
+            <textarea name="comment" rows="8" cols="80"></textarea>
             <button type="submit" name="button">Enviar</button>
           </form>
           <?php
