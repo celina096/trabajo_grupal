@@ -16,3 +16,5 @@ JOIN chequera on chequera_id = idchequera
 JOIN cuentas_bancaria ON cuenta_bancaria_id = idcuentas_bancaria
 JOIN bancos ON banco_id = bancos.idbancos
 JOIN condicion_cheque ON condicion_id = idcondicion_cheque
+
+--MUESTRO LOS REGISTROS DE GASTOS
