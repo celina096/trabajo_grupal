@@ -199,31 +199,30 @@ h1 {
     display: block;
     position: absolute;
     top: 6vh;
-    float: right;
-    width: 40vh;
     text-align: center;
-    height: 40vh;
-    background-color: rgba(38, 38, 38, 0.79);
+    background-color: #111e2c;
     right: 0;
   }
-  .menu-btn:checked ~ ul {
-        height: 800px;
-  }
+
 
   .menu-btn:checked ~ .menu-movil li{
     display: block;
     float: none;
     margin: 0;
     padding-top: 5%;
-    font-size: 1.5em;
+    font-size: 1em;
+    border-bottom: 1px solid #5c6a7a;
   }
 
-  .menu-movil ul:first-child {
-    margin-top: 10%;
-  }
+.menu-movil h3{
+  color: #c2c9d1;
+  font-size: 1.2em;
+  padding: 12px 10px;
+  border-bottom: 1px solid #5c6a7a;
+}
 
   nav.menu-movil a {
-    color: white;
+    color: #9ca7b4;
   }
   .menu-btn:checked ~ .menu-icon .navicon {
     background: transparent;

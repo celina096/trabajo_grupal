@@ -22,7 +22,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="css/hover.css" rel="stylesheet" media="all">
     <link href="css/animate.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Oswald|Roboto+Slab" rel="stylesheet">
-
     <title>Mis Preferencias</title>
   </head>
   <body>
@@ -66,7 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <br>
             <button class="boton" type="submit" name="changeAvatar">Subir Avatar</button>
           </form>
-        </div> <!-- -avatar-wrap -->
+        </div> <!-- .avatar-wrap -->
       </div> <!-- .wrap -->
       </div> <!-- .contenido -->
     </div> <!-- .container -->

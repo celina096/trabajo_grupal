@@ -124,3 +124,27 @@ div.datosPerfil {
 }
 
  /* FIN SECCION PERFIL */
+ @media (max-width:850px) {
+	 div.miPerfil {
+		 width: inherit;
+	 }
+	 div.perfil {
+		 width: 80vw;
+	 }
+	 .contenido {
+		 height: 70vh;
+	 }
+ }
+ @media (max-width: 500px) {
+	 div.perfil {
+		 width: 100vw;
+	 }
+	 .perfil button {
+	 	border-radius: 10px;
+	 		padding: 1vh 1vh;
+	 		font-size: 1.3em;
+	 		text-align: center;
+	 		font-family: 'Roboto Slab';
+	 }
+
+ }
