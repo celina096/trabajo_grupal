@@ -119,3 +119,49 @@ h2 {
 	color: white;
 	margin-bottom: 20px;
 }
+
+@media (max-width:1179px) {
+	form.preferencias {
+	  margin-top: 1%;
+		padding-left: 5vw;
+	  margin-right: 5vw;
+	}
+}
+
+@media (max-width:900px) {
+	form.preferencias {
+	  margin-top: 1%;
+		padding-left: 1vw;
+	  margin-right: 1vw;
+	}
+}
+
+@media (max-width:850px) {
+	form.preferencias {
+		text-align: center;
+		margin-top: 1%;
+		padding-left: 5vw;
+		margin-right: 5vw;
+	}
+	form input {
+		width: 200px;
+	}
+
+	.avatar {
+		width: 200px;
+	}
+}
+
+@media (max-width:600px)  {
+	div.wrap {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	div.avatar-wrap {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	align-items: center;
+	}
+}
