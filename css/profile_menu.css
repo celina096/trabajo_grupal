@@ -3,15 +3,12 @@
 	width: 100%;
 	overflow: hidden;
 }
-.contenido h1 {
-	font-size: 3em;
-	color: #ebe8fc;
-}
+
 div.leftMenu {
 	text-align: justify;
 	background-color: #343d46;
 	width: 25%;
-	height: 100vh;
+	height: 92vh;
 	float:left;
 }
 
@@ -69,5 +66,5 @@ div.contenedor1 {
 		display: none;
 	}
 
-	
+
 }

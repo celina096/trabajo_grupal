@@ -29,7 +29,7 @@ if (isset($_POST['enviar'])) {
       session_start();
       $_SESSION['login']="ok";
       $_SESSION['usuario']=$linea['usuario'];
-      header('Location: ingresos.php');
+      header('Location: perfil.php');
     }
 
 }

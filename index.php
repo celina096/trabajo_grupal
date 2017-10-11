@@ -29,11 +29,13 @@ if (isset($_POST['enviar'])) {
       session_start();
       $_SESSION['login']="ok";
       $_SESSION['usuario']=$linea['usuario'];
-      header('Location: ingresos.php');
+      header('Location: perfil.php');
     }
 
 }
+
  ?>
+
 
 
 
@@ -42,7 +44,8 @@ if (isset($_POST['enviar'])) {
   <head>
     <meta charset="utf-8">
     <link rel="icon" href="images/favicon.ico" type="image/gif">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/hover.css" rel="stylesheet" media="all">
     <link href="css/animate.css" rel="stylesheet">
@@ -53,10 +56,12 @@ if (isset($_POST['enviar'])) {
     <div class="container">
       <div class="background1">
       <?php include('header/header.html');?>
+      <video src="images/intro.mp4" loop autoplay poster="images/background--1.jpg">
+      </video>
       </div>
       <section class="section1">
         <div>
-          <h2 class="bounceInLeft animated">Administra tus finanzas</h2>
+          <h2 class="bounceInLeft animated">ADMINISTRA TUS FINANZAS.</h2>
           <h3><spam class="animation1 bounceInLeft animated">Fácil. </spam><spam class="bounceInLeft animated animation2">Rápido.</spam><spam class="bounceInLeft animated animation3"> Gratis.</spam></h3>
         </div>
         <div class="formularioIndex fadeInDown animated">

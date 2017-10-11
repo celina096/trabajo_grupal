@@ -22,7 +22,7 @@ $datos = buscar_usuario($usuario, 'usuarios.json');
   </head>
   <body>
     <div class="container">
-      <?php include('header/header.php') ?>
+      <?php include('header/header_perfil.php') ?>
       <div class="contenido">
         <?php include('./profile_menu/profile_menu.php') ?>
         <h1>MI PERFIL</h1>
