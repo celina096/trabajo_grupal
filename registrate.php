@@ -89,8 +89,8 @@ if (isset($_SESSION['usuario'])){
               <label for="usuario">Nombre de Usuario</label>
               <br>
               <input id="usuario"  placeholder="Escriba su usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
-              <?php //if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
-              <?php //if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?>
+              <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
+              <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?>
               <label class="control-label" for="email"> E-mail </label><br/>
               <input type="email" class="form-control" id="email" name="email" placeholder=" Ingrese su Email" value="<?php echo (isset($_POST['email'])) ? $_POST['email']: '' ?>">
               <p class="text-danger">
