@@ -3,8 +3,15 @@
 require_once('funciones.php');
 require_once('classes/User.php');
 
-$db = new \App\Conexion();
+if($_POST){
 
+$user = new \App\User();
+
+$user->registrate( $_POST );
+
+$errores = $user->getErrores();
+
+}
 
 if (isset($_SESSION['usuario'])){
   header('Location: ingresos.php');

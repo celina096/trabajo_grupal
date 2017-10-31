@@ -18,9 +18,12 @@ trait Validate
     return ($clave1==$clave2);
   }
 
+  public function validarUsername() {
+    // empy | inyectart | duplicado
+  }
 
   public function validarImagen(){
-
+//tarea
   }
 
   public function getErrores(){
