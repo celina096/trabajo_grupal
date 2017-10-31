@@ -1,6 +1,8 @@
 <?php
 require_once 'funciones.php';
-
+require_once('classes/Conexion.php');
+$db = new Conexion();
+var_dump($db);
 if (isset($_SESSION['login'])){
   header('Location: perfil.php');
 }

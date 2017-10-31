@@ -1,5 +1,10 @@
 <?php
+
 require_once('funciones.php');
+require_once('classes/User.php');
+
+$db = new \App\Conexion();
+
 
 if (isset($_SESSION['usuario'])){
   header('Location: ingresos.php');
