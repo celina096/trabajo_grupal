@@ -1,7 +1,7 @@
 <?php
 
 require_once('funciones.php');
-require_once('classes/User.php');
+//require_once('classes/User.php');
 
 if($_POST){
 
@@ -13,58 +13,58 @@ $errores = $user->getErrores();
 
 }
 
-if (isset($_SESSION['usuario'])){
-  header('Location: ingresos.php');
-
-}else {
-
-    $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
-    $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
-    $clave2= isset ($_POST['clave2'])? $_POST['clave2'] : null;
-
-    $errores= array();
-
-    if (isset($_POST['enviar'])) {
-
-        if (!requerido($usuario)){
-          $errores['usuario']="el campo USUARIO es requerido";
-        }
-        if (!requerido($clave)){
-          $errores['clave']="el campo PASSWORD es requerido";
-        }
-        if (!requerido($clave2)){
-          $errores['clave2']="el campo REPETIR PASSWORD es requerido";
-        }
-        if ($clave !==$clave2) {
-          $errores['claves_distintas']="Las contraseñas no son iguales";
-        }
-        if (buscar_usuario($usuario,"usuarios.json")) {
-          $errores['usuario_existe']="El usuario ya existe en la Base de datos!!";
-        }
-        if (empty($_FILES['avatar']['name'])) {
-          $respuesta['avatar'] = "Debe subir una imagen";
-        }
-
-        if (count($errores)==0){
-          if(!empty($_FILES['avatar']['name'])){
-              print_r($_FILES);
-              $ruta=__DIR__.'/avatar/';
-              crearDirectorio($ruta);
-              $archivo = guardarImagen($ruta, 'avatar', md5($_FILES['avatar']['name'].time()) );
-              //print_r($archivo);
-              if(isset($archivo['error'])){
-                $respuesta['avatar'] = $archivo['error'];
-              }
-              $_POST['avatar'] = (isset($archivo['ruta']) ? $archivo['ruta'] : null);
-            }
-            guardar($_POST,"usuarios.json");
-            session_start();
-            $_SESSION['login']="ok";
-            $_SESSION['usuario']=$_POST['usuario'];
-            header('Location: perfil.php');
-        }
-    }
-}
+// if (isset($_SESSION['usuario'])){
+//   header('Location: ingresos.php');
+//
+// }else {
+//
+//     $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
+//     $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
+//     $clave2= isset ($_POST['clave2'])? $_POST['clave2'] : null;
+//
+//     $errores= array();
+//
+//     if (isset($_POST['enviar'])) {
+//
+//         if (!requerido($usuario)){
+//           $errores['usuario']="el campo USUARIO es requerido";
+//         }
+//         if (!requerido($clave)){
+//           $errores['clave']="el campo PASSWORD es requerido";
+//         }
+//         if (!requerido($clave2)){
+//           $errores['clave2']="el campo REPETIR PASSWORD es requerido";
+//         }
+//         if ($clave !==$clave2) {
+//           $errores['claves_distintas']="Las contraseñas no son iguales";
+//         }
+//         if (buscar_usuario($usuario,"usuarios.json")) {
+//           $errores['usuario_existe']="El usuario ya existe en la Base de datos!!";
+//         }
+//         if (empty($_FILES['avatar']['name'])) {
+//           $respuesta['avatar'] = "Debe subir una imagen";
+//         }
+//
+//         if (count($errores)==0){
+//           if(!empty($_FILES['avatar']['name'])){
+//               print_r($_FILES);
+//               $ruta=__DIR__.'/avatar/';
+//               crearDirectorio($ruta);
+//               $archivo = guardarImagen($ruta, 'avatar', md5($_FILES['avatar']['name'].time()) );
+//               //print_r($archivo);
+//               if(isset($archivo['error'])){
+//                 $respuesta['avatar'] = $archivo['error'];
+//               }
+//               $_POST['avatar'] = (isset($archivo['ruta']) ? $archivo['ruta'] : null);
+//             }
+//             guardar($_POST,"usuarios.json");
+//             session_start();
+//             $_SESSION['login']="ok";
+//             $_SESSION['usuario']=$_POST['usuario'];
+//             header('Location: perfil.php');
+//         }
+//     }
+// }
 
 
 

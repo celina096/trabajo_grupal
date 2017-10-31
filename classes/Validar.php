@@ -18,12 +18,19 @@ trait Validate
     return ($clave1==$clave2);
   }
 
-  public function validarUsername() {
-    // empy | inyectart | duplicado
+  public function validarUsername($username) {
+    return (empty($username) && !filter_var($username, FILTER_SANITIZE_STRING))
   }
 
-  public function validarImagen(){
-//tarea
+  public function validarImagen( $avatar ){
+    if(isset($avatar)) {
+      $file = $avatar['photo']['tmp_name'];
+    $file_size = $avatar['photo']['size'];
+    if (getimagesize($file_size )> 5242880) {
+      return true;
+    } else {
+      return true;
+    }
   }
 
   public function getErrores(){

@@ -38,7 +38,27 @@ class User extends Conexion{
   public function getPassword(){
   return $this->password;
 }
+public function buscarUsuario( $username ) {
+  $Sql = "select * from users where username = :username";
 
+$stmt = $this->getConexion()->prepare( $Sql );
+$stmt->bindParam(':username', $username);
+$stmt->execute();
+
+$resultados = $stmt->fetch( \PDO::FETCH_ASSOC );
+return $resultados;
+}
+
+public function buscarUsuarioEmail( $email ){
+  $Sql = "select * from users where email = :email";
+
+  $stmt = $this->getConexion()->prepare( $Sql );
+  $stmt->bindParam(':email', $email);
+  $stmt->execute();
+
+  $resultados = $stmt->fetch( \PDO::FETCH_ASSOC );
+  return $resultados;
+}
 
   public function register($valores){
     if( !$this->validarEmail( $valores['email'] ) ){
@@ -80,6 +100,6 @@ class User extends Conexion{
   // public function auth_user (){
   //   echo $this->username. "ha sido autenticado";
   // }
-
+//tarea json
 
 }
