@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `finanzas` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `finanzas`;
 -- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
 --
 -- Host: localhost    Database: finanzas
@@ -33,16 +35,6 @@ CREATE TABLE `bancos` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `bancos`
---
-
-LOCK TABLES `bancos` WRITE;
-/*!40000 ALTER TABLE `bancos` DISABLE KEYS */;
-INSERT INTO `bancos` VALUES (1,'SANTANDER RIO',1),(2,'HSBC',1),(3,'CIUDAD',1),(4,'PATAGONIA',1),(5,'FRANCES',1);
-/*!40000 ALTER TABLE `bancos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cheque`
 --
 
@@ -73,16 +65,6 @@ CREATE TABLE `cheque` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cheque`
---
-
-LOCK TABLES `cheque` WRITE;
-/*!40000 ALTER TABLE `cheque` DISABLE KEYS */;
-INSERT INTO `cheque` VALUES (1,51,1501,'2017-09-27','2017-10-13','Destinatario del cheque','1',1,1,2),(2,52,9999,'2017-09-30','2017-10-15','Provend SRL','1',1,1,1),(5,53,2500,'2017-09-30','2017-10-15','consumidor final','1',1,4,3),(6,54,2500,'2017-09-30','2017-10-15','consumidor final','1',1,3,3),(8,55,2500,'2017-09-30','2017-10-15','consumidor final','1',1,7,3),(9,58,7500,'2017-09-30','2017-10-15','consumidor final','1',1,6,2),(10,59,7700,'2017-09-30','2017-10-15','HERNAN','1',1,5,2),(11,60,8500,'2017-09-30','2017-10-15','HERNAN','1',1,5,2),(12,61,10580,'2017-09-30','2017-10-15','HERNAN','1',1,6,2);
-/*!40000 ALTER TABLE `cheque` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `chequera`
 --
 
@@ -101,16 +83,6 @@ CREATE TABLE `chequera` (
   CONSTRAINT `cuenta_bancaria_id` FOREIGN KEY (`cuenta_bancaria_id`) REFERENCES `cuentas_bancaria` (`idcuentas_bancaria`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `chequera`
---
-
-LOCK TABLES `chequera` WRITE;
-/*!40000 ALTER TABLE `chequera` DISABLE KEYS */;
-INSERT INTO `chequera` VALUES (1,1,25,51,75,1),(4,1,25,1,50,2),(5,1,25,1,50,3),(6,1,25,1,50,5),(7,1,25,101,150,7);
-/*!40000 ALTER TABLE `chequera` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `clientes`
@@ -139,15 +111,6 @@ CREATE TABLE `clientes` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `clientes`
---
-
-LOCK TABLES `clientes` WRITE;
-/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cobrador`
 --
 
@@ -162,15 +125,6 @@ CREATE TABLE `cobrador` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cobrador`
---
-
-LOCK TABLES `cobrador` WRITE;
-/*!40000 ALTER TABLE `cobrador` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cobrador` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `condicion_cheque`
 --
 
@@ -183,16 +137,6 @@ CREATE TABLE `condicion_cheque` (
   PRIMARY KEY (`idcondicion_cheque`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `condicion_cheque`
---
-
-LOCK TABLES `condicion_cheque` WRITE;
-/*!40000 ALTER TABLE `condicion_cheque` DISABLE KEYS */;
-INSERT INTO `condicion_cheque` VALUES (1,'ABIERTO'),(2,'CRUZADO'),(3,'NO A LA ORDEN');
-/*!40000 ALTER TABLE `condicion_cheque` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `contacto`
@@ -213,15 +157,6 @@ CREATE TABLE `contacto` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `contacto`
---
-
-LOCK TABLES `contacto` WRITE;
-/*!40000 ALTER TABLE `contacto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `contacto` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `cuentas_bancaria`
 --
 
@@ -237,18 +172,8 @@ CREATE TABLE `cuentas_bancaria` (
   UNIQUE KEY `num_cuenta_UNIQUE` (`num_cuenta`),
   KEY `banco_id_idx` (`banco_id`),
   CONSTRAINT `banco_id` FOREIGN KEY (`banco_id`) REFERENCES `bancos` (`idbancos`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cuentas_bancaria`
---
-
-LOCK TABLES `cuentas_bancaria` WRITE;
-/*!40000 ALTER TABLE `cuentas_bancaria` DISABLE KEYS */;
-INSERT INTO `cuentas_bancaria` VALUES (1,'362629/0',1),(2,'165189',1),(3,'15687',2),(4,'6879',2),(5,'cds',3),(6,'cegt',3),(7,'cuenta 1',4),(8,'cuenta 2',4);
-/*!40000 ALTER TABLE `cuentas_bancaria` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `cuotas`
@@ -263,15 +188,6 @@ CREATE TABLE `cuotas` (
   PRIMARY KEY (`idcuotas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `cuotas`
---
-
-LOCK TABLES `cuotas` WRITE;
-/*!40000 ALTER TABLE `cuotas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cuotas` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `gasto`
@@ -289,15 +205,6 @@ CREATE TABLE `gasto` (
   CONSTRAINT `medio_pago_id` FOREIGN KEY (`medio_pago_id`) REFERENCES `medio_de_pago` (`idmedio_de_pago`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `gasto`
---
-
-LOCK TABLES `gasto` WRITE;
-/*!40000 ALTER TABLE `gasto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `gasto` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `medio_de_pago`
@@ -324,15 +231,6 @@ CREATE TABLE `medio_de_pago` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `medio_de_pago`
---
-
-LOCK TABLES `medio_de_pago` WRITE;
-/*!40000 ALTER TABLE `medio_de_pago` DISABLE KEYS */;
-/*!40000 ALTER TABLE `medio_de_pago` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `movimientos_bancarios`
 --
 
@@ -347,16 +245,6 @@ CREATE TABLE `movimientos_bancarios` (
   UNIQUE KEY `movimientos_nombre_UNIQUE` (`movimientos_nombre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `movimientos_bancarios`
---
-
-LOCK TABLES `movimientos_bancarios` WRITE;
-/*!40000 ALTER TABLE `movimientos_bancarios` DISABLE KEYS */;
-INSERT INTO `movimientos_bancarios` VALUES (1,'CHEQUE'),(7,'COMISIONES'),(2,'EXTRACCION A CAJA'),(8,'GASTOS BANCARIOS'),(5,'IMP. CRED.'),(4,'IMP. DEB.'),(6,'SIRCREB'),(3,'TRANSFERENCIA RECIBIDA'),(9,'TRANSFERENCIAS A TERCEROS');
-/*!40000 ALTER TABLE `movimientos_bancarios` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `registro_bancario`
@@ -380,15 +268,6 @@ CREATE TABLE `registro_bancario` (
   CONSTRAINT `movimientobancario_id` FOREIGN KEY (`movimiento_bancario_id`) REFERENCES `movimientos_bancarios` (`idmovimientos_bancarios`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `registro_bancario`
---
-
-LOCK TABLES `registro_bancario` WRITE;
-/*!40000 ALTER TABLE `registro_bancario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `registro_bancario` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `registros_gasto`
@@ -419,15 +298,6 @@ CREATE TABLE `registros_gasto` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `registros_gasto`
---
-
-LOCK TABLES `registros_gasto` WRITE;
-/*!40000 ALTER TABLE `registros_gasto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `registros_gasto` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tarjetas`
 --
 
@@ -454,15 +324,6 @@ CREATE TABLE `tarjetas` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tarjetas`
---
-
-LOCK TABLES `tarjetas` WRITE;
-/*!40000 ALTER TABLE `tarjetas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tarjetas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tipo_gasto`
 --
 
@@ -477,15 +338,6 @@ CREATE TABLE `tipo_gasto` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipo_gasto`
---
-
-LOCK TABLES `tipo_gasto` WRITE;
-/*!40000 ALTER TABLE `tipo_gasto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tipo_gasto` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `usuarios`
 --
 
@@ -496,19 +348,10 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `username` varchar(45) NOT NULL,
-  `clave` varchar(45) NOT NULL,
+  `clave` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usuarios`
---
-
-LOCK TABLES `usuarios` WRITE;
-/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `usuarios_tarjetas`
@@ -523,15 +366,6 @@ CREATE TABLE `usuarios_tarjetas` (
   PRIMARY KEY (`idusuarios_tarjetas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `usuarios_tarjetas`
---
-
-LOCK TABLES `usuarios_tarjetas` WRITE;
-/*!40000 ALTER TABLE `usuarios_tarjetas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuarios_tarjetas` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -542,4 +376,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-31 15:46:06
+-- Dump completed on 2017-11-01 16:39:08

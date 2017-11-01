@@ -5,7 +5,7 @@ namespace App;
 class Conexion{
     private $conn;
     private $datos = [
-      "host" => 'mysql:host=localhost;dbname=finanzas;charset=utf8mb4;port:3306',
+      "host" => 'mysql:host=localhost;dbname=finanzas_bd;charset=utf8mb4;port:3306',
       "user" => "root",
       "pass" => 'root',
       "opciones" => [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION]
