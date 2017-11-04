@@ -38,6 +38,7 @@ class Usuario extends Conexion{
 
   	public function registrate($valores) {
   		//EMAIL
+<<<<<<< HEAD
   		if (!$this->validarEmail($valores['email'])) {
   			$this->errores['email'] = 'Email no válido';
   		} elseif ($this->buscarUsuarioEmail($valores['email'])) {
@@ -46,6 +47,14 @@ class Usuario extends Conexion{
 
   		//USUARIO
   		//if (!this->validarUsuario)
+=======
+  		$this->validarEmail($valores['email']);
+      if (empty($this->errores['email'])) {
+        if ($this->buscarUsuarioEmail($valores['email'])) {
+          $this->errores['email'] = 'El email ya está registrado';
+        }
+      }
+>>>>>>> master
 
   	} 
 }

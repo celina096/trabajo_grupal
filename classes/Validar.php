@@ -21,11 +21,23 @@ trait Validar
   }
 
   public function confirmarClave( $clave1, $clave2 ){
-    return ($clave1==$clave2);
+    if ($clave1 != $clave2) {
+      $this->errores['clave'] = 'Las claves no coinciden';
+    }
   }
 
   public function validarUsuario($usuario) {
+<<<<<<< HEAD
     return (strlen($usuario) <= 45);
+=======
+    /*return (strlen($usuario) <= 45 && filter_var($usuario, FILTER_SANITIZE_STRING));*/
+
+    if (strlen($usuario) <= 45) {
+      $this->errores['usuario'] = 'El usuario no debe tener mas de 45 caracteres';
+    } elseif (filter_var($usuario, FILTER_SANITIZE_STRING)) {
+      $this->errores['usuario'] = 'El usuario debe tener solo letras y números';
+    }
+>>>>>>> master
   }
 
   public function getErrores(){
@@ -33,3 +45,7 @@ trait Validar
   }
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
