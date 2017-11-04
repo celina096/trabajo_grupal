@@ -72,6 +72,7 @@ if ($data) {
         $archivo = $bd;
         $escribo = $escribo."\n";
         fwrite ($recurso,$escribo);
+        
   }
 }
 

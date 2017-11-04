@@ -3,9 +3,7 @@
 namespace App;
 require_once('Conexion.php');
 require_once('Validar.php');
-
 class Usuario extends Conexion{
-
 
   use Validar;
 
@@ -58,9 +56,20 @@ class Usuario extends Conexion{
         $this->validarClave($valores['clave']);
       }
 
-      //$this->validarAvatar($avatar);
+      $this->validarAvatar($avatar);
       
       if(empty($this->errores)) {
+               print_r($_FILES);
+               $ruta=__DIR__.'/avatar/';
+               crearDirectorio($ruta);
+               $archivo = guardarImagen($ruta, 'avatar', md5($_FILES['avatar']['name'].time()) );
+               //print_r($archivo);
+               if(isset($archivo['error'])){
+                 $respuesta['avatar'] = $archivo['error'];
+               }
+               $_POST['avatar'] = (isset($archivo['ruta']) ? $archivo['ruta'] : null);
+
+
         $Sql = "INSERT INTO usuarios ( email, usuario, clave) VALUES ( :email, :usuario, :clave) ";
 
          $stmt = $this->getConexion()->prepare( $Sql );
@@ -71,9 +80,15 @@ class Usuario extends Conexion{
       );
       $stmt->execute();
 
+
+
       //logearme
       $_SESSION['email']=$valores['email'];
       $_SESSION['usuario']=$valores['usuario'];
+
+
+
+
 
       //redirigir a la pagina de bienvenidos
       header('location:perfil.php');

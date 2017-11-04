@@ -3,6 +3,8 @@
 require_once('funciones.php');
 require_once('classes/Usuario.php');
 
+var_dump($_FILES);
+
 if($_POST){
 
 $user = new \App\Usuario();
@@ -11,6 +13,7 @@ $user->registrate( $_POST, $_FILES );
 $errores = $user->getErrores();
 
 }
+var_dump($errores);
 
 // if (isset($_SESSION['usuario'])){
 //   header('Location: ingresos.php');
@@ -119,11 +122,12 @@ $errores = $user->getErrores();
               <?php if (isset($errores['clave'])){echo $errores['clave'];}else{ echo "";} ?><br/>
               <?php echo (isset($errores['email'])) ? $errores['email'] : '' ?>
 
-              <div class="avatar" <?php echo (isset($errores['avatar'])) ? $errores['avatar'] : '' ?>>
+              <div class="avatar">
               <label class="control-label"  for="avatar">Avatar : </label>
               <input type="file" id="avatar" name="avatar"  accept="image/*">
               <p class="text-danger">
               </div> <!-- .avatar -->
+              <?php echo (isset($errores['avatar'])) ? $errores['avatar'] : '' ?>
 
 
               <br>

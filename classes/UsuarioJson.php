@@ -1,4 +1,5 @@
 <?php 
+require_once('../funciones.php');
 
 class UsuarioJson extends Usuario{
 	use Validar;
@@ -25,24 +26,19 @@ class UsuarioJson extends Usuario{
 
 
 
-   public function guardarUsuariosJson(){
-      $errorJson;
-      $archivo = $this->prepararJson();
-      if (count($archivo) > 0) {
+   public function guardarUsuariosJson($data){
+        
+        array_push ($data['usuario']=$usuario);
+        $json=$data;
+        $escribo=json_encode ($json);
+        $recurso= existe ($bd);
+        $archivo = $bd;
+        $escribo = $escribo."\n";
+        fwrite ($recurso,$escribo);
 
-         foreach ($archivo as $user) {
-            $userArray = json_decode($user, true);
-            $existe = $this->buscarEmail($userArray['email']);
-            if ($existe['email'] == $userArray['email']) {
-               $errorJson = "El usuario ". $userArray['email'] .  " ya existe en la db";
-               echo $errorJson."<br>";
-            }else {
-               $this->guardar($userArray);
-            }
-         }
-      }
    }
    
+
 }
 
 

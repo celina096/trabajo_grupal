@@ -34,7 +34,7 @@ trait Validar
     }
   }
 
-/*  public function validarAvatar($avatar) {
+  public function validarAvatar($avatar) {
 
     $imgFile = $avatar['user_image']['name'];
   //$tmp_dir = $avatar['user_image']['tmp_name'];
@@ -42,7 +42,7 @@ trait Validar
     $avatar = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
   
    // valid image extensions
-   $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
+   $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'svg'); // valid extensions
   
    // rename uploading image
    $userpic = rand(1000,1000000).".".$avatar;
@@ -64,6 +64,6 @@ trait Validar
 
   public function getErrores(){
     return $this->errores;
-  }*/
+  }
 
 }
