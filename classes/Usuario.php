@@ -60,8 +60,8 @@ class Usuario extends Conexion{
 
       //$this->validarAvatar($avatar);
       
-      if( count($this->errores)==0 ) {
-        $Sql = "INSERT INTO users ( email, usuario,clave) VALUES (:email, :usuario, :clave) ";
+      if(empty($this->errores)) {
+        $Sql = "INSERT INTO usuarios ( email, usuario, clave) VALUES ( :email, :usuario, :clave) ";
 
          $stmt = $this->getConexion()->prepare( $Sql );
       $stmt->bindParam(':email', $valores['email']);

@@ -34,10 +34,10 @@ trait Validar
     }
   }
 
-  public function validarAvatar($avatar) {
+/*  public function validarAvatar($avatar) {
 
     $imgFile = $avatar['user_image']['name'];
-  $tmp_dir = $avatar['user_image']['tmp_name'];
+  //$tmp_dir = $avatar['user_image']['tmp_name'];
   $imgSize = $avatar['user_image']['size'];
     $avatar = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
   
@@ -51,7 +51,7 @@ trait Validar
    if(in_array($avatar, $valid_extensions)){   
     // Check file size '5MB'
     if($imgSize < 5000000)    {
-     move_uploaded_file($tmp_dir,$upload_dir.$userpic);
+     //move_uploaded_file($tmp_dir,$upload_dir.$userpic);
     }
     else{
      $this->errores['avatar'] = "La imagen es muy pesada";
@@ -64,6 +64,6 @@ trait Validar
 
   public function getErrores(){
     return $this->errores;
-  }
+  }*/
 
 }
