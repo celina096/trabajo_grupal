@@ -6,12 +6,18 @@ trait Validar
 {
   private $errores = [];
 
-  public function validarEmail($var){
-    return filter_var($var, FILTER_VALIDATE_EMAIL);
+  public function validarEmail($email){
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+      $this->errores['email'] = 'Debe ser un email válido';
+    }
   }
 
-  public function validarClave( $var ){
-    return strlen($var) >= 6;
+  public function validarClave( $clave ){
+
+    if (strlen($clave)){
+      $this->errores['clave']= 'La clave debe tener al menos 6 dígitos';
+    }
   }
 
   public function confirmarClave( $clave1, $clave2 ){
@@ -27,4 +33,3 @@ trait Validar
   }
 
 }
-
