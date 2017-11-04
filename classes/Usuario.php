@@ -45,6 +45,7 @@ class Usuario extends Conexion{
       }
     }
 
+<<<<<<< Updated upstream
     //USUARIO
       $this->validarUsuario($valores['usuario']);
       if (empty($this->errores['usuario'])) {
@@ -57,6 +58,22 @@ class Usuario extends Conexion{
       if (empty($this->errores['clave'])) {
         $this->validarEmail($valores['clave']);
       }
+=======
+    $this->validarUsuario($valores['usuario']);
+     if (empty($this->errores['usuario'])) {
+       if ($this->buscarUsuario($valores['usuario'])) {
+         $this->errores['usuario'] = 'El nombre de usuario ya está en uso';
+       }
+     }
+     //clave
+     $this->confirmarClave($valores['clave'], $valores['clave2']);
+     if (empty($this->errores['clave'])) {
+       $this->validarEmail($valores['clave']);
+     }
+
+
+
+>>>>>>> Stashed changes
 
       $this->validarAvatar($avatar);
        

@@ -1,11 +1,11 @@
 <?php
-require_once('./funciones.php');
-if (!isset($_SESSION['login'])){
-  header('Location: index.php');
-}
+// require_once('./funciones.php');
+// if (!isset($_SESSION['login'])){
+//   header('Location: index.php');
+// }
 
-$usuario = $_SESSION['usuario'];
-$datos = buscar_usuario($usuario, 'usuarios.json');
+//$usuario = $_SESSION['usuario'];
+//$datos = buscar_usuario($usuario, 'usuarios.json');
  ?>
 
 <!DOCTYPE html>
