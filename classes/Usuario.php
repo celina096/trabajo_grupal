@@ -38,14 +38,13 @@ class Usuario extends Conexion{
 
   public function registrate($valores, $avatar) {
     //EMAIL
-    $this->validarEmail($valores['email']);
-    if (empty($this->errores ['email'])){
-      if ($this->buscarUsuarioEmail($valores ['email'])) {
-        $this->errores['email']='El email ya esta en uso';
+    $this->validarEmail($valores['email']); 
+    if (empty($this->errores['email'])) {
+      if ($this->buscarUsuarioEmail($valores['email'])) {
+        $this->errores['email'] = 'El email ya está registrado';
       }
     }
 
-<<<<<<< Updated upstream
     //USUARIO
       $this->validarUsuario($valores['usuario']);
       if (empty($this->errores['usuario'])) {
@@ -56,27 +55,29 @@ class Usuario extends Conexion{
       //clave
       $this->confirmarClave($valores['clave'], $valores['clave2']);
       if (empty($this->errores['clave'])) {
-        $this->validarEmail($valores['clave']);
+        $this->validarClave($valores['clave']);
       }
-=======
-    $this->validarUsuario($valores['usuario']);
-     if (empty($this->errores['usuario'])) {
-       if ($this->buscarUsuario($valores['usuario'])) {
-         $this->errores['usuario'] = 'El nombre de usuario ya está en uso';
-       }
-     }
-     //clave
-     $this->confirmarClave($valores['clave'], $valores['clave2']);
-     if (empty($this->errores['clave'])) {
-       $this->validarEmail($valores['clave']);
-     }
 
+      //$this->validarAvatar($avatar);
+      
+      if( count($this->errores)==0 ) {
+        $Sql = "INSERT INTO users ( email, usuario,clave) VALUES (:email, :usuario, :clave) ";
 
+         $stmt = $this->getConexion()->prepare( $Sql );
+      $stmt->bindParam(':email', $valores['email']);
+      $stmt->bindParam(':usuario', $valores['usuario']);
+      $stmt->bindValue(':clave',
+        password_hash($valores['clave'], PASSWORD_DEFAULT)
+      );
+      $stmt->execute();
 
->>>>>>> Stashed changes
+      //logearme
+      $_SESSION['email']=$valores['email'];
+      $_SESSION['usuario']=$valores['usuario'];
 
-      $this->validarAvatar($avatar);
-       
+      //redirigir a la pagina de bienvenidos
+      header('location:perfil.php');
+      }
 
   	}
 }

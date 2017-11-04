@@ -14,7 +14,7 @@ trait Validar
 
   public function validarClave($clave){
 
-    if (strlen($clave)){
+    if (strlen($clave) < 6){
       $this->errores['clave']= 'La clave debe tener al menos 6 dígitos';
     }
   }
@@ -29,11 +29,8 @@ trait Validar
 
     if (strlen($usuario) > 45) {
       $this->errores['usuario'] = 'El usuario no debe tener mas de 45 caracteres';
-<<<<<<< Updated upstream
     } elseif (preg_match("/^[a-zA-Z0-9]", $usuario)) {
       $this->errores['usuario'] = 'El usuario debe tener solo letras y números';
-=======
->>>>>>> Stashed changes
     }
   }
 
