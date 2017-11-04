@@ -30,7 +30,7 @@ class Usuario extends Conexion{
 
   	$stmt = $this->getConexion()->prepare($Sql);
   	$stmt->bindParam(':usuario', $usuario);
-  	$stmt->excute();
+  	$stmt->execute();
 
   	$resultados = $stmt->fetch( \PDO::FETCH_ASSOC );
   	return $resultados;
@@ -40,7 +40,7 @@ class Usuario extends Conexion{
     //EMAIL
     $this->validarEmail($valores['email']);
     if (empty($this->errores ['email'])){
-      if (!$this->buscarUsuarioEmail($valores ['email'])) {
+      if ($this->buscarUsuarioEmail($valores ['email'])) {
         $this->errores['email']='El email ya esta en uso';
       }
     }

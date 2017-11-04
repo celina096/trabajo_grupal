@@ -13,7 +13,7 @@ trait Validar
     }
   }
 
-  public function validarClave( $clave ){
+  public function validarClave($clave){
 
     if (strlen($clave)){
       $this->errores['clave']= 'La clave debe tener al menos 6 dígitos';
