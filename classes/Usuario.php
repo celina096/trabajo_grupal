@@ -13,7 +13,7 @@ class Usuario extends Conexion{
     parent::__construct();
   }
 
-  
+
   public function buscarUsuarioEmail($email) {
   	$Sql = "SELECT * FROM usuarios WHERE email = :email";
 
@@ -36,25 +36,16 @@ class Usuario extends Conexion{
   	return $resultados;
   }
 
-  	public function registrate($valores) {
-  		//EMAIL
-<<<<<<< HEAD
-  		if (!$this->validarEmail($valores['email'])) {
-  			$this->errores['email'] = 'Email no válido';
-  		} elseif ($this->buscarUsuarioEmail($valores['email'])) {
-  			$this->errores['email'] = 'Email ya registrado';
-  		}
-
-  		//USUARIO
-  		//if (!this->validarUsuario)
-=======
-  		$this->validarEmail($valores['email']);
-      if (empty($this->errores['email'])) {
-        if ($this->buscarUsuarioEmail($valores['email'])) {
-          $this->errores['email'] = 'El email ya está registrado';
-        }
+  public function registrate($valores) {
+    //EMAIL
+    $this->validarEmail($valores['email']);
+    if (empty($this->errores ['email'])){
+      if (!$this->buscarUsuarioEmail($valores ['email'])) {
+        $this->errores['email']='El email ya esta en uso';
       }
->>>>>>> master
+    }
 
-  	} 
+
+
+  	}
 }

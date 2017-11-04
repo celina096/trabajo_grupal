@@ -8,7 +8,7 @@ trait Validar
 
   public function validarEmail($email){
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
       $this->errores['email'] = 'Debe ser un email válido';
     }
   }
@@ -28,7 +28,7 @@ trait Validar
 
   public function validarUsuario($usuario) {
 
-    return (strlen($usuario) <= 45);
+//    return (strlen($usuario) <= 45);
     /*return (strlen($usuario) <= 45 && filter_var($usuario, FILTER_SANITIZE_STRING));*/
 
     if (strlen($usuario) <= 45) {
