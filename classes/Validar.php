@@ -27,9 +27,8 @@ trait Validar
   }
 
   public function validarUsuario($usuario) {
-<<<<<<< HEAD
+
     return (strlen($usuario) <= 45);
-=======
     /*return (strlen($usuario) <= 45 && filter_var($usuario, FILTER_SANITIZE_STRING));*/
 
     if (strlen($usuario) <= 45) {
@@ -37,7 +36,6 @@ trait Validar
     } elseif (filter_var($usuario, FILTER_SANITIZE_STRING)) {
       $this->errores['usuario'] = 'El usuario debe tener solo letras y números';
     }
->>>>>>> master
   }
 
   public function getErrores(){
@@ -45,7 +43,3 @@ trait Validar
   }
 
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> master
