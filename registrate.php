@@ -129,8 +129,6 @@ $errores = $user->getErrores();
 
               <br>
 
-            <input id="recordarme" type="checkbox" name="recordarme" value="yes">
-            <label for="recordarme"> Recordarme </label>
             <br>
             <button  type="submit" name="enviar" value="">Iniciar</button>
 

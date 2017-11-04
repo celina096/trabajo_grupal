@@ -28,9 +28,6 @@ trait Validar
 
   public function validarUsuario($usuario) {
 
-//    return (strlen($usuario) <= 45);
-    /*return (strlen($usuario) <= 45 && filter_var($usuario, FILTER_SANITIZE_STRING));*/
-
     if (strlen($usuario) <= 45) {
       $this->errores['usuario'] = 'El usuario no debe tener mas de 45 caracteres';
     } elseif (filter_var($usuario, FILTER_SANITIZE_STRING)) {
