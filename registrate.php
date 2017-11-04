@@ -1,14 +1,13 @@
 <?php
 
 require_once('funciones.php');
-//require_once('classes/User.php');
+require_once('classes/Usuario.php');
 
 if($_POST){
 
-$user = new \App\User();
+$user = new \App\Usuario();
 
 $user->registrate( $_POST );
-
 $errores = $user->getErrores();
 
 }
@@ -119,9 +118,9 @@ $errores = $user->getErrores();
               <br>
               <input id="clave2" type="password" name="clave2" value="">
               <?php if (isset($errores['claves_distintas'])){echo $errores['claves_distintas'];}else{ echo "";} ?><br/>
-              <?php echo (isset($errores['email'])) ? ' has-error': '' ?>
+              <?php echo (isset($errores['email'])) ? $errores['email'] : '' ?>
 
-              <div class="avatar" <?php echo (isset($errores['avatar'])) ? ' has-error': '' ?>>
+              <div class="avatar" <?php echo (isset($errores['avatar'])) ? $errores[avatar] : '' ?>>
               <label class="control-label"  for="avatar">Avatar : </label>
               <input type="file" id="avatar" name="avatar"  accept="image/*">
               <p class="text-danger">
