@@ -7,7 +7,7 @@ if($_POST){
 
 $user = new \App\Usuario();
 
-$user->registrate( $_POST );
+$user->registrate( $_POST, $_FILES );
 $errores = $user->getErrores();
 
 }
@@ -101,7 +101,6 @@ $errores = $user->getErrores();
               <br>
               <input id="usuario"  placeholder="Escriba su usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
               <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
-              <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?>
               <label class="control-label" for="email"> E-mail </label><br/>
               <input type="email" class="form-control" id="email" name="email" placeholder=" Ingrese su Email" value="<?php echo (isset($_POST['email'])) ? $_POST['email']: '' ?>">
               <p class="text-danger">
@@ -117,10 +116,10 @@ $errores = $user->getErrores();
               <label for="clave2">Repetir Contraseña</label>
               <br>
               <input id="clave2" type="password" name="clave2" value="">
-              <?php if (isset($errores['claves_distintas'])){echo $errores['claves_distintas'];}else{ echo "";} ?><br/>
+              <?php if (isset($errores['clave'])){echo $errores['clave'];}else{ echo "";} ?><br/>
               <?php echo (isset($errores['email'])) ? $errores['email'] : '' ?>
 
-              <div class="avatar" <?php echo (isset($errores['avatar'])) ? $errores[avatar] : '' ?>>
+              <div class="avatar" <?php echo (isset($errores['avatar'])) ? $errores['avatar'] : '' ?>>
               <label class="control-label"  for="avatar">Avatar : </label>
               <input type="file" id="avatar" name="avatar"  accept="image/*">
               <p class="text-danger">
