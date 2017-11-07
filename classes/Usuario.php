@@ -114,6 +114,15 @@ class Usuario extends Conexion{
         $this->errores['usuario'] = 'El usuario o contraseña son inválidos';
  }
 
+
+ public function editarDatos($datos) {
+  
+ }
+
+ public function editarImagen() {
+
+ }
+
   public function registrate($valores, $avatar) {
     $this->prepararJson();
     

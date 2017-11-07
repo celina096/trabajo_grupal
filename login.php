@@ -15,7 +15,7 @@ if($_POST){
 
   $errores = $user->getErrores();
 
-  var_dump($errores);
+
   }
 
 

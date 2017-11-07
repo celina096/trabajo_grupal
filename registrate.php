@@ -3,7 +3,7 @@
 require_once('funciones.php');
 require_once('classes/Usuario.php');
 
-var_dump($_FILES);
+
 
 if($_POST){
 
