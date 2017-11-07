@@ -19,14 +19,23 @@ class Usuario extends Conexion{
 
   public function prepararJson(){
     
-          $usuariosJSON = [];
-          //paso todo el archivo json para manipularlo despues
-          $usuariosJSON = file_get_contents("usuarios.json");
+    $usuariosJSON = [];
+    //paso todo el archivo json para manipularlo despues
+    $usuariosJSON = file_get_contents("usuarios.json");
+
+    //divido el archivo en lineas para contarlas
+    $usuariosJSON = explode("\n", $usuariosJSON);
+
+    //cuento la cantidad de lineas
+    $cantidadUsuarios = count($usuariosJSON);
+
+    //borro la ultima linea que esta vacia y retorno
+    $lineaVacia = ($cantidadUsuarios - 1);
+    unset($usuariosJSON[$lineaVacia]);
+
+    return $usuariosJSON;
+
     
-          //divido el archivo en lineas para contarlas
-          $handler = json_decode($usuariosJSON, true);
-          //$Sql = "INSERT INTO usuarios (email, usuario, clave, ruta_imagen) VALUES (:email, :usuario, :clave, :ruta_imagen)";
-          return $handler;
        }
     
        public function guardarUsuariosJson($data){

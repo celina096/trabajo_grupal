@@ -17,6 +17,41 @@ if($_POST){
   }
 
 
+// require_once 'funciones.php';
+
+// if (isset($_SESSION['login'])){
+//   header('Location: perfil.php');
+// }
+
+
+// $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
+// $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
+
+// $errores= array();
+
+
+// if (isset($_POST['enviar'])) {
+
+//     if (!requerido($usuario)){
+//       $errores['usuario']="el campo USUARIO es requerido";
+//     }
+//     if (!requerido($clave)){
+//       $errores['clave']="el campo CLAVE es requerido";
+//     }
+//     if (!buscar_usu($usuario,$clave)){
+//       $errores['usuario_error']="Usuario o clave incorrecto";
+//     }
+//     $linea=buscar_usu($usuario,$clave);
+
+//     if (count($errores)==0){
+//       session_start();
+//       $_SESSION['login']="ok";
+//       $_SESSION['usuario']=$linea['usuario'];
+//       header('Location: perfil.php');
+//     }
+
+// }
+
  ?>
 
 

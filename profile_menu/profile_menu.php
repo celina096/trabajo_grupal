@@ -14,7 +14,7 @@
           <li><a href="egresos.php">Egresos</a></li>
           <li><a href="#">Bancos</a></li>
           <h3>AJUSTES DE USUARIO</h3>
-          <li><a href="perfil.php">Datos Personales</a></li>
+         <!-- <li><a href="perfil.php">Datos Personales</a></li> -->
           <li><a href="preferencias.php">Tus Preferencias</a></li>
           <li><a href="safety.php">Privacidad y Seguridad</a></li>
           <li><a href="#">Notificaciones</a></li>
