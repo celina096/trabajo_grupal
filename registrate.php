@@ -11,13 +11,12 @@ $user = new \App\Usuario();
 
 $user->registrate( $_POST, $_FILES );
 $errores = $user->getErrores();
-
 }
-var_dump($errores);
 
-// if (isset($_SESSION['usuario'])){
-//   header('Location: ingresos.php');
-//
+
+if (isset($_SESSION['usuario'])){
+  header('Location: preferencias.php');
+}
 // }else {
 //
 //     $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
@@ -102,15 +101,13 @@ var_dump($errores);
 
               <label for="usuario">Nombre de Usuario</label>
               <br>
-              <input id="usuario"  placeholder="Escriba su usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
+              <input id="usuario"  placeholder="Escriba su usuario" type="text" name="usuario" required value=''>
+              <br>
               <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
               <label class="control-label" for="email"> E-mail </label><br/>
               <input type="email" class="form-control" id="email" name="email" placeholder=" Ingrese su Email" value="<?php echo (isset($_POST['email'])) ? $_POST['email']: '' ?>">
               <p class="text-danger">
-                <?php if(isset($errores['email'])){
-                    foreach($errores['email'] as $lista){
-                      echo $lista.'<br>';
-                    } } ?>
+              <?php echo (isset($errores['email'])) ? $errores['email'] : '' ?>
               </p>
               <label for="clave" >Contraseña</label>
               <br>
@@ -120,7 +117,7 @@ var_dump($errores);
               <br>
               <input id="clave2" type="password" name="clave2" value="">
               <?php if (isset($errores['clave'])){echo $errores['clave'];}else{ echo "";} ?><br/>
-              <?php echo (isset($errores['email'])) ? $errores['email'] : '' ?>
+       
 
               <div class="avatar">
               <label class="control-label"  for="avatar">Avatar : </label>

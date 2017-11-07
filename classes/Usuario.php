@@ -3,13 +3,42 @@
 namespace App;
 require_once('Conexion.php');
 require_once('Validar.php');
+//require_once('../funciones.php');
+
 class Usuario extends Conexion{
+  private $rutaAvatar='../trabajo_grupal/avatar/';
+  private $nombreAvatar;
+  
 
   use Validar;
+
 
   public function __construct(){
     parent::__construct();
   }
+
+  public function prepararJson(){
+    
+          $usuariosJSON = [];
+          //paso todo el archivo json para manipularlo despues
+          $usuariosJSON = file_get_contents("usuarios.json");
+    
+          //divido el archivo en lineas para contarlas
+          $handler = json_decode($usuariosJSON, true);
+          //$Sql = "INSERT INTO usuarios (email, usuario, clave, ruta_imagen) VALUES (:email, :usuario, :clave, :ruta_imagen)";
+          return $handler;
+       }
+    
+       public function guardarUsuariosJson($data){
+         $bd = 'usuarios.json';
+          $data['clave'] = password_hash($data['clave'],PASSWORD_DEFAULT);
+          $json=json_encode($data);
+          $json['ruta_imagen'] = $this->nombreAvatar;
+          $escribo= $json;
+          $archivo = $bd;
+          $escribo = $escribo."\n";
+          fwrite ($recurso,$escribo);
+       }
 
 
   public function buscarUsuarioEmail($email) {
@@ -34,8 +63,63 @@ class Usuario extends Conexion{
   	return $resultados;
   }
 
+
+
+  function crearDirectorio($destino){
+    if(!file_exists($destino)){
+      mkdir($destino, 0777, true);
+    }
+}
+
+  public function guardarAvatar($datos) {
+    $this->crearDirectorio($this->rutaAvatar);
+    $imgFile = $datos['avatar']['name'];
+    $tmp_dir = $datos['avatar']['tmp_name'];
+    $imgSize = $datos['avatar']['size'];
+    $avatar = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
+    $userpic = rand(1000,1000000).".".$avatar;
+    $destino = $this->rutaAvatar;
+    $this->crearDirectorio($destino);
+    move_uploaded_file($tmp_dir, $destino.$userpic);
+    $this->nombreAvatar = $userpic;
+    return $userpic;
+  }
+
+
+  public function login($usuario, $clave) {
+    $Sql = "SELECT * FROM usuarios WHERE usuario = :usuario";
+    //$this->errores['usuario'] = 'El usuario o contraseña son inválidos';
+        $stmt = $this->getConexion()->prepare($Sql);
+        $stmt->bindParam(':usuario', $usuario);
+        $stmt->execute();
+    
+        $resultados = $stmt->fetch( \PDO::FETCH_ASSOC );
+        if($stmt->rowCount() > 0)
+        {
+           if(password_verify($clave, $resultados['clave']))
+           {
+              $_SESSION['usuario'] = $resultados['usuario'];
+              $_SESSION['email']=$resultados['email'];
+              $_SESSION['imagen'] = $resultados['ruta_imagen'];
+              $_SESSION['login'] = true;
+             
+              header('Location: preferencias.php');
+           }
+           else
+           {
+            
+           }
+           $this->errores['usuario'] = 'El usuario o contraseña son inválidos';
+        }
+        $this->errores['usuario'] = 'El usuario o contraseña son inválidos';
+ }
+
   public function registrate($valores, $avatar) {
+    $this->prepararJson();
+    
     //EMAIL
+
+
     $this->validarEmail($valores['email']); 
     if (empty($this->errores['email'])) {
       if ($this->buscarUsuarioEmail($valores['email'])) {
@@ -57,41 +141,43 @@ class Usuario extends Conexion{
       }
 
       $this->validarAvatar($avatar);
-      
-      if(empty($this->errores)) {
-               print_r($_FILES);
-               $ruta=__DIR__.'/avatar/';
-               crearDirectorio($ruta);
-               $archivo = guardarImagen($ruta, 'avatar', md5($_FILES['avatar']['name'].time()) );
-               //print_r($archivo);
-               if(isset($archivo['error'])){
-                 $respuesta['avatar'] = $archivo['error'];
-               }
-               $_POST['avatar'] = (isset($archivo['ruta']) ? $archivo['ruta'] : null);
+     
 
+      if (count($this->errores) == 0) {
 
-        $Sql = "INSERT INTO usuarios ( email, usuario, clave) VALUES ( :email, :usuario, :clave) ";
+        try {
+          $Sql = "INSERT INTO usuarios ( email, usuario, clave, ruta_imagen) VALUES ( :email, :usuario, :clave, :ruta_imagen) ";
+          
+                $stmt = $this->getConexion()->prepare( $Sql );
+                $stmt->bindParam(':email', $valores['email']);
+                $stmt->bindParam(':usuario', $valores['usuario']);
+                $stmt->bindValue(':clave',
+                  password_hash($valores['clave'], PASSWORD_DEFAULT)
+                );
+                $stmt->bindValue(':ruta_imagen',
+              $rutaImagen = $this->guardarAvatar($avatar));
+                $stmt->execute();
+          
+        }
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }
+              //logearme
+              $_SESSION['email']=$valores['email'];
+              $_SESSION['usuario']=$valores['usuario'];
+              $_SESSION['imagen'] = $this->nombreAvatar;
+              $_SESSION['login'] = true;
 
-         $stmt = $this->getConexion()->prepare( $Sql );
-      $stmt->bindParam(':email', $valores['email']);
-      $stmt->bindParam(':usuario', $valores['usuario']);
-      $stmt->bindValue(':clave',
-        password_hash($valores['clave'], PASSWORD_DEFAULT)
-      );
-      $stmt->execute();
+              $this->guardarUsuariosJson($valores);
+        
+        
+        
+        
+        
+              //redirigir a la pagina de bienvenidos
+              header('location:preferencias.php');
 
-
-
-      //logearme
-      $_SESSION['email']=$valores['email'];
-      $_SESSION['usuario']=$valores['usuario'];
-
-
-
-
-
-      //redirigir a la pagina de bienvenidos
-      header('location:perfil.php');
       }
 
   	}

@@ -1,6 +1,6 @@
 <?php 
 
-$restore_file = 'finanzas_db.sql';
+$restore_file = 'finanzas.sql';
 $server_name = 'localhost';
 $username = 'root';
 $password = 'root';

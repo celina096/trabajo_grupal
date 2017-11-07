@@ -1,38 +1,51 @@
 <?php
+
+
 require_once 'funciones.php';
+require_once('classes/Usuario.php');
 
 if (isset($_SESSION['login'])){
-  header('Location: perfil.php');
+  header('Location: preferencias.php');
 }
+if($_POST){
+
+  $user = new \App\Usuario();
+  
+  echo $user->login( $_POST['usuario'], $_POST['clave']);
+
+  $errores = $user->getErrores();
+
+  var_dump($errores);
+  }
 
 
-$usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
-$clave= isset ($_POST['clave'])? $_POST['clave'] : null;
+// $usuario= isset ($_POST['usuario'])? $_POST['usuario'] : null;
+// $clave= isset ($_POST['clave'])? $_POST['clave'] : null;
 
-$errores= array();
+// $errores= array();
 
 
-if (isset($_POST['enviar'])) {
+// if (isset($_POST['enviar'])) {
 
-    if (!requerido($usuario)){
-      $errores['usuario']="el campo USUARIO es requerido";
-    }
-    if (!requerido($clave)){
-      $errores['clave']="el campo CLAVE es requerido";
-    }
-    if (!buscar_usu($usuario,$clave)){
-      $errores['usuario_error']="Usuario o clave incorrecto";
-    }
-    $linea=buscar_usu($usuario,$clave);
+//     if (!requerido($usuario)){
+//       $errores['usuario']="el campo USUARIO es requerido";
+//     }
+//     if (!requerido($clave)){
+//       $errores['clave']="el campo CLAVE es requerido";
+//     }
+//     if (!buscar_usu($usuario,$clave)){
+//       $errores['usuario_error']="Usuario o clave incorrecto";
+//     }
+//     $linea=buscar_usu($usuario,$clave);
 
-    if (count($errores)==0){
-      session_start();
-      $_SESSION['login']="ok";
-      $_SESSION['usuario']=$linea['usuario'];
-      header('Location: perfil.php');
-    }
+//     if (count($errores)==0){
+//       session_start();
+//       $_SESSION['login']="ok";
+//       $_SESSION['usuario']=$linea['usuario'];
+//       header('Location: perfil.php');
+//     }
 
-}
+// }
  ?>
 
 
@@ -59,13 +72,13 @@ if (isset($_POST['enviar'])) {
 
             <p class='registrate'> INICIA SESIÓN </p>
 
-          <form class="container" action="index.php" method="post">
+          <form class="container" action="login.php" method="post">
 
               <label for="usuario">Nombre de Usuario</label>
               <br>
               <input id="usuario"  placeholder="Escriba su usuario" type="text" name="usuario" required value='<?php echo $usuario ?>'>
-              <?php if (isset($errores['usuario'])){echo $errores['usuario'];}else{ echo "";} ?><br/>
-              <?php if (isset($errores['usuario_existe'])){echo $errores['usuario_existe'];}else{ echo "";} ?>
+              <?php echo (isset($errores['usuario'])) ? $errores['usuario'] : '' ?><br/>
+             
 
 
               <label for="clave" >Contraseña</label>

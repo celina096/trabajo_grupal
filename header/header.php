@@ -15,10 +15,11 @@
         <li class="hvr-underline-from-center"><a href="contacto.php">Contacto</a></li>
         <li class="hvr-underline-from-center"><a href="faqs.php">FAQs</a></li>
         <li class="hvr-underline-from-center"><a href="perfil.php">Perfil</a></li>
+        <li class="hvr-underline-from-center"><a href="perfil.php"><?php echo $_SESSION['usuario'] ?></a></li>
         <a class="user-avatar" href="perfil.php">
           <img class="user-avatar" src="<?php
           $nombreimagen = buscarAvatar($_SESSION['usuario']);
-           echo 'avatar/'.$nombreimagen; ?>" alt="avatar del usuario" width="50px">
+           echo 'avatar/'.$_SESSION['imagen']; ?>" alt="avatar del usuario" width="50px">
         </a>
         <div class="user-menu ">
           <h3>mimail@gmail.com</h3>

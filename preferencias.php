@@ -2,7 +2,8 @@
 require_once('./funciones.php');
 
 $usuario = $_SESSION['usuario'];
-$datos = buscar_usuario($_SESSION['usuario'], 'usuarios.json');
+
+
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -35,11 +36,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <h2>Cambiar datos personales</h2>
           <label for="username">Nombre de Usuario</label>
           <br>
-          <input id="username" type="text" name="username" value="<?php echo $usuario ?>">
+          <input id="username" type="text" name="username" value="<?php echo $_SESSION['usuario'] ?>">
           <br>
           <label for="email">E-mail</label>
           <br>
-          <input type="email" name="email" value="<?php echo $datos['email'] ?>">
+          <input type="email" name="email" value="<?php echo $_SESSION['email'] ?>">
           <br>
           <label for="oldpassword">Contraseña Actual</label>
           <br>
@@ -53,9 +54,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
         <div class="avatar-wrap">
           <div class="avatar">
-            <img src="<?php
-            $nombreimagen = buscarAvatar($_SESSION['usuario']);
-             echo 'avatar/'.$nombreimagen; ?>" alt="" width="150px">
+            <img src="<?php 
+            echo 'avatar/'.$_SESSION['imagen'];
+            ?>" alt="" width="150px">
           </div> <!-- .avatar -->
           <form class="cambiar-avatar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
             <br>

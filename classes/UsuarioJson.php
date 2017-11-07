@@ -1,10 +1,10 @@
-<?php 
-require_once('../funciones.php');
+<?php
+require_once('Usuario.php');
 
-class UsuarioJson extends Usuario{
-	use Validar;
 
-	private function prepararJson(){
+trait UsuarioJson{
+
+   public function prepararJson(){
 
       $usuariosJSON = [];
       //paso todo el archivo json para manipularlo despues
@@ -24,22 +24,17 @@ class UsuarioJson extends Usuario{
 
    }
 
-
-
    public function guardarUsuariosJson($data){
-        
-        array_push ($data['usuario']=$usuario);
-        $json=$data;
-        $escribo=json_encode ($json);
-        $recurso= existe ($bd);
-        $archivo = $bd;
-        $escribo = $escribo."\n";
-        fwrite ($recurso,$escribo);
-
+      $data['clave'] = password_hash($data['clave'],PASSWORD_DEFAULT);
+      $json=$data;
+      $json['ruta_imagen'] = 'hola';
+      $escribo=json_encode ($json);
+      $recurso= existe ($bd);
+      $archivo = $bd;
+      $escribo = $escribo."\n";
+      fwrite ($recurso,$escribo);
    }
-   
-
-}
 
 
 }
+

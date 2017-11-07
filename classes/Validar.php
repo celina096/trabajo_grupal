@@ -29,26 +29,27 @@ trait Validar
 
     if (strlen($usuario) > 45) {
       $this->errores['usuario'] = 'El usuario no debe tener mas de 45 caracteres';
-    } elseif (preg_match("/^[a-zA-Z0-9]", $usuario)) {
+    } 
+    if (!filter_var($usuario, FILTER_SANITIZE_STRING)) {
       $this->errores['usuario'] = 'El usuario debe tener solo letras y números';
     }
   }
 
-  public function validarAvatar($avatar) {
+  public function validarAvatar($datos) {
 
-    $imgFile = $avatar['user_image']['name'];
+    $imgFile = $datos['avatar']['name'];
   //$tmp_dir = $avatar['user_image']['tmp_name'];
-  $imgSize = $avatar['user_image']['size'];
+  $imgSize = $datos['avatar']['size'];
     $avatar = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
   
    // valid image extensions
-   $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'svg'); // valid extensions
+   $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
   
    // rename uploading image
    $userpic = rand(1000,1000000).".".$avatar;
-    
+   $imgExt =strtolower(pathinfo($imgFile,PATHINFO_EXTENSION));
    // allow valid image file formats
-   if(in_array($avatar, $valid_extensions)){   
+   if(in_array($imgExt,$valid_extensions)){   
     // Check file size '5MB'
     if($imgSize < 5000000)    {
      //move_uploaded_file($tmp_dir,$upload_dir.$userpic);
@@ -58,7 +59,7 @@ trait Validar
     }
    }
    else{
-    $this->errores['avatar'] = "Lo siento, solo archivos JPG, JPEG, PNG & GIF están permitidos.";  
+    $this->errores['avatar'] = "La imagen debe ser JPEG, JPG, PNG o GIF";  
    }
   }
 
