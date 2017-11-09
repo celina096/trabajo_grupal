@@ -1,17 +1,27 @@
 <?php
-require_once('./funciones.php');
+require_once('funciones.php');
+require_once('classes/Usuario.php');
 
 $usuario = $_SESSION['usuario'];
 
 
 
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $newUsername = $_POST['username'];
-  reemplazar($usuario, $newUsername);
-  $_SESSION['usuario'] = $newUsername;
-  header("Location: preferencias.php");
+if(!empty($_POST)) {
+  $user = new \App\Usuario();
+  
+  $user->editarDatos( $_POST, $_SESSION );
+  $errores = $user->getErrores();
 }
+
+var_dump($_POST);
+var_dump($_SESSION);
+var_dump($errores);
+
+
+
+
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -32,25 +42,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php include('./profile_menu/profile_menu.php') ?>
       <h1>PREFERENCIAS</h1>
       <div class="wrap">
-        <form id="form1" class="preferencias" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+        <form id="form1" class="preferencias" action="preferencias.php" method="post">
           <h2>Cambiar datos personales</h2>
           <label for="username">Nombre de Usuario</label>
           <br>
-          <input id="username" type="text" name="username" value="<?php echo $_SESSION['usuario'] ?>">
+          <input id="username" type="text" name="usuario" value="" placeholder="<?php echo $_SESSION['usuario'] ?>">
           <br>
           <label for="email">E-mail</label>
           <br>
-          <input type="email" name="email" value="<?php echo $_SESSION['email'] ?>">
+          <input type="email" name="email" value="" placeholder="<?php echo $_SESSION['email'] ?>">
           <br>
           <label for="oldpassword">Contraseña Actual</label>
           <br>
-          <input id="oldpassword" type="password" name="oldpassword" value="" >
+          <input id="oldpassword" type="password" name="clave" value="" required>
           <br>
           <label for="password">Nueva Contraseña</label>
           <br>
-          <input id="password" type="password" name="password" value="">
+          <input id="password" type="password" name="claveNueva" value="">
           <br>
           <button form="form1" class="boton" type="submit" name="form">Registrar cambios</button>
+          <?php 
+          foreach ($errores as $error) {
+            echo "<li>" . $error . "</li>";
+          }
+          ?>
         </form>
         <div class="avatar-wrap">
           <div class="avatar">

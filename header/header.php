@@ -16,7 +16,7 @@
         <li class="hvr-underline-from-center"><a href="faqs.php">FAQs</a></li>
         <!-- <li class="hvr-underline-from-center"><a href="perfil.php">Perfil</a></li> -->
         <li class="hvr-underline-from-center"><a href="preferencias.php"><?php echo $_SESSION['usuario'] ?></a></li>
-        <a class="user-avatar" href="perfil.php">
+        <a class="user-avatar" href="preferencias.php">
           <img class="user-avatar" src="<?php
           $nombreimagen = buscarAvatar($_SESSION['usuario']);
            echo 'avatar/'.$_SESSION['imagen']; ?>" alt="avatar del usuario" width="50px">
@@ -52,7 +52,7 @@
         <li><a href="egresos.php">Egresos</a></li>
         <li><a href="#">Bancos</a></li>
         <h3>AJUSTES DE USUARIO</h3>
-        <li><a href="perfil.php">Datos Personales</a></li>
+        <li><a href="preferenncias.php">Datos Personales</a></li>
         <li><a href="preferencias.php">Tus Preferencias</a></li>
         <li><a href="safety.php">Privacidad y Seguridad</a></li>
         <li><a href="#">Notificaciones</a></li>

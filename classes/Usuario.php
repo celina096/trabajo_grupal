@@ -47,6 +47,14 @@ class Usuario extends Conexion{
           $archivo = $bd;
           $escribo = $escribo."\n";
           fwrite ($recurso,$escribo);
+
+          array_push ($data['usuario']=$usuario);
+          $json=$data;
+          $escribo=json_encode ($json);
+          $recurso= existe ($bd);
+          $archivo = $bd;
+          $escribo = $escribo."\n";
+          fwrite ($recurso,$escribo);
        }
 
 
@@ -123,12 +131,56 @@ class Usuario extends Conexion{
         $this->errores['usuario'] = 'El usuario o contraseña son inválidos';
  }
 
+ public function confirmarClave($clave, $usuario) {
 
- public function editarDatos($datos) {
+  $Sql = "SELECT * FROM usuarios WHERE usuario = :usuario";
+  //$this->errores['usuario'] = 'El usuario o contraseña son inválidos';
+      $stmt = $this->getConexion()->prepare($Sql);
+      $stmt->bindParam(':usuario', $usuario);
+      $stmt->execute();
   
+      $resultados = $stmt->fetch( \PDO::FETCH_ASSOC );
+
+      if ($stmt->rowCount() > 0) {
+        return password_verify($clave, $resultados['clave']);
+      }
  }
 
- public function editarImagen() {
+
+
+ public function editarDatos($valores, $sesion) {
+
+
+  if (empty($valores['usuario'])) {
+    $this->validarUsuario($valores['usuario']);
+    $valores['usuario'] = $sesion['usuario'];
+  }
+
+  if (empty($valores['email'])) {
+    $this->validarEmail($valores['email']);
+    $valores['email'] = $sesion['email'];
+  }
+
+  if ($this->confirmarClave($valores['clave'], $sesion['usuario'])) {
+    $Sql = "UPDATE usuarios SET usuario = :usuario, email = :email, clave = :clave  WHERE usuario = :usuarioSesion";
+    //$this->errores['usuario'] = 'El usuario o contraseña son inválidos';
+        $stmt = $this->getConexion()->prepare($Sql);
+        $stmt->bindParam(':usuario', $valores['usuario']);
+        $stmt->bindParam(':email', $valores['email']);
+        $stmt->bindValue(':clave',
+        password_hash($valores['claveNueva'], PASSWORD_DEFAULT)
+      );
+      $stmt->bindParam(':usuarioSesion', $sesion['usuario']);
+  
+        $stmt->execute();
+        $this->errores = 'Se registraron los cambios exitosamente';
+        $_SESSION['usuario'] = $valores['usuario'];
+        $_SESSION['email'] = $valores['email'];
+  
+      header('Location: preferencias.php');
+  } else {
+    $this->errores['clave'] = 'La contraseña es invalida';
+  }
 
  }
 
@@ -198,5 +250,8 @@ class Usuario extends Conexion{
 
       }
 
-  	}
+    }
+    
+
+
 }
