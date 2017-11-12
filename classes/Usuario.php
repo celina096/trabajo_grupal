@@ -37,17 +37,15 @@ class Usuario extends Conexion{
 
     
        }
+
+       public function migrarJson() {
+          $handler = $this->prepararJson();
+          
+       }
+
     
        public function guardarUsuariosJson($data){
-         $bd = 'usuarios.json';
-          $data['clave'] = password_hash($data['clave'],PASSWORD_DEFAULT);
-          $json=json_encode($data);
-          $json['ruta_imagen'] = $this->nombreAvatar;
-          $escribo= $json;
-          $archivo = $bd;
-          $escribo = $escribo."\n";
-          fwrite ($recurso,$escribo);
-
+          $data['ruta_imagen'] = $this->nombreAvatar;
           array_push ($data['usuario']=$usuario);
           $json=$data;
           $escribo=json_encode ($json);
@@ -181,6 +179,10 @@ class Usuario extends Conexion{
   } else {
     $this->errores['clave'] = 'La contraseña es invalida';
   }
+
+ }
+
+ public function editarImagen($avatar) {
 
  }
 

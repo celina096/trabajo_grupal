@@ -14,10 +14,6 @@ if(!empty($_POST)) {
   $errores = $user->getErrores();
 }
 
-var_dump($_POST);
-var_dump($_SESSION);
-var_dump($errores);
-
 
 
 
@@ -73,13 +69,13 @@ var_dump($errores);
             echo 'avatar/'.$_SESSION['imagen'];
             ?>" alt="" width="150px">
           </div> <!-- .avatar -->
-          <form class="cambiar-avatar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+          <form class="cambiar_avatar" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
             <br>
             <label for="cambiar-avatar">Cambiar avatar</label>
             <br>
             <input class="boton" type="file" name="avatar" accept="image/*" />
             <br>
-            <button class="boton" type="submit" name="changeAvatar">Subir Avatar</button>
+            <button class="boton" type="submit" name="cambiar_avatar">Subir Avatar</button>
           </form>
         </div> <!-- .avatar-wrap -->
       </div> <!-- .wrap -->
